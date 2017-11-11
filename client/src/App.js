@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import Dashboard from "./components/Dashboard";
 import Schedule from "./components/Schedule";
 import Login from "./components/Login";
+import About from "./components/About";
 
 const App = () =>
   <Router>
@@ -21,6 +22,7 @@ const App = () =>
           <Route exact path="/products" component={Products} />
           <Route exact path="/schedule" component={Schedule} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/About" component={About} />
           <Route component={NoMatch} />
         </Switch>
       <Footer />

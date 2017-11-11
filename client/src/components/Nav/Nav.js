@@ -11,6 +11,7 @@ const Nav = () =>
           <li><a href="/">Home </a></li>
           <li><a href="/about">About Us</a></li>
           <li><a href="/login">Login/Register</a></li>
+          <li><a href="/Products">Products </a></li>
           {/* Dropdown Menu */}
           {/* <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">AfterLogin - Dvlpmt Only

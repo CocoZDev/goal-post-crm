@@ -4,6 +4,7 @@ var router = express.Router();
 var db = require("../models");
 var passport = require("passport");
 
+
 router.get('/', (req, res, next) => {
     if(req.isAuthenticated()){
         res.redirect("/dashboard");
