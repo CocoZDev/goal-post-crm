@@ -19,17 +19,16 @@ const Main = () =>
 
     <hr />
 
-    <Jumbotron>
-        <h3><a href = "/login">Login or Register</a></h3>
-        <p>Use a login button or form here.</p>
-    </Jumbotron>
+    <Row>
+        <Login />
+    </Row>
 
     <hr />
     
     {/* Links after users logging in */}
 
-    <div class="button groups">
-    <h3>Links after users logging in, will remove later</h3>
+    <div className="button groups">
+    <h3>Links after users logging in, will remove later!!!</h3>
         <ul>
             <li><a href="/customers">Customers</a></li>
             <li><a href="/products">Products</a></li>

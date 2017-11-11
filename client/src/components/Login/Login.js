@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
 import { Col, Row, Container } from "../Grid";
-// import Jumbotron from "../Jumbotron";
+import "../../styles/Login.css";
 
 
 
-// Code Reference from https://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
+// Code Reference from https://bootsnipp.com/snippets/qrmK0
 
 // const Login = () =>
 
-
-//   <p>Login/Register Placeholder. Will use this code example reference from https://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
+//   <p>Login/Register Placeholder. Will use this code example reference from https://bootsnipp.com/snippets/qrmK0
 //   </p>
 
 // ============ Modified Login Component with Class ==============
@@ -18,8 +17,6 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
-    firstName: "",
-    lastName: "",
     email: ""
   };
 
@@ -38,96 +35,82 @@ class Login extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="lg-6 lg-offset-3 md-6 md-offset-3 sm-6 sm-offset-3">
-            <div id="myTabContent" className="tab-content text-center" style={{width:'300px'}}>
-              {/* ===== Login ===== */}
-              <div className="tab-pane active in" id="login">
-                <form className="form-horizontal" action='' method="POST">
-                  <fieldset>
-                    <div id="legend">
-                      <legend className="">Login</legend>
-                    </div>    
-                    <div className="control-group">
-                      {/* <!-- Username --> */}
-                      <label className="control-label"  for="username">Username</label>
-                      <div className="controls">
-                        <Input 
-                          type="text" 
-                          id="username" 
-                          name="username" 
-                          placeholder="" 
-                          value={this.state.username}
-                          onChange={this.handleInputChange}>
-                        </Input>
-                      </div>
-                    </div>
-
-                    <div className="control-group">
-                      {/* <!-- Password--> */}
-                      <label className="control-label" for="password">Password</label>
-                      <div className="controls">
-                        <Input 
-                          type="password" 
-                          id="password"
-                          name="password" 
-                          placeholder=""
-                          value={this.state.password}
-                          onChange={this.handleInputChange}>
-                        </Input>
-                      </div>
-                    </div>
-
-
-                    <div className="control-group">
-                      {/* <!-- Button --> */}
-                      <div className="controls">
-                        <button className="btn btn-success">Login</button>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>                
+          <Col size="md-6 md-offset-3">
+            <div class="panel panel-login">
+              {/* Panel Heading */}
+              <div class="panel-heading">
+                <Row>
+                  <Col size="xs-6">
+                    <a href="#" class="active" id="login-form-link">Login</a>
+                  </Col>
+                  <Col size="xs-6">
+                    <a href="#" id="register-form-link">Register</a>
+                  </Col>
+                </Row>
+                <hr />
               </div>
+              {/* End of Panel Heading */}
 
-              {/* ===== Create New Account ===== */}
+              {/* Panel Body */}
+              <div class="panel-body">
+                <Row>
+                  <Col size="lg-12">
 
-              <div className="tab-pane fade" id="create">
-                <form id="tab">
-                  <label>Username</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.username}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>First Name</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.firstName}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>Last Name</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.lastName}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>Email</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.email}
-                    onChange={this.handleInputChange}>
-                  </Input>
+                    {/* Login Form */}
 
-                  <div>
-                    <FormBtn>Create Account</FormBtn>
-                  </div>
-                </form>
+                    <form id="login-form" action="" method="post" role="form" style={{ display: 'block'}} >
+                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username"                 value={this.state.author}                 onChange={this.handleInputChange}></Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password"></Input>
+         
+                        <Input type="checkbox" tabindex="3" class="" name="remember" id="remember"></Input>
+                        <label for="remember"> Remember Me</label>
+                        <Row>
+                          <Col size="sm-6 sm-offset-3">
+                            <FormBtn 
+                              type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" 
+                              value="Log In" onChange={this.handleFormSubmit}>Log In
+                            </FormBtn>
+                          </Col>
+                        </Row>
+                  
+                        <Row>
+                          <Col size="lg-12" class="text-center">
+                              <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                          </Col>
+                        </Row>
+                    </form>
+
+                    {/* Register Form */}
+
+                    <form id="register-form" action="" method="post" role="form" style={{display:'none'}}>
+                        <Input 
+                          type="text" name="username" id="username" tabindex="1" placeholder="Username" 
+                          value={this.state.author} onChange={this.handleInputChange}>
+                        </Input>
+                        <Input 
+                          type="email" name="email" id="email" tabindex="1" placeholder="Email Address" 
+                          value={this.state.author} onChange={this.handleInputChange}>
+                        </Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password"></Input>
+                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password"></Input>
+                        <Row>
+                          <Col size="sm-6 sm-offset-3">
+                            <FormBtn 
+                              type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" 
+                              value="Register Now" onChange={this.handleFormSubmit}>Register
+                            </FormBtn>
+                          </Col>
+                        </Row>
+                    </form>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
-          </Row>
-        </Container>
-      );
-    }
+        </Row>
+      </Container>
+    );
   }
+}
 
 export default Login;
