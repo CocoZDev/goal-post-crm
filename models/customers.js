@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var customers = sequelize.define("customers", {
-        customer_id: {
+      customer_id: {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true,
@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
               len: [1,10]
             }
-          },
-        customer_contact: {
+      },
+      customer_contact: {
         type: DataTypes.STRING,
         allowNull: false
       },
