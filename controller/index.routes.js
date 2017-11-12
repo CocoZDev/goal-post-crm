@@ -7,9 +7,9 @@ var passport = require("passport");
 
 router.get('/', (req, res, next) => {
     if(req.isAuthenticated()){
-        res.redirect("/dashboard");
+        res.redirect("/customers");
     }else{
-        res.redirect("/account/login");
+        res.redirect("/login");
     }
 });
 

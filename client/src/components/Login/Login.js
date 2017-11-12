@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
 import { Col, Row, Container } from "../Grid";
 import "../../styles/Login.css";
-
+import API from "../../utils/API";
 
 
 // Code Reference from https://bootsnipp.com/snippets/qrmK0
@@ -17,7 +17,7 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
-    email: ""
+    // email: ""
   };
 
   handleInputChange = event => {
@@ -29,6 +29,15 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    if (this.state.username && this.state.password) {
+      API.saveAccount({
+        username: this.state.username,
+        password: this.state.password
+      })
+      // .then(res => console.log(`Username Submitted from Form: ${this.state.username} | Password Submitted from Form: ${this.state.password}')
+        .then(res => this.getAccounts())
+        .catch(err => console.log(err));
+    }
   };
 
   render(){
@@ -58,7 +67,7 @@ class Login extends Component {
 
                     {/* Login Form */}
 
-                    <form id="login-form" action="" method="post" role="form" style={{ display: 'block'}} >
+                    <form id="login-form" role="form" style={{ display: 'block'}} >
                         <Input type="text" name="username" id="username" tabindex="1" placeholder="Username"                 value={this.state.author}                 onChange={this.handleInputChange}></Input>
                         <Input type="password" name="password" id="password" tabindex="2" placeholder="Password"></Input>
          
@@ -68,7 +77,7 @@ class Login extends Component {
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
                               type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" 
-                              value="Log In" onChange={this.handleFormSubmit}>Log In
+                              value="Log In" onClick={this.handleFormSubmit}>Log In
                             </FormBtn>
                           </Col>
                         </Row>
@@ -82,7 +91,7 @@ class Login extends Component {
 
                     {/* Register Form */}
 
-                    <form id="register-form" action="" method="post" role="form" style={{display:'none'}}>
+                    <form id="register-form" role="form" style={{display:'none'}}>
                         <Input 
                           type="text" name="username" id="username" tabindex="1" placeholder="Username" 
                           value={this.state.author} onChange={this.handleInputChange}>
@@ -97,7 +106,7 @@ class Login extends Component {
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
                               type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" 
-                              value="Register Now" onChange={this.handleFormSubmit}>Register
+                              value="Register Now" onClick={this.handleFormSubmit}>Register
                             </FormBtn>
                           </Col>
                         </Row>
