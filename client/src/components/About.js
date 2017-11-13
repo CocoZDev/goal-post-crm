@@ -24,9 +24,8 @@ const About = () =>
 
   
 
-  {/* Row #3 */}
+  {/* Row #2 */}
   <Row>
-    {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/me.jpg" />
     <h2>Dennis Alvey</h2>
@@ -37,9 +36,8 @@ const About = () =>
     </Col>
   </Row>
 
-  {/* Row #4 */}
+  {/* Row #3 */}
   <Row>
-    {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/Tatianna.jpg" />
     <h2>Tatianna "Drama-Mam2" Watwood</h2>
@@ -51,9 +49,8 @@ const About = () =>
     </Col>
   </Row>
 
-  {/* Row #5 */}
+  {/* Row #4 */}
   <Row>
-    {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/jeannine.jpg" />
     <h2>Jeanine "Mufasa" Smith</h2>
@@ -65,9 +62,8 @@ const About = () =>
     </Col>
   </Row>
 
-  {/* Row #6 */}
+  {/* Row #5 */}
   <Row>
-    {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/Guiyu.jpg" />
     <h2>Guiyu "Zoey" Zhao  </h2>
@@ -80,7 +76,6 @@ const About = () =>
 
   {/* Row #6 */}
   <Row>
-    {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/Brian.jpg" />
     <h2>Brian "The Captain" Hart  </h2>

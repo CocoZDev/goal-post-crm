@@ -68,11 +68,11 @@ class Login extends Component {
                     {/* Login Form */}
 
                     <form id="login-form" role="form" style={{ display: 'block'}} >
-                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username"                 value={this.state.author}                 onChange={this.handleInputChange}></Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password"></Input>
+                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username" value={this.state.author} onChange={this.handleInputChange} required></Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" required></Input>
          
                         <Input type="checkbox" tabindex="3" class="" name="remember" id="remember"></Input>
-                        <label for="remember"> Remember Me</label>
+                        <label for="remember">Remember Me</label>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
@@ -94,14 +94,14 @@ class Login extends Component {
                     <form id="register-form" role="form" style={{display:'none'}}>
                         <Input 
                           type="text" name="username" id="username" tabindex="1" placeholder="Username" 
-                          value={this.state.author} onChange={this.handleInputChange}>
+                          value={this.state.author} onChange={this.handleInputChange} required>
                         </Input>
                         <Input 
                           type="email" name="email" id="email" tabindex="1" placeholder="Email Address" 
-                          value={this.state.author} onChange={this.handleInputChange}>
+                          value={this.state.author} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password"></Input>
-                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password"></Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" required></Input>
+                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password" required></Input>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 

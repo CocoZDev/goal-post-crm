@@ -18,7 +18,7 @@ const Nav = () =>
         <ul class="nav navbar-nav navbar-right ml-auto">
           <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
           <li><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
-          <li><a href="/Products">Products </a></li>
+          <li><a href="/contact"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
           <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login/Register</a></li>          
         </ul>
       </div>
