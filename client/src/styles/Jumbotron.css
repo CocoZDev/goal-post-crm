@@ -1,5 +1,6 @@
 .jumbotron {
-  height: 200px;
+  height: auto;
+  width: 100%;
   background: #8ac8f7;
   /* color: white; */
   /* padding: 10px; */
