@@ -4,12 +4,11 @@ var router = express.Router();
 var db = require("../models");
 var passport = require("passport");
 
-
 router.get('/', (req, res, next) => {
     if(req.isAuthenticated()){
-        res.redirect("/customers");
+        res.redirect("/dashboard");
     }else{
-        res.redirect("/login");
+        res.redirect("/");
     }
 });
 
