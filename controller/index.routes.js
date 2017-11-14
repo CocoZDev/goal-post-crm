@@ -25,8 +25,8 @@ router.get('/', (req, res, next) => {
 //             },
 //             order: db.sequelize.col('customer_company')
 //         }).then(function(results){
-            // var customerList = {customers: results}
-            // res.render('teacher', classList);
+//             // var customerList = {customers: results}
+//             // res.render('teacher', classList);
 //             res.json(results);
 //         });
 //     }else{
@@ -35,7 +35,7 @@ router.get('/', (req, res, next) => {
 // });
 
 // route to get all of a rep's customers
-router.get('/dashboard', (req, res, next) => {
+router.get('/Dashboard', (req, res, next) => {
     if (req.isAuthenticated()) {
         db.customers.findAll({
             where: {
@@ -43,9 +43,8 @@ router.get('/dashboard', (req, res, next) => {
             },
             order: db.sequelize.col('customer_company')
         }).then(function (results) {
-            // var customerList = {customers: results}
-            // res.render('teacher', classList);
-            res.json(results);
+            console.log(results);
+            res.redirect("/Customers")
         });
     } else {
         res.redirect("/account/login");
@@ -53,7 +52,7 @@ router.get('/dashboard', (req, res, next) => {
 });
 
 // post to create a new customer
-router.post('/dashboard', (req, res, next) =>{
+router.post('/Dashboard', (req, res, next) =>{
     if(req.isAuthenticated()){
         db.customers.create({
             customer_contact: req.body.contact,
@@ -64,7 +63,7 @@ router.post('/dashboard', (req, res, next) =>{
             customer_rating: 0,
             repRepId: req.user.rep_id
         }).then(function(results){
-            res.redirect('/dashboard');
+            res.redirect('/Dashboard');
         });
     }else{
         res.redirect("/account/login");        

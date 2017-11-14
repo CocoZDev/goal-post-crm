@@ -6,22 +6,27 @@ var router = express.Router();
 
 // ALL links in this file get prepended with /account
 // ==================================================
-router.get('/', (req, res, next) => {
-    res.render(path.join(__dirname, "/"));
-});
+// router.get('/', (req, res, next) => {
+//     res.render(path.join(__dirname, "/"));
+// });
+
 
 router.get('/login' , (req, res, next) => {
-    res.render(path.join(__dirname, "/customers"));
+    res.render(path.join(__dirname, "/login"));
 });
 
 
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/customers',
+    successRedirect: '/Dashboard',
     failureRedirect: '/login'
 }))
 
-router.post('/signup', passport.authenticate('local-register', {
-    successRedirect: '/login',
+router.get('/register', (req, res, next) => {
+    res.render(path.join(__dirname, "/register"));
+});
+
+router.post('/register', passport.authenticate('local-register', {
+    successRedirect: '/Dashboard',
     failureRedirect: '/login'
 }))
 
