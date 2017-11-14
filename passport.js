@@ -6,7 +6,7 @@ var db = require('./models');
 const authenticate = (username, password, done) =>{
     db.reps.find({
         where:{
-          rep_username: username,
+          rep_userName: username,
         }
       }).then(rep => {
         if (!rep || !bcrypt.compareSync(password, rep.rep_password)) {
@@ -14,7 +14,6 @@ const authenticate = (username, password, done) =>{
           console.log("failed to login, but sucess in getting this far.")
             return done(null, false, {message: 'invalid username/or and password combination'});
         }
-  
         done(null, rep);
       })
       .catch(done) // pass the error back
@@ -24,7 +23,7 @@ const register = (req, email, password, done) => {
     //sequelize?
     db.reps.find({
         where:{
-            rep_email: req.body.email,
+            rep_userName: req.body.username,
         }
     })
     .then(user => {
