@@ -25,13 +25,12 @@ const Products = () =>
   <Row>
     {/* Vertical Menu */}
     <Col size="md-4">
-      <VerticalMenu>
-      </VerticalMenu>
+      <p>This should be an image</p>
     </Col>
 
     {/* Products Content */}
     <Col size="md-8">
-      <p>Products Placeholder Section</p>
+      <p>Product description</p>
     </Col>
   </Row>
 </Container>

@@ -8,6 +8,8 @@ import Customers from "./components/Customers";
 import Products from "./components/Products";
 import Dashboard from "./components/Dashboard";
 import Schedule from "./components/Schedule";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import Login from "./components/Login";
 
 const App = () =>
@@ -20,6 +22,8 @@ const App = () =>
           <Route exact path="/customers" component={Customers} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/schedule" component={Schedule} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route component={NoMatch} />
         </Switch>

@@ -33,7 +33,7 @@ app.use(passport.session());
 
 // Static Directory
 // ================
-app.use(express.static("public"));
+app.use(express.static("api"));
 
 // Allow use of handlebars and method override
 // ===========================================
