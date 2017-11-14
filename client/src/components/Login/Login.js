@@ -17,7 +17,7 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
-    // email: ""
+    email: ""
   };
 
   handleInputChange = event => {
@@ -27,14 +27,26 @@ class Login extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleRegister = event => {
+    event.preventDefault();
+    if ((this.state.username && this.state.password && this.state.passwordTwo) && (this.state.password === this.state.passwordConfirm)) {
+      API.saveAccount({
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email
+      })
+        .then(res => this.getAccounts())
+        .catch(err => console.log(err));
+    }
+  };
+
+  handleLogin = event => {
     event.preventDefault();
     if (this.state.username && this.state.password) {
       API.saveAccount({
         username: this.state.username,
         password: this.state.password
       })
-      // .then(res => console.log(`Username Submitted from Form: ${this.state.username} | Password Submitted from Form: ${this.state.password}')
         .then(res => this.getAccounts())
         .catch(err => console.log(err));
     }
@@ -45,12 +57,12 @@ class Login extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6 md-offset-3">
-            <div class="panel panel-login">
+            <div className="panel panel-login">
               {/* Panel Heading */}
-              <div class="panel-heading">
+              <div className="panel-heading">
                 <Row>
                   <Col size="xs-6">
-                    <a href="#" class="active" id="login-form-link">Login</a>
+                    <a href="#" className="active" id="login-form-link">Login</a>
                   </Col>
                   <Col size="xs-6">
                     <a href="#" id="register-form-link">Register</a>
@@ -61,30 +73,30 @@ class Login extends Component {
               {/* End of Panel Heading */}
 
               {/* Panel Body */}
-              <div class="panel-body">
+              <div className="panel-body">
                 <Row>
                   <Col size="lg-12">
 
                     {/* Login Form */}
 
                     <form id="login-form" role="form" style={{ display: 'block'}} >
-                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username" value={this.state.author} onChange={this.handleInputChange} required></Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" required></Input>
+                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
          
-                        <Input type="checkbox" tabindex="3" class="" name="remember" id="remember"></Input>
+                        <Input type="checkbox" tabindex="3" className="" name="remember" id="remember"></Input>
                         <label for="remember">Remember Me</label>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
-                              type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" 
-                              value="Log In" onClick={this.handleFormSubmit}>Log In
+                              type="submit" name="login-submit" id="login-submit" tabindex="4" className="form-control btn btn-login" 
+                              value="Log In" onClick={this.handleLogin}>Log In
                             </FormBtn>
                           </Col>
                         </Row>
                   
                         <Row>
-                          <Col size="lg-12" class="text-center">
-                              <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                          <Col size="lg-12" className="text-center">
+                              <a href="" tabindex="5" className="forgot-password">Forgot Password?</a>
                           </Col>
                         </Row>
                     </form>
@@ -94,19 +106,23 @@ class Login extends Component {
                     <form id="register-form" role="form" style={{display:'none'}}>
                         <Input 
                           type="text" name="username" id="username" tabindex="1" placeholder="Username" 
-                          value={this.state.author} onChange={this.handleInputChange} required>
+                          value={this.state.username} onChange={this.handleInputChange} required>
                         </Input>
                         <Input 
                           type="email" name="email" id="email" tabindex="1" placeholder="Email Address" 
-                          value={this.state.author} onChange={this.handleInputChange} required>
+                          value={this.state.email} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" required></Input>
-                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password" required></Input>
+                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" 
+                           value={this.state.password} onChange={this.handleInputChange} required>
+                        </Input>
+                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password" 
+                          value={this.state.passwordConnfirm} onChange={this.handleInputChange} required>
+                        </Input>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
-                              type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" 
-                              value="Register Now" onClick={this.handleFormSubmit}>Register
+                              type="submit" name="register-submit" id="register-submit" tabindex="4" className="form-control btn btn-register" 
+                              value="Register Now" onClick={this.handleRegister}>Register
                             </FormBtn>
                           </Col>
                         </Row>
