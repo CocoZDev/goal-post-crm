@@ -10,12 +10,17 @@ export default {
     return axios.get("/api/accounts/" + id);
   },
   // Deletes the Account with the given id
-  deleteAccount: function(id) {
+  archiveAccount: function(id) {
     return axios.delete("/api/accounts/" + id);
   },
   // Saves a Account to the database
-  saveAccount: function(AccountData) {
+  registerAccount: function(AccountData) {
     return axios.post("/api/accounts", AccountData);
+  }
+
+  // Saves a Account to the database
+  loginAccount: function(AccountData) {
+    return axios.post("/account/register", AccountData);
   }
     // // Saves a Account to the database from a different PORT
     // saveAccount: function(AccountData) {
