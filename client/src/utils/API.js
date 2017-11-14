@@ -16,7 +16,7 @@ export default {
   // Saves a Account to the database
   registerAccount: function(AccountData) {
     return axios.post("/api/accounts", AccountData);
-  }
+  },
 
   // Saves a Account to the database
   loginAccount: function(AccountData) {

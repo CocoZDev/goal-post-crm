@@ -30,7 +30,7 @@ class Login extends Component {
   handleRegister = event => {
     event.preventDefault();
     if ((this.state.username && this.state.password && this.state.passwordTwo) && (this.state.password === this.state.passwordConfirm)) {
-      API.saveAccount({
+      API.registerAccount({
         username: this.state.username,
         password: this.state.password,
         email: this.state.email
@@ -43,7 +43,7 @@ class Login extends Component {
   handleLogin = event => {
     event.preventDefault();
     if (this.state.username && this.state.password) {
-      API.saveAccount({
+      API.loginAccount({
         username: this.state.username,
         password: this.state.password
       })
