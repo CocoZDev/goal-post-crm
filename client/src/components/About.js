@@ -42,7 +42,7 @@ const About = () =>
     {/* Products Content */}
     <Col size="md-8">
     <img className="aboutImg" src="/Images/Tatianna.jpg" />
-    <h2>Tatianna "Drama-Mam2" Watwood</h2>
+    <h2>Tatianna "Drama-Mama" Watwood</h2>
     <p>Full stack web developer skilled in creating web applications 
       using front and backend technologies and multiple languagues. 
       Other relevant skills include Public Speaking, Microsoft Powerpoint Presentations,
