@@ -30,7 +30,7 @@ class Login extends Component {
 
   handleRegister = event => {
     event.preventDefault();
-    if (this.state.password === this.state.passwordConfirm) {
+    // if ((this.state.username && this.state.password && this.state.passwordConfirm) && (this.state.password === this.state.passwordConfirm)) {
       API.registerAccount({
         username: this.state.username,
         password: this.state.password,
@@ -39,18 +39,17 @@ class Login extends Component {
         .then(res => this.getAccounts())
         .catch(err => console.log(err));
     }
-  };
+  // };
 
   handleLogin = event => {
     event.preventDefault();
-    if (this.state.username && this.state.password) {
+    // if (this.state.username && this.state.password) {
       API.loginAccount({
         username: this.state.username,
         password: this.state.password
       })
-        .then(res => this.getAccounts())
+        .then(res => API.getAccounts())
         .catch(err => console.log(err));
-    }
   };
 
   render(){
@@ -116,7 +115,7 @@ class Login extends Component {
                         <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" 
                            value={this.state.password} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password" 
+                        <Input type="password" name="passwordConfirm" id="confirm-password" tabindex="2" placeholder="Confirm Password" 
                           value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
                         <Row>

@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
-var exphbs = require("express-handlebars");
+// var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require('express-session');
 var bcrypt = require("bcrypt-nodejs");
@@ -12,7 +12,7 @@ require('./passport.js');
 // Set up the Express App
 // ======================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 // ================================
@@ -37,7 +37,7 @@ app.use(express.static("api"));
 
 // Allow use of handlebars and method override
 // ===========================================
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 // app.engine("handlebars", exphbs({defaultLayout: "main"}));
 // app.set("view engine" , "handlebars");
 
@@ -53,8 +53,9 @@ app.use("/account", account);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
+db.sequelize.sync({ force: false }).then(function () {
     app.listen(PORT, function(){
-        db.sequelize.sync({force: false}).then(function(){ console.log("App is listening on PORT " + PORT);
+        console.log("App is listening on PORT " + PORT);
     });
 });
 
