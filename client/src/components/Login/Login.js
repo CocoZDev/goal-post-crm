@@ -17,6 +17,7 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
+    passwordConfirm: "",
     email: ""
   };
 
@@ -29,7 +30,7 @@ class Login extends Component {
 
   handleRegister = event => {
     event.preventDefault();
-    if ((this.state.username && this.state.password && this.state.passwordTwo) && (this.state.password === this.state.passwordConfirm)) {
+    if (this.state.password === this.state.passwordConfirm) {
       API.registerAccount({
         username: this.state.username,
         password: this.state.password,
@@ -116,7 +117,7 @@ class Login extends Component {
                            value={this.state.password} onChange={this.handleInputChange} required>
                         </Input>
                         <Input type="password" name="confirm-password" id="confirm-password" tabindex="2" placeholder="Confirm Password" 
-                          value={this.state.passwordConnfirm} onChange={this.handleInputChange} required>
+                          value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
