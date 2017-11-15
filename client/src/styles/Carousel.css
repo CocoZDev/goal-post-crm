@@ -1,11 +1,5 @@
-/*
-Fade content bs-carousel with hero headers
-Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
-Image credits: unsplash.com
-*/
-
 /********************************/
-/*       Fade Bs-carousel       */
+/* Bootstrap carousel with overlay */
 /********************************/
 .fade-carousel {
   position: relative;
@@ -18,7 +12,7 @@ Image credits: unsplash.com
   margin: 0 2px;
   background-color: #2196F3;
   border-color: #2196F3;
-  opacity: .4;
+  opacity: .7;
 }
 .fade-carousel .carousel-indicators > li.active {
 width: 10px;
@@ -29,11 +23,11 @@ opacity: 1;
 /********************************/
 /*          Hero Headers        */
 /********************************/
-.carousel-caption {
+.hero {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 1;
+  z-index: 3;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -44,18 +38,18 @@ opacity: 1;
          -o-transform: translate3d(-50%,-50%,0);
             transform: translate3d(-50%,-50%,0);
 }
-.carousel-caption h1 {
+.hero h1 {
   font-size: 6em;    
   font-weight: bold;
   margin: 0;
   padding: 0;
 }
 
-/* .carousel-caption h1, h3 {
+.hero h1, h3 {
   color: #fff;
-} */
+}
 
-.fade-carousel .carousel-inner .item .carousel-caption {
+.fade-carousel .carousel-inner .item .hero {
   opacity: 0;
   -webkit-transition: 2s all ease-in-out .1s;
      -moz-transition: 2s all ease-in-out .1s; 
@@ -63,7 +57,7 @@ opacity: 1;
        -o-transition: 2s all ease-in-out .1s; 
           transition: 2s all ease-in-out .1s; 
 }
-.fade-carousel .carousel-inner .item.active .carousel-caption {
+.fade-carousel .carousel-inner .item.active .hero {
   opacity: 1;
   -webkit-transition: 2s all ease-in-out .1s;
      -moz-transition: 2s all ease-in-out .1s; 
@@ -137,8 +131,8 @@ background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199
 /*          Media Queries       */
 /********************************/
 @media screen and (min-width: 980px){
-  .carousel-caption { width: 980px; }    
+  .hero { width: 980px; }    
 }
 @media screen and (max-width: 640px){
-  .carousel-caption h1 { font-size: 4em; }    
+  .hero h1 { font-size: 4em; }    
 }
