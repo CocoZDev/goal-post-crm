@@ -29,29 +29,29 @@ class Login extends Component {
   };
 
   handleRegister = event => {
-    // event.preventDefault();
-    // if ((this.state.username && this.state.password && this.state.passwordConfirm) && (this.state.password === this.state.passwordConfirm)) {
+    event.preventDefault();
+    console.log("Handling register..Login.js");
       API.registerAccount({
         username: this.state.username,
         password: this.state.password,
         email: this.state.email
       })
-        .then(res => this.getAccounts())
+        .then(res => console.log("you have registered!"))
         .catch(err => console.log(err));
 
     }
   // };
 
   handleLogin = event => {
-    // event.preventDefault();
-    // if (this.state.username && this.state.password) {
+    event.preventDefault();
+    console.log("Handling login..Login.js");
       API.loginAccount({
         username: this.state.username,
         password: this.state.password
       })
+        .then(res => console.log("res..Login.js: " + res))
         .then(res => API.getAccounts())
         .catch(err => console.log(err));
-      document.getElementById("login-form").reset();
   };
 
   render(){

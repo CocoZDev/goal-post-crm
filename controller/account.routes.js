@@ -11,14 +11,19 @@ var router = express.Router();
 // });
 
 
-router.get('/login' , (req, res, next) => {
-    res.render(path.join(__dirname, "/login"));
-});
+// router.get('/login' , (req, res, next) => {
+//     console.log("logging in..account.routes.js");
+//     // res.render(path.join(__dirname, "/login"));
+// });
 
+// router.get('/dashboard', (req, res, next) => {
+//     res.render(path.join(__dirname, "/dashboard"));
+// });
 
+// this is handling the authentication
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/Dashboard',
-    failureRedirect: '/login'
+    successRedirect: '/dashboard',
+    failureRedirect: '/'
 }))
 
 router.get('/register', (req, res, next) => {
@@ -26,8 +31,8 @@ router.get('/register', (req, res, next) => {
 });
 
 router.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/Dashboard',
-    failureRedirect: '/login'
+    successRedirect: '/login',
+    failureRedirect: '/'
 }))
 
 router.get('/logout', (req, res, next) => {
