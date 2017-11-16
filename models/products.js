@@ -12,12 +12,10 @@ module.exports = function (sequelize, DataTypes) {
     product_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      
     },
     product_description: {
       type: DataTypes.STRING,
-      allowNull: false,
-      
+      allowNull: false, 
     },
     product_quantity: {
       type: DataTypes.INTEGER,

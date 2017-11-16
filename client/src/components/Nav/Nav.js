@@ -19,7 +19,8 @@ const Nav = () =>
           <li><a href="/"><span className="glyphicon glyphicon-home"></span> Home </a></li>
           <li><a href="/about"><span className="glyphicon glyphicon-info-sign"></span> About Us</a></li>
           <li><a href="/contact"><span className="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
-          <li><a href="/login"><span className="glyphicon glyphicon-user"></span> Login/Register</a></li>          
+          <li><a href="/login"><span className="glyphicon glyphicon-user"></span> Login/Register</a></li>
+          <li><a href="/products"><span className="glyphicon glyphicon-home"></span> Products </a></li>
         </ul>
       </div>
     </div>
