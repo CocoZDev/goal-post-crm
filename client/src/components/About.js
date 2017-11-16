@@ -43,7 +43,7 @@ const About = () =>
       <img className="aboutImg img-circle" src="/images/Tatianna.jpg" width="150px"/>
       </Col>
       <Col size="md-8">
-      <h2>Tatianna "Drama-Mam2" Watwood</h2>
+      <h2>Tatianna "Drama-Mama" Watwood</h2>
       <p>Full stack web developer skilled in creating web applications 
         using front and backend technologies and multiple languagues. 
         Other relevant skills include Public Speaking, Microsoft Powerpoint Presentations,
