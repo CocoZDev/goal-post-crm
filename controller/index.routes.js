@@ -41,24 +41,21 @@ router.get('/dashboard', (req, res, next) => {
     }
 });
 
-// post to create a new customer
-// router.post('/dashboard', (req, res, next) =>{
-//     if(req.isAuthenticated()){
-//         db.customers.create({
-//             customer_contact: req.body.contact,
-//             customer_company: req.body.company,
-//             customer_address: req.body.address,
-//             customer_phone: req.body.phone,
-//             customer_email: req.body.email,
-//             customer_rating: 0,
-//             repRepId: req.user.rep_id
-//         }).then(function(results){
-//             res.redirect('/dashboard');
-//         });
-//     }else{
-//         res.redirect("/account/login");        
-//     }
-// })
+// post to create a new product
+router.post('/postProducts', (req, res, next) =>{
+    if(req.isAuthenticated()){
+        db.products.create({
+            product_name: req.body.product_name,
+            product_description: req.body.product_description,
+            product_quantity: req.body.product_quantity,
+        }).then(function(results){
+            console.log("Your product was created!");
+            // res.redirect('/dashboard');
+        });
+    }else{
+        res.redirect("/account/login");        
+    }
+})
 
 // route to get customers from a particular rep
 router.get('/customers/:id', (req, res, next) =>{

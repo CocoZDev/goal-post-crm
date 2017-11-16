@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 class Products extends Component {
   state = {
     product_name: "",
-    description:"",
-    quantity:""
+    product_description:"",
+    product_quantity:""
   };
 
 
@@ -28,8 +28,8 @@ handleSubmit = event => {
   console.log("Handling register.. Products.js");
   API.postProducts({
     product_name: this.state.product_name,
-    description: this.state.description,
-    quantity: this.state.quantity
+    product_description: this.state.product_description,
+    product_quantity: this.state.product_quantity
   })
 
   .then(res => console.log("you have entered your product."))

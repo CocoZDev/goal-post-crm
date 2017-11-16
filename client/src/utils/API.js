@@ -25,4 +25,9 @@ export default {
   archiveAccount: function(id) {
     return axios.delete("/api/accounts/" + id);
   },
+  // Saves a Account to the database
+  postProducts: function (Data) {
+    console.log("posting product..API.js");
+    return axios.post("index/postProducts", Data);
+  },
 };
