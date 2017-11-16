@@ -38,9 +38,7 @@ class Login extends Component {
       })
         .then(res => console.log("you have registered!"))
         .catch(err => console.log(err));
-
     }
-  // };
 
   handleLogin = event => {
     event.preventDefault();
