@@ -30,24 +30,26 @@ class Login extends Component {
 
   handleRegister = event => {
     event.preventDefault();
-    // if ((this.state.username && this.state.password && this.state.passwordConfirm) && (this.state.password === this.state.passwordConfirm)) {
+    console.log("Handling register..Login.js");
       API.registerAccount({
         username: this.state.username,
         password: this.state.password,
         email: this.state.email
       })
-        .then(res => this.getAccounts())
+        .then(res => console.log("you have registered!"))
         .catch(err => console.log(err));
+
     }
   // };
 
   handleLogin = event => {
     event.preventDefault();
-    // if (this.state.username && this.state.password) {
+    console.log("Handling login..Login.js");
       API.loginAccount({
         username: this.state.username,
         password: this.state.password
       })
+        .then(res => console.log("res..Login.js: " + res))
         .then(res => API.getAccounts())
         .catch(err => console.log(err));
   };
@@ -62,10 +64,10 @@ class Login extends Component {
               <div className="panel-heading">
                 <Row>
                   <Col size="xs-6">
-                    <a href="#" className="active" id="login-form-link">Login</a>
+                    <a href="/login" className="active" id="login-form-link">Login</a>
                   </Col>
                   <Col size="xs-6">
-                    <a href="#" id="register-form-link">Register</a>
+                    <a href="/register" id="register-form-link">Register</a>
                   </Col>
                 </Row>
                 <hr />
@@ -79,7 +81,7 @@ class Login extends Component {
 
                     {/* Login Form */}
 
-                    <form id="login-form" role="form" style={{ display: 'block'}} >
+                    <form id="login-form" style={{ display: 'block'}} >
                         <Input type="text" name="username" id="username" tabindex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
                         <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
          
@@ -103,7 +105,7 @@ class Login extends Component {
 
                     {/* Register Form */}
 
-                    <form id="register-form" role="form" style={{display:'none'}}>
+                    <form id="register-form" style={{display:'none'}}>
                         <Input 
                           type="text" name="username" id="username" tabindex="1" placeholder="Username" 
                           value={this.state.username} onChange={this.handleInputChange} required>
