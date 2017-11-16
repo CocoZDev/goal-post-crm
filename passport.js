@@ -3,10 +3,10 @@ var bcrypt = require('bcrypt-nodejs');
 const LocalStrategy = require('passport-local').Strategy
 var db = require('./models');
 
-const authenticate = (email, password, done) =>{
+const authenticate = (username, password, done) =>{
     db.reps.find({
         where:{
-          rep_email: email,
+          rep_userName: username,
         }
       }).then(rep => {
         if (!rep || !bcrypt.compareSync(password, rep.rep_password)) {
@@ -14,7 +14,6 @@ const authenticate = (email, password, done) =>{
           console.log("failed to login, but sucess in getting this far.")
             return done(null, false, {message: 'invalid username/or and password combination'});
         }
-  
         done(null, rep);
       })
       .catch(done) // pass the error back
@@ -24,14 +23,14 @@ const register = (req, email, password, done) => {
     //sequelize?
     db.reps.find({
         where:{
-            rep_email: req.body.email,
+            rep_userName: req.body.username,
         }
     })
     .then(user => {
       if (user) {
         return done(null, false, { message: 'an account with that email has already been created' });
       }
-      if (password !== req.body.password2) {
+      if (password !== req.body.password) {
         return done(null, false, { message: `passwords don't match` });
       }
       db.reps.create({

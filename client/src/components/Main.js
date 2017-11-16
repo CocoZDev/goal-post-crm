@@ -33,7 +33,7 @@ const Main = () =>
         
         {/* Links after users logging in */}
 
-        <div className="button groups">
+        <div className="button groups" style={{padding: "0 0 30px 0"}}>
         <h3>Links after users logging in, will remove later!!!</h3>
             <ul>
                 <li><a href="/customers">Customers</a></li>
