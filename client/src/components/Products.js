@@ -73,12 +73,7 @@ return (
         </form>
     </Col>
   </Row>
-                  
-  <Row>
-    <Col size="lg-12" className="text-center">
-        <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
-    </Col>
-  </Row>
+
 </Container>
 );
 }
