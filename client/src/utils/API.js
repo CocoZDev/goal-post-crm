@@ -15,7 +15,7 @@ export default {
   // Gets all Accounts
   getAccounts: function() {
     console.log("getAccounts function..API.js");
-    return axios.get("index/dashboard");
+    return axios.get("/dashboard");
   },
   // Gets the Account with the given id
   getAccount: function(id) {
@@ -27,7 +27,9 @@ export default {
   },
   // Saves a Account to the database
   postProducts: function (Data) {
+    console.log("___________________________");
     console.log("posting product..API.js");
-    return axios.post("index/postProducts", Data);
+    console.log("___________________________");
+    return axios.post("/postProducts", Data);
   },
 };

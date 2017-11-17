@@ -16,25 +16,25 @@ class Products extends Component {
   };
 
 
-handleInputChange = event => {
-  const { name, value } = event.target;
-  this.setState({
-    [name]: value
-  });
-};
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-handleSubmit = event => {
+handleFormSubmit = event => {
   event.preventDefault();
-  console.log("Handling register.. Products.js");
+  console.log("Handling new product.. Products.js");
   API.postProducts({
     product_name: this.state.product_name,
     product_description: this.state.product_description,
     product_quantity: this.state.product_quantity
   })
-
   .then(res => console.log("you have entered your product."))
-  .catch(err => console.log (err, "Your product has not been entered!"));
-}
+  .catch(err => console.log (err));
+};
+
 render() {
 return (
 <Container>
@@ -60,28 +60,24 @@ return (
       <p>Product description</p>
     </Col>
   </Row>
-
-  <form id="product-form" style={{ display: 'block'}} >
-                        <Input type="text" name="product_name" id="product_name" tabindex="1" placeholder="product" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
-                        <Input type="text" name="description" id="description" tabindex="2" placeholder="description" value={this.state.description} onChange={this.handleInputChange} required></Input>
-                        <Input type="number" name="quantity" id="quantity" tabindex="2" placeholder="quantity" value={this.state.quantity} onChange={this.handleInputChange} required></Input>
                         
-                        
-                        <Row>
-                          <Col size="sm-6 sm-offset-3">
-                            <FormBtn 
-                              type="submit" name="product-submit" id="product-submit" tabindex="4" className="form-control btn btn-login" 
-                              value="submit_product" onClick={this.handleLogin}>product add
-                            </FormBtn>
-                          </Col>
-                        </Row>
+  <Row>
+    <Col size="sm-6 sm-offset-3">
+        <form id="product-form" style={{ display: 'block' }} >
+          <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="product" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
+          <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
+          <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>               
+          <FormBtn type="submit" name="product-submit" id="product-submit" tabIndex="4" className="form-control btn btn-login" value="submit_product" onClick={this.handleFormSubmit}>product add
+          </FormBtn>
+        </form>
+    </Col>
+  </Row>
                   
-                        <Row>
-                          <Col size="lg-12" className="text-center">
-                              <a href="" tabindex="5" className="forgot-password">Forgot Password?</a>
-                          </Col>
-                        </Row>
-                    </form>
+  <Row>
+    <Col size="lg-12" className="text-center">
+        <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
+    </Col>
+  </Row>
 </Container>
 );
 }

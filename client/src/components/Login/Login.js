@@ -80,15 +80,15 @@ class Login extends Component {
                     {/* Login Form */}
 
                     <form id="login-form" style={{ display: 'block'}} >
-                        <Input type="text" name="username" id="username" tabindex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
+                        <Input type="text" name="username" id="username" tabIndex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
          
-                        <Input type="checkbox" tabindex="3" className="" name="remember" id="remember"></Input>
+                        <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
                         <label for="remember">Remember Me</label>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
-                              type="submit" name="login-submit" id="login-submit" tabindex="4" className="form-control btn btn-login" 
+                            type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" 
                               value="Log In" onClick={this.handleLogin}>Log In
                             </FormBtn>
                           </Col>
@@ -96,7 +96,7 @@ class Login extends Component {
                   
                         <Row>
                           <Col size="lg-12" className="text-center">
-                              <a href="" tabindex="5" className="forgot-password">Forgot Password?</a>
+                          <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
                           </Col>
                         </Row>
                     </form>
@@ -105,23 +105,23 @@ class Login extends Component {
 
                     <form id="register-form" style={{display:'none'}}>
                         <Input 
-                          type="text" name="username" id="username" tabindex="1" placeholder="Username" 
+                        type="text" name="username" id="username" tabIndex="1" placeholder="Username" 
                           value={this.state.username} onChange={this.handleInputChange} required>
                         </Input>
                         <Input 
-                          type="email" name="email" id="email" tabindex="1" placeholder="Email Address" 
+                        type="email" name="email" id="email" tabIndex="1" placeholder="Email Address" 
                           value={this.state.email} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="password" id="password" tabindex="2" placeholder="Password" 
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password" 
                            value={this.state.password} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="passwordConfirm" id="confirm-password" tabindex="2" placeholder="Confirm Password" 
+                        <Input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password" 
                           value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
                         <Row>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
-                              type="submit" name="register-submit" id="register-submit" tabindex="4" className="form-control btn btn-register" 
+                            type="submit" name="register-submit" id="register-submit" tabIndex="4" className="form-control btn btn-register" 
                               value="Register Now" onClick={this.handleRegister}>Register
                             </FormBtn>
                           </Col>

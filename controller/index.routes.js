@@ -43,6 +43,9 @@ router.get('/dashboard', (req, res, next) => {
 
 // post to create a new product
 router.post('/postProducts', (req, res, next) =>{
+    console.log("_________________________________");
+    console.log("creating post..index.routes.js");
+    console.log("_________________________________");
     if(req.isAuthenticated()){
         db.products.create({
             product_name: req.body.product_name,
@@ -55,7 +58,7 @@ router.post('/postProducts', (req, res, next) =>{
     }else{
         res.redirect("/account/login");        
     }
-})
+});
 
 // route to get customers from a particular rep
 router.get('/customers/:id', (req, res, next) =>{
