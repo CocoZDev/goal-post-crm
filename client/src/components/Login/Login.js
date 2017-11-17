@@ -36,7 +36,8 @@ class Login extends Component {
         password: this.state.password,
         email: this.state.email
       })
-        .then(res => console.log("you have registered!"))
+        // .then(res => console.log("you have registered!"))
+        .then(res => window.location = '/Login')
         .catch(err => console.log(err));
     }
 
@@ -48,7 +49,8 @@ class Login extends Component {
         password: this.state.password
       })
         .then(res => console.log("res..Login.js: " + res))
-        .then(res => API.getAccounts())
+        .then(res => window.location = '/Dashboard')
+        // .then(res => API.getAccounts())
         .catch(err => console.log(err));
   };
 

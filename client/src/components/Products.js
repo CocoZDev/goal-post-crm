@@ -31,7 +31,8 @@ handleFormSubmit = event => {
     product_description: this.state.product_description,
     product_quantity: this.state.product_quantity
   })
-  .then(res => console.log("you have entered your product."))
+  // .then(res => console.log("you have entered your product..Products.js"))
+    .then(res => window.location = '/Products')
   .catch(err => console.log (err));
 };
 

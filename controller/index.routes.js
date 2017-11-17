@@ -53,7 +53,7 @@ router.post('/postProducts', (req, res, next) =>{
             product_quantity: req.body.product_quantity,
         }).then(function(results){
             console.log("Your product was created!");
-            // res.redirect('/dashboard');
+            res.redirect('/dashboard');
         });
     }else{
         res.redirect("/account/login");        
