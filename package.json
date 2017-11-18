@@ -24,6 +24,7 @@
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.1.0",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.0",
     "mysql2": "^1.4.2",

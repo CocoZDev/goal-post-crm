@@ -10,7 +10,7 @@ export default {
   loginAccount: function (Data) {
     console.log("logging in to account..API.js");
     return axios.post("account/login", Data);
-    console.log("data from API.js: " + Data);
+    console.log("data from API.js: ", Data);
   },
   // Gets all Accounts
   getAccounts: function() {

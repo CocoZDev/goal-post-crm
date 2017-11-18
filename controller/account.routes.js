@@ -21,9 +21,9 @@ var router = express.Router();
 // });
 
 // this is handling the authentication
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/'
+router.post('/login', passport.authenticate('local', (err, data) => {
+    console.log('in account.rotes.js', data)
+    res.json(data);
 }))
 
 router.get('/register', (req, res, next) => {
