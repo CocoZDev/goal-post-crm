@@ -57,12 +57,12 @@ class Login extends Component {
   render(){
     return (
       <Container fluid>
-        <Row>
+        <Row fluid>
           <Col size="md-6 md-offset-3">
             <div className="panel panel-login">
               {/* Panel Heading */}
               <div className="panel-heading">
-                <Row>
+                <Row fluid>
                   <Col size="xs-6">
                     <a href="/login" className="active" id="login-form-link">Login</a>
                   </Col>
@@ -76,7 +76,7 @@ class Login extends Component {
 
               {/* Panel Body */}
               <div className="panel-body">
-                <Row>
+                <Row fluid>
                   <Col size="lg-12">
 
                     {/* Login Form */}
@@ -87,7 +87,7 @@ class Login extends Component {
          
                         <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
                         <label for="remember">Remember Me</label>
-                        <Row>
+                        <Row fluid>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
                             type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" 
@@ -96,7 +96,7 @@ class Login extends Component {
                           </Col>
                         </Row>
                   
-                        <Row>
+                        <Row fluid>
                           <Col size="lg-12" className="text-center">
                           <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
                           </Col>
@@ -120,7 +120,7 @@ class Login extends Component {
                         <Input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password" 
                           value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
-                        <Row>
+                        <Row fluid>
                           <Col size="sm-6 sm-offset-3">
                             <FormBtn 
                             type="submit" name="register-submit" id="register-submit" tabIndex="4" className="form-control btn btn-register" 
@@ -135,6 +135,26 @@ class Login extends Component {
             </div>
           </Col>
         </Row>
+
+
+      {/* Placeholder Links After Logging In */}
+
+        <Row fluid>
+            {/* Links after users logging in */}
+
+            <div className="button groups" style={{position: 'absolute', top: '400px', height: '300px'}}>
+            <h3>Links after users logging in, will remove later!!!</h3>
+                <ul>
+                    <li><a href="/customers">Customers</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/schedule">Schedule</a></li>
+                </ul>
+            </div>
+        </Row>
+
+
+
       </Container>
     );
   }
