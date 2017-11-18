@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
         console.log("_________________________________");
         console.log("get route / was not authenticated..index.routes.js");
         console.log("_________________________________");
-        res.redirect("/login");
+        // res.redirect("/login");
     }
 });
 
