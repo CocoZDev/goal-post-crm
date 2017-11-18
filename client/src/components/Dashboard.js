@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () =>
 
-<Container>
+<Container fluid>
   {/* Row #1 */}
-  <Row>
+  <Row fluid>
     <Col size="md-12">
       <Jumbotron>
         <h1><strong>Dashboard</strong></h1>
@@ -22,7 +22,7 @@ const Dashboard = () =>
   </Row>
 
   {/* Row #2 */}
-  <Row>
+  <Row fluid>
     {/* Vertical Menu */}
     <Col size="md-4">
       <VerticalMenu>

@@ -10,8 +10,8 @@
 }
 .fade-carousel .carousel-indicators > li {
   margin: 0 2px;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  /* background-color: #2196F3;
+  border-color: #2196F3; */
   opacity: .7;
 }
 .fade-carousel .carousel-indicators > li.active {

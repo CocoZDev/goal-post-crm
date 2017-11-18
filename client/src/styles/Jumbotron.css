@@ -1,10 +1,8 @@
 .jumbotron {
-  height: auto;
+  min-height: 200px;
   width: 100%;
-  background: #8ac8f7;
-  /* color: white; */
-  /* padding: 10px; */
-  /* vertical-align: center; */
+  background: #0BDD9C;
+  padding: 50px; 
 }
 
 /* .jumbotron h1{

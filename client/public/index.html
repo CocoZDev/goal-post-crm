@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Font Awesome CSS Icons (For cool glyphicons) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -19,7 +19,7 @@
       .panel-body a {
         word-break: break-all;
       }
-   </style>
+      </style>
     
     <title>Sales Tool</title>
   </head>
@@ -27,38 +27,52 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <script>
-
-      // Login/Register Form 
-
-      $(function() {
-
-        $('#login-form-link').click(function(e) {
-        $("#login-form").delay(100).fadeIn(100);
-        $("#register-form").fadeOut(100);
-        $('#register-form-link').removeClass('active');
-        $(this).addClass('active');
-        e.preventDefault();
-      });
-      $('#register-form-link').click(function(e) {
-        $("#register-form").delay(100).fadeIn(100);
-        $("#login-form").fadeOut(100);
-        $('#login-form-link').removeClass('active');
-        $(this).addClass('active');
-        e.preventDefault();
-      });
-
-      });
-
-      
-      </script>
-
-      <!-- Zotabox Contact Form Embed -->
-
-      <script type="text/javascript">
-        (function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/9/c/9c33da2db5ffd8ef745d2e48eb15e439/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));
-      </script>
-      
+    
     <div id="root"></div>
+
+<script>
+  
+  // Add Active Class to Nav Items
+    $('.navbar li a').click(function (e){
+        e.preventDefault();
+        console.log($('.navbar li.active'));
+        $('.navbar li a.active').removeClass('active');
+        console.log($(this));
+        $(this).addClass('active');
+        console.log('done');
+    });         
+
+
+  // Login/Register Form
+
+  $(function() {
+
+    $('#login-form-link').click(function(e) {
+    $("#login-form").delay(100).fadeIn(100);
+    $("#register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+  $('#register-form-link').click(function(e) {
+    $("#register-form").delay(100).fadeIn(100);
+    $("#login-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+  });
+
+
+  
+</script>
+
+<!-- Zotabox Contact Form Embed -->
+
+<script type="text/javascript">
+  (function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/9/c/9c33da2db5ffd8ef745d2e48eb15e439/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));
+</script>
+      
   </body>
 </html>

@@ -38,9 +38,11 @@ handleFormSubmit = event => {
 
 render() {
 return (
-<Container>
+
+<div>
+{/* <Container fluid> */}
   {/* Row #1 */}
-  <Row>
+  <Row fluid>
     <Col size="md-12">
       <Jumbotron>
         <h1><strong>Products</strong></h1>
@@ -50,7 +52,7 @@ return (
   </Row>
 
   {/* Row #2 */}
-  <Row>
+  <Row fluid>
     {/* Vertical Menu */}
     <Col size="md-4">
       <p>This should be an image</p>
@@ -62,7 +64,7 @@ return (
     </Col>
   </Row>
                         
-  <Row>
+  <Row fluid>
     <Col size="sm-6 sm-offset-3">
         <form id="product-form" style={{ display: 'block' }} >
           <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="product" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
@@ -74,7 +76,8 @@ return (
     </Col>
   </Row>
 
-</Container>
+{/* </Container> */}
+</div>
 );
 }
 }

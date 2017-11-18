@@ -11,8 +11,8 @@ const Contact = () =>
 
 <div>
 
-<Container>
-  <Row>
+{/* <Container fluid> */}
+  <Row fluid>
     <Col size="md-12">   
       <div className="banner container" 
         /* Crop the banner image */
@@ -21,15 +21,15 @@ const Contact = () =>
         /* Pan banner inside banner container */
         style={{position:'relative', 'margin': '-80px 0 80px 0'}}/> 
         <div className="carousel-caption" style={{'text-shadow': '2px 2px 4px #000000'}}>
-          <h1><strong>Contact Us</strong></h1>
+          <h1 style={{'font-size': "36pt"}}><strong>Contact Us</strong></h1>
         </div>
       </div>
     </Col>
   </Row>
 
-</Container>
+{/* </Container> */}
 
-<Container>
+<Container fluid>
   {/* Row #2 */}
   {/* <Row>
     <Col size="md-12">
@@ -41,7 +41,7 @@ const Contact = () =>
 
   {/* Row #3 */}
   {/* Zotabox Contact Form Embed */}
-  <Row>
+  <Row fluid>
     <Col size="md-12">
       <center><div style={{padding: "20px 0 20px 0"}} id="zbwid-e422a183"></div></center>  
 
