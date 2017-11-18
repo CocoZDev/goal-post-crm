@@ -6,15 +6,15 @@ var router = express.Router();
 
 // ALL links in this file get prepended with /account
 // ==================================================
-router.get('/', (req, res, next) => {
-    res.render(path.join(__dirname, "/"));
-});
+// router.get('/', (req, res, next) => {
+//     res.render(path.join(__dirname, "/"));
+// });
 
 
-router.get('/login' , (req, res, next) => {
-    console.log("logging in..account.routes.js");
-    res.render(path.join(__dirname, "/login"));
-});
+// router.get('/login' , (req, res, next) => {
+//     console.log("logging in..account.routes.js");
+//     res.render(path.join(__dirname, "/login"));
+// });
 
 // router.get('/dashboard', (req, res, next) => {
 //     res.render(path.join(__dirname, "/dashboard"));
