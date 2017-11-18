@@ -9,9 +9,9 @@ import VerticalMenu from "./VerticalMenu";
 
 const Schedule = () =>
 
-<Container>
+<Container fluid>
   {/* Row #1 */}
-  <Row>
+  <Row fluid>
     <Col size="md-12">
       <Jumbotron>
         <h1><strong>Schedule</strong></h1>
@@ -21,7 +21,7 @@ const Schedule = () =>
   </Row>
 
   {/* Row #2 */}
-  <Row>
+  <Row fluid>
     {/* Vertical Menu */}
     <Col size="md-4">
       <VerticalMenu>

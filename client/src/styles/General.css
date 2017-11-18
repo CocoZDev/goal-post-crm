@@ -1,12 +1,19 @@
-html { height: 100%; }
+html { 
+  height: 100%; 
+}
+
 body {
     min-height: 100%; 
     position: relative; 
-    padding-bottom: 50px; /*Footer Height
-  /* background: #00c6ff;  fallback for old browsers */
-  /* background: -webkit-linear-gradient(to bottom, #0072ff, #00c6ff);  Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(to bottom, #0072ff, #00c6ff); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+    padding-bottom: 50px; /*Footer Height */
+    background-attachment: fixed !important;
+    background: linear-gradient(to bottom right, #56B2BA 0%, #1fc8db 51%, #0BDD9C 100%);
+    /* background-image: url("./img/FreeGreatPicture.com-685-background-color.jpg"); */
+    color: rgb(56, 58, 66);
+}
+
+h1, h2 {
+  color: #292A31;
 }
 
 .banner {

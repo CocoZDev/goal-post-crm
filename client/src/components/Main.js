@@ -16,34 +16,24 @@ const Main = () =>
 <div>
     <Carousel />
 
-    <Container>
+    <hr />
 
-        {/* <Jumbotron> 
-            <h3>Placeholder on Main Components for content to be added, such as benefit overview in slider or 3-column text. </h3>
-        </Jumbotron> */}
+    <Login />
 
-        <hr />
-        <Row >
-            <div style={{background:'#EFF0F1'}}>
-                <Login />
-            </div>
-        </Row>
+    <hr />
+    
+    {/* Links after users logging in */}
 
-        <hr />
-        
-        {/* Links after users logging in */}
+    <div className="button groups" style={{padding: "0 0 30px 0"}}>
+    <h3>Links after users logging in, will remove later!!!</h3>
+        <ul>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+        </ul>
+    </div>
 
-        <div className="button groups" style={{padding: "0 0 30px 0"}}>
-        <h3>Links after users logging in, will remove later!!!</h3>
-            <ul>
-                <li><a href="/customers">Customers</a></li>
-                <li><a href="/products">Products</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/schedule">Schedule</a></li>
-            </ul>
-        </div>
-
-    </Container>
 </div>
 
 export default Main;

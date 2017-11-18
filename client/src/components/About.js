@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 const About = () =>
 
-  <Container>
+<div>
     {/* Row #1 */}
-    <Row>
+    <Row fluid>
       <Col size="md-12">      
         <Jumbotron>
           <h1><strong>About Us</strong></h1>
@@ -23,10 +23,11 @@ const About = () =>
     </Row>
 
 
+  <Container fluid>
     {/* Row #2 */}
-    <Row>
+    <Row fluid>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/me.jpg" width="150px"/>
+      <img className="aboutImg img-circle" src="/images/me.jpg" width="120px"/>
       </Col>
       <Col size="md-8">
       <h2>Dennis Alvey</h2>
@@ -38,9 +39,9 @@ const About = () =>
     </Row>
 
     {/* Row #3 */}
-    <Row>
+    <Row fluid>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" width="150px"/>
+      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" width="120px"/>
       </Col>
       <Col size="md-8">
       <h2>Tatianna "Drama-Mama" Watwood</h2>
@@ -53,9 +54,9 @@ const About = () =>
     </Row>
 
     {/* Row #4 */}
-    <Row>
+    <Row fluid>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/jeannine.jpg" width="150px"/>
+      <img className="aboutImg img-circle" src="/images/jeannine.jpg" width="120px"/>
       </Col>
       <Col size="md-8">
       <h2>Jeanine "Mufasa" Smith</h2>
@@ -68,9 +69,9 @@ const About = () =>
     </Row>
 
     {/* Row #5 */}
-    <Row>
+    <Row fluid>
       <Col size="md-4">   
-      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" width="150px"/>
+      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" width="120px"/>
       </Col>
       <Col size="md-8">
       <h2>Guiyu "Zoey" Zhao  </h2>
@@ -82,9 +83,9 @@ const About = () =>
     </Row>
 
     {/* Row #6 */}
-    <Row>
+    <Row fluid>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/Brian.jpg" width="150px"/>
+      <img className="aboutImg img-circle" src="/images/Brian.jpg" width="120px"/>
       </Col>
       <Col size="md-8">
       <h2>Brian "The Captain" Hart  </h2>
@@ -94,5 +95,6 @@ const About = () =>
     </Row>
 
   </Container>
+</div>
 
 export default About;
