@@ -1,15 +1,19 @@
 .navbar {
   /* background: black; */
-  height: auto;
+  height: 50px;
   color: white;
 }
 
-
-
-.navbar ul {
+/* .navbar ul {
   margin: 0;
 }
 
 .navbar li {
   display: inline-block;
+} */
+
+@media only screen and (max-width: 640px) {
+  .navbar {
+   height: auto;
+  }
 }

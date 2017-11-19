@@ -12,7 +12,7 @@ const Nav = () =>
         </button>
           <a className="navbar-brand" href="/">
           {/* <img id="logo" src="http://www.iconninja.com/files/785/556/35/settings-optimization-tools-earth-globe-configuration-icon.svg" width="50px" alt="logo"></img>  */}
-          Goal Touch</a>
+          Goal Post</a>
       </div>
       <div className="collapse navbar-collapse pull-sm-right" id="collapse-right">
         <ul className="nav navbar-nav navbar-right ml-auto">
