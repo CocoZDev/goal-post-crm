@@ -17,18 +17,24 @@ const Main = () =>
     <div>
         {/* Video Section */}
 
-        <section className="parallax" style={{'height':'100vh'}}>
-            <Container fluid>
-                <Row fluid>
-                    <h1>Placeholder for Video and </h1>
-                    <h1>Scolling Text for "Goal Post Can _______"</h1>
+        <section className="parallax" style={{ 'height': '100vh' }}>
+            <section className="container">
+                    <video autoplay="true" loop muted poster="../styles/img/mobile-friendly.jpg" class="video">
+                        <source src="https://ak3.picdn.net/shutterstock/videos/3894353/preview/stock-footage-two-young-businessmen-who-are-old-acquaintances-meet-and-shake-hands-in-a-busy-modern-office-buildi.mp4" type="video/mp4" />
+                    </video>
+            </section>
+            <section className="content">
+                <div className="container">
+                    <h1>Stock Video and Placeholder for</h1>
+                    <h1>Scolling Text:</h1>
+                    <h1>"Goal Post Can _______"</h1>
                     <p></p>
-                </Row>
-            </Container>
+                </div>
+            </section>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-1 demo" id="features" style={{'height':'50vh'}}>
+        <section className="parallax parallax-1" id="features" style={{'height':'50vh'}}>
             <div className="container">
                 <h1>Features</h1>
             </div>
@@ -64,7 +70,7 @@ const Main = () =>
             <hr />
             <div className="container">
                 <h2 style={{ 'text-decoration': 'underline'}}>Product Demo (GIFs)</h2>
-                <Container fluid>
+                <Container>
                 
                     {/* Row #1 */}
                     <Row>

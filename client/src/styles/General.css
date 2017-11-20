@@ -1,14 +1,14 @@
 html { 
   height: 100%; 
-  margin: 0;
 }
 
 body {
     height: 100%; 
     margin-top: 50px;
+    width: 102vw;
+    margin-left: -20px;
     line-height: 1.2;
     position: relative; 
-    padding-bottom: 50px; /*Footer Height */
     background-attachment: fixed !important;
     background: linear-gradient(to bottom right, #0060DF 0%, #18ABFB 50%, #0BDD9C 100%);
     /* background: linear-gradient(to bottom right, #56B2BA 0%, #1fc8db 51%, #0BDD9C 100%); */
@@ -21,28 +21,46 @@ h1, h2 {
   text-shadow: 2px 2px 4px #000000;
 }
 
+
+/* Video */
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* .bg-filter {
+  z-index: -99;
+  opacity: 0.3;
+  background: -webkit-linear-gradient(rgba(49, 224, 247, 1) 0%, #0060DF  100%);
+  background: -moz-linear-gradient(rgba(49, 224, 247, 1) 0%, #0060DF  100%);
+  background: -o-linear-gradient(rgba(49, 224, 247, 1) 0%, #0060DF  100%);
+  background: linear-gradient(rgba(49, 224, 247, 1) 0%, #0060DF 100%);
+} */
+/* .intro-text {
+  font-family: "Open Sans";
+  width: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  font-size: 56px;
+  text-transform: uppercase;
+  color: white;
+} */
+
+
 .glyphicon-feature {
   color: #0060DF;
   font-size: 60px;
 }
-
-/* container {
-  width: 100% !important;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-row {
-  width: 100% !important;
-  position: absolute;
-  left: 0;
-  right: 0;
-} */
-
-/* .banner {
-  width: 100%;
-  height: auto;
-} */
 
 
 /* Parallax Effect */
@@ -59,13 +77,16 @@ section.parallax {
   background-size: cover;
 }
 
+/* /Parallax Overlay */
 section.parallax:after {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.30);
+  /* background-color: rgba(0, 0, 0, 0.30); */
+  background: #0060DF;
+  opacity: 0.2;
   z-index: 100;
   content: ' ';
 }
