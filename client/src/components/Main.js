@@ -69,50 +69,79 @@ const Main = () =>
             </div>
             <hr />
             <div className="container">
-                <h2 style={{ 'text-decoration': 'underline'}}>Product Demo (GIFs)</h2>
-                <Container>
+                <h2 style={{ 'text-decoration': 'underline'}}>Product Demo</h2>
+                <Container fluid> 
                 
                     {/* Row #1 */}
                     <Row>
-                        <Col size="md-6"> 
-                            <a><img src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" style={{'vertical-align':'middle','text-align':'center', 'height':'300px',  'width':'400px', 'padding': '10px', 'border': '1px solid #292A31'  }}/></a>
+                        <Col size="md-5"> 
+                            <a><img className='demo-gif' src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" /></a>
                         </Col>
-                        <Col size="md-6"> 
+                        <Col size="md-7"> 
                             <h4>Dashboard</h4>
-                            <p>Description Placeholder</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
                         </Col>
                     </Row>
 
                     {/* Row #2 */}
                     <Row>
-                        <Col size="md-6"> 
-                            <a><img src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" style={{'vertical-align':'middle','text-align':'center', 'height':'300px',  'width':'400px','padding': '10px', 'border': '1px solid #292A31' }}/></a>
-                        </Col>
-                        <Col size="md-6"> 
+                        <Col size="md-7"> 
                             <h4>Customer Database Management</h4>
-                            <p>Description Placeholder</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </Col>
+                        <Col size="md-5"> 
+                            <a><img className='demo-gif' src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" 
+                            /></a>
                         </Col>
                     </Row>
 
                     {/* Row #3 */}
                     <Row>
-                        <Col size="md-6"> 
-                            <a><img src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" style={{'vertical-align':'middle','text-align':'center', 'height':'300px',  'width':'400px','padding': '10px', 'border': '1px solid #292A31' }}/></a>
+                        <Col size="md-5"> 
+                            <a><img className='demo-gif' src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" /></a>
                         </Col>
-                        <Col size="md-6"> 
+                        <Col size="md-7"> 
                             <h4>Products</h4>
-                            <p>Description Placeholder</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
                         </Col>
                     </Row>
 
                     {/* Row #4 */}
                     <Row>
-                        <Col size="md-6"> 
-                            <a><img src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" style={{'vertical-align':'middle','text-align':'center', 'height':'300px',  'width':'400px','padding': '10px', 'border': '1px solid #292A31' }}/></a>
-                        </Col>
-                        <Col size="md-6"> 
+                        <Col size="md-7"> 
                             <h4>Schedule</h4>
-                            <p>Description Placeholder</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </Col>
+                        <Col size="md-5"> 
+                            <a><img className='demo-gif' src="https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" /></a>                        
                         </Col>
                     </Row>
                 </Container>
@@ -127,33 +156,35 @@ const Main = () =>
             </div>
         </section>
         <section className="content" style={{'height':'50vh'}}>
-            <div className="container">
-                <h3>(Photo in cirlce and testimonials)</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-                            <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            </div>
+            <Container fluid>
+                <Row fluid>
+                    <h3>(Photo in cirlce and testimonials)</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </Row>
+            </Container>
         </section>
         
         {/* Team Section */}
@@ -163,11 +194,11 @@ const Main = () =>
                 <h3><a href="/about" style={{'color':'white'}}>Learn More</a></h3>
             </div>
         </section>
-        <section className="content team" >
+        <section className="content team" style={{ 'height': '45vh' }} >
         <center>
-            <Container>
+            <Container fluid>
                 {/* Row #1 */}
-                <Row>
+                <Row fluid>
                     <Col size="md-4">
                         <img className="aboutImg img-circle" src="/images/jeannine.jpg" />
                         <h4>Jeanine Smith</h4>
@@ -188,7 +219,7 @@ const Main = () =>
                 </Row>
 
                 {/* Row #2 */}
-                <Row>
+                <Row fluid>
                     <Col size="md-6">
                         <img className="aboutImg img-circle" src="/images/Brian.jpg" />
                         <h4>Brian Hart  </h4>

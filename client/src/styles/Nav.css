@@ -4,6 +4,9 @@
 }
 .navbar-default .navbar-brand {
   color: #f8f8f8;
+  font-size: 30px;
+  height: 50px;
+  margin-top: -5px;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -14,6 +17,7 @@
 }
 .navbar-default .navbar-nav > li > a {
   color: #f8f8f8;
+  height: auto;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {

@@ -17,9 +17,9 @@ const Nav = () =>
       <div className="collapse navbar-collapse pull-sm-right" id="collapse-right">
         <ul className="nav navbar-nav navbar-right ml-auto">
           <li className="active"><a href="/"><span className="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a></li>
-          <li><a href="#features"><span className="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Features</a></li>
-          <li><a href="#testimonials"><span className="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Testimonials</a></li>
-          <li><a href="#team"><span className="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Team</a></li>
+          <li><a href="/#features"><span className="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Features</a></li>
+          <li><a href="/#testimonials"><span className="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Testimonials</a></li>
+          <li><a href="/#team"><span className="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Team</a></li>
           <li><a href="/contact"><span className="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Contact Us</a></li>
           <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Login/Register</a></li>
         </ul>
