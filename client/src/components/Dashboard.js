@@ -21,19 +21,20 @@ const Dashboard = () =>
     </Col>
   </Row>
 
-  {/* Row #2 */}
-  <Row fluid>
-    {/* Vertical Menu */}
-    <Col size="md-4">
-      <VerticalMenu>
-      </VerticalMenu>
-    </Col>
+    {/* Row #2 */}
+    <Row fluid>
+      {/* Vertical Menu */}
+      <Col size="md-2">
+        <VerticalMenu />
+      </Col>
 
-    {/* Dashboard Content */}
-    <Col size="md-8">
-      <p>Dashboard Placeholder Section</p>
-    </Col>
-  </Row>
-</Container>
+      {/* Dashboard Content */}
+      <Col size="md-10">
+        <div className='private text-center'>
+          <h4>Dashboard Placeholder Section</h4>
+        </div>
+      </Col>
+    </Row>
+  </Container>
 
 export default Dashboard;

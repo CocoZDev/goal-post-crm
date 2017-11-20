@@ -39,8 +39,7 @@ handleFormSubmit = event => {
 render() {
 return (
 
-<div>
-{/* <Container fluid> */}
+<Container fluid>
   {/* Row #1 */}
   <Row fluid>
     <Col size="md-12">
@@ -51,33 +50,66 @@ return (
     </Col>
   </Row>
 
-  {/* Row #2 */}
-  <Row fluid>
-    {/* Vertical Menu */}
-    <Col size="md-4">
-      <p>This should be an image</p>
-    </Col>
+    {/* Row #2 */}
+    <Row fluid>
+      {/* Vertical Menu */}
+      <Col size="md-2">
+        <VerticalMenu />
+      </Col>
 
-    {/* Products Content */}
-    <Col size="md-8">
-      <p>Product description</p>
-    </Col>
-  </Row>
-                        
-  <Row fluid>
-    <Col size="sm-6 sm-offset-3">
-        <form id="product-form" style={{ display: 'block' }} >
-          <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="product" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
-          <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
-          <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>               
-          <FormBtn type="submit" name="product-submit" id="product-submit" tabIndex="4" className="form-control btn btn-login" value="submit_product" onClick={this.handleFormSubmit}>product add
-          </FormBtn>
-        </form>
-    </Col>
-  </Row>
+      {/* Products Content */}
+      <Col size="md-10">
+          <div className='private text-center'>
+            
+            {/* Product Form */}
+            <Col size="md-6">
+              <center>
+                <h4>Add A New Product</h4>
+                  <form id="product-form" style={{ display: 'block' }} >
+                    <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="Add Product Name" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
+                    <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="Add Description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
+                    <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="Add Quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>
+                    <FormBtn type="submit" name="product-submit" id="product-submit" tabIndex="4" className="form-control btn" value="submit_product" onClick={this.handleFormSubmit}>Add Product
+                  </FormBtn>
+                  </form>
+                </center>
+            </Col>
 
-{/* </Container> */}
-</div>
+          {/* Product Table */}
+          <Col size="md-6">
+              <h4>Product Database</h4>
+              <table className="product-table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th className="text-center">Product Name</th>
+                    <th className="text-center">Description</th>
+                    <th className="text-center">Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                  </tr>
+                  <tr>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                  </tr>
+                  <tr>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                    <td>Placeholder</td>
+                  </tr>
+                </tbody>
+              </table>
+          </Col>
+
+          </div>
+      </Col>
+    </Row>
+</Container>
 );
 }
 }

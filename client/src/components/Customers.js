@@ -18,18 +18,19 @@ const Customers = () =>
     </Col>
   </Row>
 
-  {/* Row #2 */}
-  <Row fluid>
-    {/* Vertical Menu */}
-    <Col size="md-4">
-      <VerticalMenu>
-      </VerticalMenu>
-    </Col>
+    {/* Row #2 */}
+    <Row fluid>
+      {/* Vertical Menu */}
+      <Col size="md-2">
+        <VerticalMenu />
+      </Col>
 
     {/* Dashboard Content */}
-    <Col size="md-8">
-      <p>Customers Placeholder Section</p>
-    </Col>
+      <Col size="md-10">
+        <div className='private text-center'>
+          <h4>Customers Placeholder Section</h4>
+        </div>
+      </Col>
   </Row>
 </Container>
 

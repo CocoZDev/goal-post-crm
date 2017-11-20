@@ -34,43 +34,68 @@ const Main = () =>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-1" id="features" style={{'height':'50vh'}}>
+        <section className="parallax parallax-1" id="features" style={{'height':'30vh'}}>
             <div className="container">
                 <h1>Features</h1>
             </div>
         </section>
         <section className="content">
-            <div className="container" style={{'height':'50vh'}}>
-                <h2 style={{ 'text-decoration': 'underline'}}>What Can We Do?</h2>
+            <div className="container" style={{'height':'68vh', 'padding': '3vh'}}>
                 <center>
-                <Row>
-                    <Col size="md-3">
-                        <span className="glyphicon glyphicon-feature glyphicon-stats"></span>
-                        <h3>Dashboard</h3>
-                        <p>Description</p>
-                    </Col>
-                    <Col size="md-3">
-                        <span className="glyphicon glyphicon-feature glyphicon-phone"></span>
-                        <h3>Dashboard</h3>
-                        <p>Description</p>
-                    </Col>
-                    <Col size="md-3">
-                        <span className="glyphicon glyphicon-feature glyphicon glyphicon-calendar"></span>
-                        <h3>Schedule</h3>
-                        <p>Description</p>
-                    </Col>
-                    <Col size="md-3">
-                        <span className="glyphicon glyphicon-feature glyphicon-map-marker"></span>
-                        <h3>Best Driving Route</h3>
-                        <p>Description</p>
-                    </Col>
-                </Row>
+                    <Row>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-mobile" aria-hidden="true"></i></a>
+                            <h3>Mobile-Responsive</h3>
+                            <p>Use it on your computer, mobile phone, or tablet.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-users" aria-hidden="true"></i></a>
+                            <h3>Team Info Sharing</h3>
+                            <p>Users from the same team or company can share universal information such as product inventory.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-cloud" aria-hidden="true"></i></a>
+                            <h3>Cloud</h3>
+                            <p>No need to install software. <br />Easily access all your data anywhere with Internet connection.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-lock" aria-hidden="true"></i></a>
+                            <h3>Secure</h3>
+                            <p>Your data is secure with our technology.</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-line-chart" aria-hidden="true"></i></a>
+                            <h3>Dashboard</h3>
+                            <p>Quickly find out how much progress you made towards monthly or weekly sales goals.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-database" aria-hidden="true"></i></a>
+                            <h3>Database Management</h3>
+                            <p>Easily add and update your customers' information and product details.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-calendar" aria-hidden="true"></i></a>
+                            <h3>Schedule</h3>
+                            <p>Use our calendar to plan your sales meeting and delivery schedule.</p>
+                        </Col>
+                        <Col size="md-3">
+                            <a className="fa"><i className="fa fa-car" aria-hidden="true"></i></a>
+                            <h3>Optimized Driving Route</h3>
+                            <p>Plan your sales trip to multiple customers with our optimized driving routes.</p>
+                        </Col>
+                    </Row>
                 </center>
             </div>
-            <hr />
+        </section>
+        <hr />
+        {/* Product Demo */}
+        <center>
+        <section className="content">
             <div className="container">
-                <h2 style={{ 'text-decoration': 'underline'}}>Product Demo</h2>
-                <Container fluid> 
+                <h2 style={{ 'text-decoration': 'underline'}}>Feature Demo</h2>
+                <Container> 
                 
                     {/* Row #1 */}
                     <Row>
@@ -147,7 +172,7 @@ const Main = () =>
                 </Container>
             </div>
         </section>
-
+        </center>
         {/* Testimonials Section */}
         <section className="parallax parallax-2" id="testimonials" style={{'height':'50vh'}}>
             <div className="container">
