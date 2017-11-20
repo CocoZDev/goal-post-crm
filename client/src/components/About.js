@@ -13,7 +13,7 @@ const About = () =>
 
 <div>
     {/* Row #1 */}
-    <Row fluid>
+    <Row>
       <Col size="md-12">      
         <Jumbotron>
           <h1><strong>About Us</strong></h1>
@@ -23,11 +23,11 @@ const About = () =>
     </Row>
 
 
-  <Container fluid>
+  <Container >
     {/* Row #2 */}
-    <Row fluid>
+    <Row>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/me.jpg" width="120px"/>
+      <img className="aboutImg img-circle" src="/images/me.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8">
       <h2>Dennis Alvey</h2>
@@ -39,9 +39,9 @@ const About = () =>
     </Row>
 
     {/* Row #3 */}
-    <Row fluid>
+    <Row>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" width="120px"/>
+      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8">
       <h2>Tatianna "Drama-Mama" Watwood</h2>
@@ -54,9 +54,9 @@ const About = () =>
     </Row>
 
     {/* Row #4 */}
-    <Row fluid>
+    <Row>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/jeannine.jpg" width="120px"/>
+      <img className="aboutImg img-circle" src="/images/jeannine.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8">
       <h2>Jeanine "Mufasa" Smith</h2>
@@ -69,9 +69,9 @@ const About = () =>
     </Row>
 
     {/* Row #5 */}
-    <Row fluid>
+    <Row>
       <Col size="md-4">   
-      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" width="120px"/>
+      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8">
       <h2>Guiyu "Zoey" Zhao  </h2>
@@ -83,9 +83,9 @@ const About = () =>
     </Row>
 
     {/* Row #6 */}
-    <Row fluid>
+    <Row>
       <Col size="md-4">
-      <img className="aboutImg img-circle" src="/images/Brian.jpg" width="120px"/>
+      <img className="aboutImg img-circle" src="/images/Brian.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8">
       <h2>Brian "The Captain" Hart  </h2>

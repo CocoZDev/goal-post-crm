@@ -1,11 +1,11 @@
 .jumbotron {
   min-height: 200px;
   width: 100%;
-  background: #0BDD9C;
+  /* background: linear-gradient(to bottom right, #0060DF 0%, #18ABFB 50%, #0060DF 100% ); */
+  background: linear-gradient(to bottom right,  rgb(1, 62, 141) 0%, #18ABFB 100% );
+  /* background: black; */
+  color: white !important;
   padding: 50px; 
 }
 
-/* .jumbotron h1{
-  color: white;
-} */
 

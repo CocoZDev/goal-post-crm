@@ -6,20 +6,116 @@ html {
 body {
     height: 100%; 
     margin-top: 50px;
+    line-height: 1.2;
     position: relative; 
     padding-bottom: 50px; /*Footer Height */
     background-attachment: fixed !important;
-    background: linear-gradient(to bottom right, #56B2BA 0%, #1fc8db 51%, #0BDD9C 100%);
+    background: linear-gradient(to bottom right, #0060DF 0%, #18ABFB 50%, #0BDD9C 100%);
+    /* background: linear-gradient(to bottom right, #56B2BA 0%, #1fc8db 51%, #0BDD9C 100%); */
     /* background-image: url("./img/FreeGreatPicture.com-685-background-color.jpg"); */
     color: rgb(56, 58, 66);
 }
 
 h1, h2 {
   color: #292A31;
+  text-shadow: 2px 2px 4px #000000;
 }
 
-.banner {
+.glyphicon-feature {
+  color: #0060DF;
+  font-size: 60px;
+}
+
+/* container {
+  width: 100% !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+row {
+  width: 100% !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+} */
+
+/* .banner {
   width: 100%;
   height: auto;
+} */
+
+
+/* Parallax Effect */
+section.parallax {
+  position: relative;
+  height: auto;
+  padding: 120px 0px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+section.parallax:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.30);
+  z-index: 100;
+  content: ' ';
+}
+
+section.parallax h1, h2, h3 {
+  color: #fff;
+  position: relative;
+  z-index: 101;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+section.parallax h1 {
+  font-size: 48px;
+}
+
+section.parallax h2 {
+  font-size: 36px;
+}
+
+section.parallax h3 {
+  font-size: 24px;
+}
+
+section.parallax-1 {
+  background-image: url("img/tools.png");
+  background-position: 50% 100%;
+}
+
+section.parallax-2 {
+  background-image: url("img/thumb-up.jpg");
+  background-position: 50% 100%;
+}
+
+section.parallax-3 {
+  background-image: url("img/team.jpg");
+  background-position: 50% 100%;
+}
+
+/* Team */
+.team {
+  line-height: 0.7;
+}
+
+.aboutImg {
+  width: 100px;
+  padding: 10px;
+}
+
 

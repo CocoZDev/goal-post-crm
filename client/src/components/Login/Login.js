@@ -145,9 +145,9 @@ class Login extends Component {
             <div className="button groups" style={{position: 'absolute', top: '400px', height: '300px'}}>
             <h3>Links after users logging in, will remove later!!!</h3>
                 <ul>
+                    <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/customers">Customers</a></li>
                     <li><a href="/products">Products</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/schedule">Schedule</a></li>
                 </ul>
             </div>
