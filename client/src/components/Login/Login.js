@@ -48,8 +48,10 @@ class Login extends Component {
         username: this.state.username,
         password: this.state.password
       })
-        .then(res => console.log("res..Login.js: ", res, this.props))
-        // .then(res => API.getAccounts())
+        .then(res => 
+          console.log("res..Login.js: ", res, this.props),
+          // get dashboard component
+          this.props.history.replace('/dashboard'))
         .catch(err => console.log(err));
   };
 
