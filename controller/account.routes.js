@@ -3,17 +3,11 @@ var passport = require("passport");
 var db = require("../models");
 var path = require("path");
 var router = express.Router();
-
 // ALL links in this file get prepended with /account
 // ==================================================
+
 // router.get('/', (req, res, next) => {
 //     res.render(path.join(__dirname, "/"));
-// });
-
-
-// router.get('/login' , (req, res, next) => {
-//     console.log("logging in..account.routes.js");
-//     res.render(path.join(__dirname, "/login"));
 // });
 
 // router.get('/dashboard', (req, res, next) => {
@@ -21,10 +15,12 @@ var router = express.Router();
 // });
 
 // this is handling the authentication
-router.post('/login', passport.authenticate('local', (err, data) => {
-    console.log('in account.rotes.js', data)
-    res.json(data);
-}))
+router.post('/login',
+    passport.authenticate('local', { session: false }),
+    function (req, res) {
+        console.log("user authenticated..account.routes.js ", req.user.username, req.user.token);
+        res.json({ username: req.user.username, token: req.user.token });
+    });
 
 router.get('/register', (req, res, next) => {
     res.render(path.join(__dirname, "/register"));

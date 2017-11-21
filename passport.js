@@ -22,7 +22,7 @@ const authenticate = (username, password, done) =>{
         // create a token string
         const token = jwt.sign(payload, config.jwtSecret);
         const data = {
-            name: rep.rep_userName,
+            username: rep.rep_userName,
             token: token
         };
         return done(null, data);
@@ -58,18 +58,18 @@ const register = (req, email, password, done) => {
 passport.use(new LocalStrategy(authenticate));
 passport.use('local-register', new LocalStrategy({passReqToCallback: true}, register));
 
-passport.serializeUser((reps, done) => {
-    done(null, reps.rep_id)
-});
+// passport.serializeUser((reps, done) => {
+//     done(null, reps.rep_id)
+// });
 
-passport.deserializeUser((id, done) => {
-    db.reps.find({
-        where:{
-            rep_id: id,
-        }
-      })
-      .then(rep => {
-          done(null, rep)
-      })
-      .catch(done)
-})
+// passport.deserializeUser((id, done) => {
+//     db.reps.find({
+//         where:{
+//             rep_id: id,
+//         }
+//       })
+//       .then(rep => {
+//           done(null, rep)
+//       })
+//       .catch(done)
+// })
