@@ -4,13 +4,13 @@ export default {
 
   // Saves a Account to the database
   registerAccount: function (Data) {
+    console.log("registering..API.js");
     return axios.post("account/register", Data);
   },
   // Logs in a rep
   loginAccount: function (Data) {
     console.log("logging in to account..API.js");
     return axios.post("account/login", Data);
-    console.log("data from API.js: ", Data);
   },
   // Gets all Accounts
   getAccounts: function() {

@@ -49,7 +49,6 @@ class Login extends Component {
         password: this.state.password
       })
         .then(res => console.log("res..Login.js: ", res, this.props))
-        // .then(res => window.location = '/Dashboard')
         // .then(res => API.getAccounts())
         .catch(err => console.log(err));
   };

@@ -12,7 +12,7 @@ const authenticate = (username, password, done) =>{
         }
       }).then(rep => {
         if (!rep || !bcrypt.compareSync(password, rep.rep_password)) {
-          console.log("failed to login, but sucess in getting this far.")
+          console.log("failed to login, username not found.");
             return done(null, false, {message: 'invalid username/or and password combination'});
         }
         const payload = {
