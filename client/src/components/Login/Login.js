@@ -3,6 +3,7 @@ import { Input, FormBtn } from "../Form";
 import { Col, Row, Container } from "../Grid";
 import "../../styles/Login.css";
 import API from "../../utils/API";
+import decode from 'jwt-decode';
 
 
 // Code Reference from https://bootsnipp.com/snippets/qrmK0
@@ -48,10 +49,16 @@ class Login extends Component {
         username: this.state.username,
         password: this.state.password
       })
-        .then(res => 
-          console.log("res..Login.js: ", res, this.props),
+        .then(res => {
+          console.log("res..Login.js: ", res.data.token, this.props);
+          // set token to local storage
+          localStorage.setItem('token', res.data.token);
           // get dashboard component
-          this.props.history.replace('/dashboard'))
+          this.props.history.replace('/dashboard')
+          // decode token
+          const decoded = decode(res.data.token);
+          console.log("decoded token giving rep_id and timestamp: ", decoded)
+        })
         .catch(err => console.log(err));
   };
 
