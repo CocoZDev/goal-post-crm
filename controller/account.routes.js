@@ -22,9 +22,9 @@ router.post('/login',
         res.json({ username: req.user.username, token: req.user.token });
     });
 
-router.get('/register', (req, res, next) => {
-    res.render(path.join(__dirname, "/register"));
-});
+// router.get('/register', (req, res, next) => {
+//     res.render(path.join(__dirname, "/register"));
+// });
 
 router.post('/register', passport.authenticate('local-register', {
     successRedirect: '/login',

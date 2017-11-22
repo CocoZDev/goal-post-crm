@@ -17,9 +17,9 @@ const Main = () =>
     <div>
         {/* Video Section */}
 
-        <section className="parallax" style={{ 'min-height': '100vh' }}>
+        <section className="parallax" style={{ 'minHeight': '100vh' }}>
             <section className="container">
-                <video autoplay="true" loop muted poster="../styles/img/mobile-friendly.jpg" className="video">
+                <video autoPlay="true" loop muted poster="../styles/img/mobile-friendly.jpg" className="video">
                     <source src="https://ak3.picdn.net/shutterstock/videos/3894353/preview/stock-footage-two-young-businessmen-who-are-old-acquaintances-meet-and-shake-hands-in-a-busy-modern-office-buildi.mp4" type="video/mp4" />
                 </video>
             </section>
@@ -34,14 +34,14 @@ const Main = () =>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-1" id="why" style={{'min-height':'40vh'}}>
+        <section className="parallax parallax-1" id="why" style={{'minHeight':'40vh'}}>
             <div className="container">
                 <h1>Why Us?</h1>
                 <h3>Our Competitive Advantages</h3>
             </div>
         </section>
         <section className="content" id="features-content">
-            <div className="container" style={{ 'min-height': '50vh', 'padding-top': '55px' }}>
+            <div className="container" style={{ 'minHeight': '50vh', 'paddingTop': '55px' }}>
                 <center>
                     <Row>
                         <Col size="md-3 sm-3">
@@ -70,14 +70,14 @@ const Main = () =>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-2" id="features" style={{ 'min-height': '40vh' }}>
+        <section className="parallax parallax-2" id="features" style={{ 'minHeight': '40vh' }}>
             <div className="container">
                 <h1>Features</h1>
                 <h3>4 Ways We Can Make Your Life Easier</h3>
             </div>
         </section>
         <section className="content" id="features-content">
-            <div className="container" style={{ 'min-height': '50vh', 'padding-top': '55px' }}>
+            <div className="container" style={{ 'minHeight': '50vh', 'paddingTop': '55px' }}>
                 <center>
                     <Row>
                         <Col size="md-3 sm-3">
@@ -106,7 +106,7 @@ const Main = () =>
         </section>
 
         {/* Product Demo */}
-        <section className="parallax parallax-3" style={{ 'min-height': '40vh' }}>
+        <section className="parallax parallax-3" style={{ 'minHeight': '40vh' }}>
             <div className="container">
                 <h1>Live Demo</h1>
                 <h3>See the Features in Action</h3>
@@ -193,13 +193,13 @@ const Main = () =>
         </section>
 
         {/* Testimonials Section */}
-        <section className="parallax parallax-4" id="testimonials" style={{'min-height':'40vh'}}>
+        <section className="parallax parallax-4" id="testimonials" style={{'minHeight':'40vh'}}>
             <div className="container">
                 <h1>Testimonials</h1>
                 <h3>Hear directly from our customers</h3>
             </div>
         </section>
-        <section className="content" style={{ 'min-height': '50vh', 'padding': '5vh' }}>
+        <section className="content" style={{ 'minHeight': '50vh', 'padding': '5vh' }}>
             <Container fluid>
                 <Row fluid>
                     <div id="testimonial" className="carousel slide testimonial_indicators testimonial_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
@@ -246,13 +246,13 @@ const Main = () =>
         </section>
         
         {/* Team Section */}
-        <section className="parallax parallax-5" id="team" style={{'min-height':'40vh'}}>
+        <section className="parallax parallax-5" id="team" style={{'minHeight':'40vh'}}>
             <div className="container">
                 <h1>Meet Our Team</h1>
                 <h3><a href="/about" style={{'color':'white'}}>Learn More</a></h3>
             </div>
         </section>
-        <section className="content team" style={{ 'min-height': '50vh', 'padding': '5vh' }}>
+        <section className="content team" style={{ 'minHeight': '50vh', 'padding': '5vh' }}>
         <center>
             <Container fluid>
                 {/* Row #1 */}

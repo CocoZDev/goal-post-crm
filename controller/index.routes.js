@@ -5,22 +5,22 @@ var db = require("../models");
 var passport = require("passport");
 
 router.get('/', (req, res, next) => {
-    if(req.isAuthenticated()){
+    // if(req.isAuthenticated()){
         console.log("_________________________________");
         console.log("get route / happened..index.routes.js");
         console.log("_________________________________");
         // res.redirect("/dashboard");
-    }else{
-        console.log("_________________________________");
-        console.log("get route / was not authenticated..index.routes.js");
-        console.log("_________________________________");
+    // }else{
+        // console.log("_________________________________");
+        // console.log("get route / was not authenticated..index.routes.js");
+        // console.log("_________________________________");
         // res.redirect("/login");
-    }
+    // }
 });
 
 // route to get all of a rep's customers
 router.get('/dashboard', (req, res, next) => {
-    if (req.isAuthenticated()) {
+    // if (req.isAuthenticated()) {
         console.log("_________________________________");
         console.log("route /dashboard..index.routes.js");
         console.log("_________________________________");
@@ -31,14 +31,15 @@ router.get('/dashboard', (req, res, next) => {
             order: db.sequelize.col('customer_company')
         }).then(function (results) {
             console.log(results);
-            res.redirect("/")
+            res.json(results);
+            // res.redirect("/")
         });
-    } else {
-        console.log("_________________________________");
-        console.log("User not Authenticated..index.routes.js");
-        console.log("_________________________________");
-        res.redirect("/login");
-    }
+    // } else {
+    //     console.log("_________________________________");
+    //     console.log("User not Authenticated..index.routes.js");
+    //     console.log("_________________________________");
+    //     res.redirect("/login");
+    // }
 });
 
 // post to create a new product
@@ -46,23 +47,24 @@ router.post('/postProducts', (req, res, next) =>{
     console.log("_________________________________");
     console.log("creating post..index.routes.js");
     console.log("_________________________________");
-    if(req.isAuthenticated()){
+    // if(req.isAuthenticated()){
         db.products.create({
             product_name: req.body.product_name,
             product_description: req.body.product_description,
             product_quantity: req.body.product_quantity,
         }).then(function(results){
             console.log("Your product was created!");
-            res.redirect('/dashboard');
+            res.json(results);
+            // res.redirect('/dashboard');
         });
-    }else{
-        res.redirect("/account/login");        
-    }
+    // }else{
+    //     res.redirect("/account/login");        
+    // }
 });
 
 // route to get customers from a particular rep
 router.get('/customers/:id', (req, res, next) =>{
-    if(req.isAuthenticated()){
+    // if(req.isAuthenticated()){
         db.customers.findAll({
             include:[{
                 model: db.reps,
@@ -76,9 +78,9 @@ router.get('/customers/:id', (req, res, next) =>{
             // res.render('specificClass', studentList);
             res.json(doc)
         });
-    }else{
-        res.redirect("/account/login");
-    }
+    // }else{
+    //     res.redirect("/account/login");
+    // }
 });
 
 
