@@ -16,7 +16,7 @@ import General from "./styles/General.css";
 
 const App = () =>
   <Router>
-    <div>
+    <div id="container">
       <Container fluid>
         <Nav />
           <Switch>

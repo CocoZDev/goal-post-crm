@@ -15,6 +15,8 @@
     <!-- Font Awesome CSS Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous">    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto" rel="stylesheet">
     <!-- Style to fix the issue of text extending past panel length -->
     <style>
       .panel-body a {
@@ -33,17 +35,6 @@
 
 <script>
   
-  // Add Active Class to Nav Items
-    $('.navbar li a').click(function (e){
-        e.preventDefault();
-        console.log($('.navbar li.active'));
-        $('.navbar li a.active').removeClass('active');
-        console.log($(this));
-        $(this).addClass('active');
-        console.log('done');
-    });         
-
-
   // Login/Register Form
 
   $(function() {
