@@ -4,11 +4,11 @@ var router = express.Router();
 var db = require("../models");
 var passport = require("passport");
 
-router.get('/', (req, res, next) => {
+// router.get('/', (req, res, next) => {
     // if(req.isAuthenticated()){
-        console.log("_________________________________");
-        console.log("get route / happened..index.routes.js");
-        console.log("_________________________________");
+        // console.log("_________________________________");
+        // console.log("get route / happened..index.routes.js");
+        // console.log("_________________________________");
         // res.redirect("/dashboard");
     // }else{
         // console.log("_________________________________");
@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
         // console.log("_________________________________");
         // res.redirect("/login");
     // }
-});
+// });
 
 // route to get all of a rep's customers
 router.get('/dashboard', (req, res, next) => {
