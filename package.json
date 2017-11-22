@@ -22,7 +22,6 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.1.0",
     "jwt-decode": "^2.2.0",
