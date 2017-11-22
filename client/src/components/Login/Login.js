@@ -66,15 +66,15 @@ class Login extends Component {
     return (
       <Container fluid>
         <Row fluid>
-          <Col size="md-6 md-offset-3">
+          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
             <div className="panel panel-login">
               {/* Panel Heading */}
               <div className="panel-heading">
                 <Row fluid>
-                  <Col size="xs-6">
+                  <Col size="md-6 sm-6">
                     <a href="/login" className="active" id="login-form-link">Login</a>
                   </Col>
-                  <Col size="xs-6">
+                  <Col size="md-6 sm-6">
                     <a href="/register" id="register-form-link">Register</a>
                   </Col>
                 </Row>
@@ -85,7 +85,7 @@ class Login extends Component {
               {/* Panel Body */}
               <div className="panel-body">
                 <Row fluid>
-                  <Col size="lg-12">
+                  <Col size="md-12 sm-12">
 
                     {/* Login Form */}
 
@@ -93,10 +93,10 @@ class Login extends Component {
                         <Input type="text" name="username" id="username" tabIndex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
                         <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
          
-                        <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
-                        <label for="remember">Remember Me</label>
+                        {/* <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
+                        <label for="remember">Remember Me</label> */}
                         <Row fluid>
-                          <Col size="sm-6 sm-offset-3">
+                          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
                             <FormBtn 
                             type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" 
                               value="Log In" onClick={this.handleLogin}>Log In
@@ -104,11 +104,11 @@ class Login extends Component {
                           </Col>
                         </Row>
                   
-                        <Row fluid>
-                          <Col size="lg-12" className="text-center">
+                        {/* <Row fluid>
+                          <Col size="md-12 sm-12" className="text-center">
                           <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
                           </Col>
-                        </Row>
+                        </Row> */}
                     </form>
 
                     {/* Register Form */}
@@ -129,7 +129,7 @@ class Login extends Component {
                           value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
                         <Row fluid>
-                          <Col size="sm-6 sm-offset-3">
+                          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
                             <FormBtn 
                             type="submit" name="register-submit" id="register-submit" tabIndex="4" className="form-control btn btn-register" 
                               value="Register Now" onClick={this.handleRegister}>Register
@@ -148,17 +148,20 @@ class Login extends Component {
       {/* Placeholder Links After Logging In */}
 
         <Row fluid>
-            {/* Links after users logging in */}
-
-            <div className="button groups" style={{position: 'absolute', top: '400px', height: '300px'}}>
+          {/* Links after users logging in */}
+          <Col size="md-12 sm-12">
+            <div className="button groups" style={{position: 'relative', 'padding-bottom': '300px' }}>
             <h3>Links after users logging in, will remove later!!!</h3>
+              <Col size="md-4 md-offset-4 sm-4 sm-offset-4">
                 <ul>
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/customers">Customers</a></li>
                     <li><a href="/products">Products</a></li>
                     <li><a href="/schedule">Schedule</a></li>
                 </ul>
+              </Col>
             </div>
+          </Col>
         </Row>
 
 

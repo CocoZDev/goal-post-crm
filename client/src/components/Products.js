@@ -53,16 +53,16 @@ return (
     {/* Row #2 */}
     <Row fluid>
       {/* Vertical Menu */}
-      <Col size="md-2">
+      <Col size="md-2 sm-2">
         <VerticalMenu />
       </Col>
 
       {/* Products Content */}
-      <Col size="md-10">
+      <Col size="md-10 sm-10">
           <div className='private text-center'>
             
             {/* Product Form */}
-            <Col size="md-6">
+            <Col size="md-6 sm-6">
               <center>
                 <h4>Add A New Product</h4>
                   <form id="product-form" style={{ display: 'block' }} >
@@ -76,7 +76,7 @@ return (
             </Col>
 
           {/* Product Table */}
-          <Col size="md-6">
+          <Col size="md-6 sm-6">
               <h4>Product Database</h4>
               <table className="product-table table-bordered text-center">
                 <thead>
