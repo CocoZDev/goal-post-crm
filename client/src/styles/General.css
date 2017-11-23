@@ -39,13 +39,15 @@ h1, h2 {
   text-shadow: 2px 2px 4px #000000;
 }
 
-/* Icons for Features Section */
+/* Icons for Why and Features Section */
+#why-content i.fa,
 #features-content i.fa {
   font-size: 36pt;
   margin-top: 10px;
   color: #0060DF;
 }
 
+#why-content a.fa,
 #features-content a.fa {
   width: 70px;
   height: 70px;
@@ -56,8 +58,7 @@ h1, h2 {
   transition: .5s;
 }
 
-#features-content a:hover,
-#features-content a:visited {
+#features-content a:hover {
   transform: rotateY(360deg);
   background-color: #0060DF;
 }
@@ -113,17 +114,20 @@ h1, h2 {
 }
 
 /* Demo Section */
+#demo-container {
+  padding-top: 20px;
+}
 
 .demo-gif {
   vertical-align: middle;
-  height:auto;
-  width:100%;
+  height: auto;
+  width: 90%;
   padding: 10px;
   /* border: 1px solid #292A31; */
 }
 
 .demo-content {
-  padding: 40px 10px 10px 20px;
+  padding: 60px 10px 10px 20px;
 }
 
 
@@ -188,7 +192,7 @@ section.parallax h4 {
 }
 
 section.parallax h5 {
-  font-size: 40px;
+  font-size: 24px;
 }
 
 section.parallax-1 {
@@ -212,6 +216,16 @@ section.parallax-4 {
 section.parallax-5 {
   background-image: url("img/team.jpg");
   /* background-position: 60% 100%; */
+}
+
+section.parallax-5 a {
+  color: #ED4C37;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+section.parallax-5 a:hover {
+  color: #0060DF
 }
 
 /* Team */
@@ -359,37 +373,38 @@ section.parallax-5 {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 70%;
+  width: 85%;
   margin: auto;
   padding: 20px;
   position: relative;
   text-align: center;
 }
 .testimonial_slide img {
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   margin: auto;
   display: block;
   color: #f2f2f2;
   font-size: 18px;
   line-height: 46px;
   text-align: center;
-  position: relative;
 }
 
 .testimonial_slide p {
   color: #ffffff;
   font-size: 16px;
-  margin: 40px 0 20px 0;
+  margin: 60px 0 20px 0;
 }
 
-.testimonial_slide h4 {
+.testimonial_slide h5 {
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
+  padding-top: 20px;
 }
 
 

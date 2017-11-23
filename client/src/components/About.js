@@ -27,7 +27,7 @@ const About = () =>
     {/* Row #2 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/me.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/Dennis.jpg" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Dennis Alvey</h2>

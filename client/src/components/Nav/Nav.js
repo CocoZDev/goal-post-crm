@@ -24,7 +24,7 @@ class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="/"><span className="glyphicon glyphicon-briefcase"></span>&nbsp;
+            <a className="navbar-brand animated bounceInDown" href="/"><span className="glyphicon glyphicon-briefcase"></span>&nbsp;
           Goal Post</a>
           </div>
           <div className="collapse navbar-collapse pull-sm-right" id="collapse-right">
