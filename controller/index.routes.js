@@ -5,11 +5,11 @@ var db = require("../models");
 var passport = require("passport");
 
 
-// router.get('/', (req, res, next) => {
-//     console.log("_________________________________");
-//     console.log("get route / happened..index.routes.js");
-//     console.log("_________________________________");
-// });
+router.get('/', (req, res, next) => {
+    console.log("_________________________________");
+    console.log("get route / happened..index.routes.js");
+    console.log("_________________________________");
+});
 
 // route to get all of a rep's customers
 router.get('/dashboard', (req, res, next) => {
