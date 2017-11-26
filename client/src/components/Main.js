@@ -17,7 +17,7 @@ const Main = () =>
     <div>
         {/* Video Section */}
 
-        <section className="parallax" style={{ 'minHeight': '100vh' }}>
+        <section className="parallax" style={{ 'min-height': '100vh' }}>
             <section className="container">
                 <video autoPlay="true" loop muted poster="../styles/img/mobile-friendly.jpg" className="video">
                     <source src="https://ak3.picdn.net/shutterstock/videos/3894353/preview/stock-footage-two-young-businessmen-who-are-old-acquaintances-meet-and-shake-hands-in-a-busy-modern-office-buildi.mp4" type="video/mp4" />
@@ -34,14 +34,14 @@ const Main = () =>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-1" id="why" style={{'minHeight':'40vh'}}>
+        <section className="parallax parallax-1" id="why" style={{'min-height':'40vh'}}>
             <div className="container" id="why-header">
                 <h1>Why Us?</h1>
                 <h3>Our Competitive Advantages</h3>
             </div>
         </section>
         <section className="content" id="why-content">
-            <div className="container animated slideInUp" style={{ 'minHeight': '50vh', 'paddingTop': '55px' }}>
+            <div className="container animated slideInUp" style={{ 'min-height': '50vh', 'paddingTop': '55px' }}>
                 <center>
                     <Row>
                         <Col size="md-3 sm-3">
@@ -70,7 +70,7 @@ const Main = () =>
         </section>
 
         {/* Features Section */}
-        <section className="parallax parallax-2" id="features" style={{ 'minHeight': '40vh' }}>
+        <section className="parallax parallax-2" id="features" style={{ 'min-height': '40vh' }}>
             <div className="container">
                 <h1>Features</h1>
                 <h3>4 Ways We Can Make Your Life Easier. </h3>
@@ -78,7 +78,7 @@ const Main = () =>
             </div>
         </section>
         <section className="content" id="features-content">
-            <div className="container" style={{ 'minHeight': '50vh', 'paddingTop': '55px' }}>
+            <div className="container" style={{ 'min-height': '50vh', 'paddingTop': '55px' }}>
                 <center>
                     <Row>
                         <Col size="md-3 sm-3">
@@ -107,7 +107,7 @@ const Main = () =>
         </section>
 
         {/* Product Demo */}
-        <section className="parallax parallax-3" style={{ 'minHeight': '40vh' }}>
+        <section className="parallax parallax-3" style={{ 'min-height': '40vh' }}>
             <div className="container">
                 <h1>Live Demo</h1>
                 <h3>See the Features in Action</h3>
@@ -227,7 +227,7 @@ const Main = () =>
                             <div className="item">
                                 <div className="testimonial_slide">
                                     <img src="images/t-2.jpg" className="img-circle img-responsive" />
-                                    <h5><i>I wish I knew about Goal Post years earlier. Every salesperson should use GoalPost."</i></h5>
+                                    <h5><i>"I wish I knew about Goal Post years earlier. Every salesperson should use GoalPost."</i></h5>
                                     <h5>- Brandon</h5>
                                 </div>
                             </div>
@@ -255,13 +255,13 @@ const Main = () =>
         </section>
         
         {/* Team Section */}
-        <section className="parallax parallax-5" id="team" style={{'minHeight':'40vh'}}>
+        <section className="parallax parallax-5" id="team" style={{'min-height':'40vh'}}>
             <div className="container">
                 <h1>Meet Our Team</h1>
                 <h3><a href="/about">Learn More</a></h3>
             </div>
         </section>
-        <section className="content team" style={{ 'minHeight': '50vh', 'padding': '5vh' }}>
+        <section className="content team" style={{ 'min-height': '50vh', 'padding': '5vh' }}>
         <center>
             <Container fluid>
                 {/* Row #1 */}

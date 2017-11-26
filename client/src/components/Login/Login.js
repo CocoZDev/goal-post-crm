@@ -78,7 +78,7 @@ class Login extends Component {
                     <a href="/register" id="register-form-link">Register</a>
                   </Col>
                 </Row>
-                <hr />
+                {/* <hr /> */}
               </div>
               {/* End of Panel Heading */}
 
