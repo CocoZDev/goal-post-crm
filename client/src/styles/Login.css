@@ -3,29 +3,35 @@ border-color: #D0E0E3;
 -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-margin-top: 100px;
+margin-top: 150px;
+min-height: 300px;
 }
 .panel-login>.panel-heading {
 color: #00415d;
 background-color: #fff;
 border-color: #fff;
 text-align:center;
+margin-top: 20px;
+height: 50px;
 }
 .panel-login>.panel-heading a{
-text-decoration: none;
+text-decoration: underline;
+text-underline-position: under;
 color: #666;
 font-weight: bold;
-font-size: 15px;
+font-size: 16px;
 -webkit-transition: all 0.1s linear;
 -moz-transition: all 0.1s linear;
 transition: all 0.1s linear;
 width: 50%;
+margin-bottom: 20px;
 }
 .panel-login>.panel-heading a.active{
 color: #2196F3;
-font-size: 18px;
+font-size: 20px;
 }
-.panel-login>.panel-heading hr{
+
+/* .panel-login>.panel-heading hr{
 margin-top: 10px;
 margin-bottom: 0px;
 clear: both;
@@ -35,7 +41,7 @@ background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.
 background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
-}
+} */
 .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
 height: 45px;
 border: 1px solid #ddd;
