@@ -37,7 +37,14 @@ module.exports = function (sequelize, DataTypes) {
   reps.associate = function (models) {
     reps.hasMany(models.customers, {
       onDelete: "CASCADE"
-    });
-  };
+    })};
+  reps.associate = function (models) {
+    reps.hasMany(models.products, {
+      onDelete: "CASCADE"
+    })};
+  reps.associate = function (models) {
+      reps.hasMany(models.events, {
+        onDelete: "CASCADE"
+      })};
   return reps;
 };

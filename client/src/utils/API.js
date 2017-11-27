@@ -13,9 +13,9 @@ export default {
     return axios.post("account/login", Data);
   },
   // Gets all Accounts
-  getAccounts: function() {
+  getAccounts: function (Data) {
     console.log("getAccounts function..API.js");
-    return axios.get("/dashboard");
+    return axios.post("/dashboard", Data);
   },
   // Gets the Account with the given id
   getAccount: function(id) {

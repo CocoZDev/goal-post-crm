@@ -28,6 +28,11 @@ module.exports = function (sequelize, DataTypes) {
     }
   },
     { timestamps: false });
+  products.associate = function (models) {
+    products.belongsTo(models.reps, {
+      onDelete: "CASCADE"
+    });
+  };
  
   return products;
 };

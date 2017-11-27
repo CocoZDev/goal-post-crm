@@ -12,20 +12,20 @@ router.get('/', (req, res, next) => {
 });
 
 // route to get all of a rep's customers
-router.get('/dashboard', (req, res, next) => {
+router.post('/dashboard', (req, res, next) => {
     // if (req.isAuthenticated()) {
         console.log("_________________________________");
         console.log("route /dashboard..index.routes.js");
         console.log("_________________________________");
+        console.log('req ', req.body.repRepId);
         db.customers.findAll({
             where: {
-                repRepId: req.user.rep_id,
-            },
-            order: db.sequelize.col('customer_company')
+                repRepId: req.body.repRepId
+            }
+            // order: db.sequelize.col('customer_company')
         }).then(function (results) {
-            console.log(results);
-            res.json(results);
-            // res.redirect("/")
+            // console.log(results);
+            res.json(results)
         });
     // } else {
     //     console.log("_________________________________");

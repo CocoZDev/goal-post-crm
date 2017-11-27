@@ -54,10 +54,18 @@ class Login extends Component {
           // set token to local storage
           localStorage.setItem('token', res.data.token);
           // get dashboard component
-          this.props.history.replace('/dashboard')
+          this.props.history.replace('/dashboard');
           // decode token
           const decoded = decode(res.data.token);
-          console.log("decoded token giving rep_id and timestamp: ", decoded)
+          var sub = decoded.sub;
+          console.log("decoded token giving rep_id and timestamp: ", decoded);
+          API.getAccounts({
+            username: this.state.username,
+            repRepId: 5
+          }).then(res => {
+            console.log("getAccounts response: ", res.data)
+          })
+            .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
   };
