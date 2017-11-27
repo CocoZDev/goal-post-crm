@@ -58,10 +58,12 @@ class Login extends Component {
           // decode token
           const decoded = decode(res.data.token);
           var sub = decoded.sub;
+          console.log('sub: ' + sub);
+          localStorage.setItem('rep_id', sub);
           console.log("decoded token giving rep_id and timestamp: ", decoded);
           API.getAccounts({
             username: this.state.username,
-            repRepId: 5
+            repRepId: sub
           }).then(res => {
             console.log("getAccounts response: ", res.data)
           })
