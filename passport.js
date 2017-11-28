@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const authenticate = (username, password, done) =>{
     db.reps.find({
         where:{
-          rep_userName: username
+          rep_username: username
         }
       }).then(rep => {
         if (!rep || !bcrypt.compareSync(password, rep.rep_password)) {
@@ -22,7 +22,7 @@ const authenticate = (username, password, done) =>{
         // create a token string
         const token = jwt.sign(payload, config.jwtSecret);
         const data = {
-            username: rep.rep_userName,
+            username: rep.rep_username,
             token: token
         };
         return done(null, data);
@@ -34,7 +34,7 @@ const register = (req, email, password, done) => {
     //sequelize?
     db.reps.find({
         where:{
-            rep_userName: req.body.username,
+            rep_username: req.body.username,
         }
     })
     .then(user => {
@@ -45,7 +45,7 @@ const register = (req, email, password, done) => {
         return done(null, false, { message: `passwords don't match` });
       }
       db.reps.create({
-        rep_userName: req.body.username,
+        rep_username: req.body.username,
         rep_email: req.body.email,
         rep_password: bcrypt.hashSync(password)
       }).then(function(){
