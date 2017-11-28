@@ -6,6 +6,7 @@ import { List, ListItem } from "./List";
 import DeleteBtn from "./DeleteBtn";
 import VerticalMenu from "./VerticalMenu";
 import API from "../utils/API";
+import CustForm from "./CustForm";
 
 class Customers extends Component {
   state = {
@@ -73,6 +74,12 @@ class Customers extends Component {
               </div>
             </Col>
         </Row>
+        {/* Row #3 */}
+        <Row fluid>
+          <Col size="md-12 sm-12">
+            <CustForm />
+          </Col>
+        </Row>        
       </Container>
     )
   }};
