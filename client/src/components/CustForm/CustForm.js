@@ -51,21 +51,22 @@ class Form extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     //if (this.state.customer_contact && this.state.customer_company) {
-      API.saveCusts({
-        customer_contact: this.state.customer_contact,
-        customer_company: this.state.customer_company,
-        customer_email: this.state.customer_email, 
-        customer_address: this.state.customer_address,
-        customer_phone: this.state.customer_phone,
-        customer_rating: this.state.customer_rating,
-        customer_notes: this.state.customer_notes,
-        customer_visited: this.state.customer_visited,
-        customer_active: this.state.customer_active,
-        repRepId: localStorage.getItem('rep_id')
-      })
-      .then(res => this.loadCusts())
-      .catch(err => console.log(err));
+    //   API.saveCusts({
+    //     customer_contact: this.state.customer_contact,
+    //     customer_company: this.state.customer_company,
+    //     customer_email: this.state.customer_email, 
+    //     customer_address: this.state.customer_address,
+    //     customer_phone: this.state.customer_phone,
+    //     customer_rating: this.state.customer_rating,
+    //     customer_notes: this.state.customer_notes,
+    //     customer_visited: this.state.customer_visited,
+    //     customer_active: this.state.customer_active,
+    //     repRepId: localStorage.getItem('rep_id')
+    //   })
+    //   .then(res => this.loadCusts())
+    //   .catch(err => console.log(err));
     //}
+    
   };
   
   render () {
@@ -86,11 +87,11 @@ class Form extends Component {
               name="customer_company"
               placeholder="Company Name (required)"
             />
-            <TextArea
+            <Input
               value={this.state.customer_email}
               onChange={this.handleInputChange}
               name="customer_email"
-              placeholder="customer_email (required)"
+              placeholder="customer email (required)"
             />
             <FormBtn
               disabled={!(this.state.customer_contact && this.state.customer_company)}
