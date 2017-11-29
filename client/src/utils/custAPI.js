@@ -14,7 +14,7 @@ export default {
         return axios.delete("/customers/" + id);
       },
       // Saves a cust to the database
-      saveCust: function(custData) {
+      saveCusts: function(custData) {
         return axios.post("/customers", custData);
       }
     };      

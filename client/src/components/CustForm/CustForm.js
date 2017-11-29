@@ -21,25 +21,25 @@ class Form extends Component {
     customer_active: ''
   };
 
-  componentsDidMount() {
-    this.loadCusts();
-  }
+//   componentsDidMount() {
+//     this.loadCusts();
+//   }
 
-  loadCusts = () => {
-    API.getCusts()
-    .then(res =>
-    this.setState({ customers: res.data, customer_contact: "", 
-    customer_company: "", customer_email: "", customer_address: "", customer_phone: "", customer_rating: "",
-    customer_notes: "", customer_visited: "", customer_active: ""})
-  )
-  .catch(err => console.log(err));
-  };
+//   loadCusts = () => {
+//     API.getCusts()
+//     .then(res =>
+//     this.setState({ customers: res.data, customer_contact: "", 
+//     customer_company: "", customer_email: "", customer_address: "", customer_phone: "", customer_rating: "",
+//     customer_notes: "", customer_visited: "", customer_active: ""})
+//   )
+//   .catch(err => console.log(err));
+//   };
 
-  deleteCust = id => {
-    API.deleteCust(id)
-    .then(res => this.loadCusts())
-    .catch(err => console.log(err));
-  };
+//   deleteCust = id => {
+//     API.deleteCust(id)
+//     .then(res => this.loadCusts())
+//     .catch(err => console.log(err));
+//   };
 
   handleInputChange = event => {
     const {name, value } = event.target;
@@ -51,7 +51,7 @@ class Form extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     //if (this.state.customer_contact && this.state.customer_company) {
-      API.saveCust({
+      API.saveCusts({
         customer_contact: this.state.customer_contact,
         customer_company: this.state.customer_company,
         customer_email: this.state.customer_email, 
@@ -100,7 +100,7 @@ class Form extends Component {
             </FormBtn>
           </form>
         </Col>
-        <Col size="md-6">
+         {<Col size="md-6">
           {this.state.customers.length ? (
             <List>
               {this.state.customers.map(customer => {
@@ -119,7 +119,7 @@ class Form extends Component {
           ) : (
             <h3>No Results to Display</h3>
           )}
-        </Col>
+        </Col> }
       </Row>
     </Container>
   );

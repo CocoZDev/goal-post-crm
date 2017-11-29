@@ -8,6 +8,7 @@ var express = require("express");
 
 // Requiring our models
 const db = require("../models");
+var path = require("path");
 var router = express.Router();
 
 // Routes
@@ -37,7 +38,6 @@ router.get('/:id', (req, res, next) =>{
 
   // POST route for saving a new customer
   router.post("/", function(req, res) {
-    console.log(req.body);
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property 
