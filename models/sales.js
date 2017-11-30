@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
         sale_purchasePrice: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        sale_note: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
     },
         { timestamps: false });
