@@ -41,7 +41,7 @@ router.get('/:id', (req, res, next) =>{
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property 
-    console.log(req.body);
+    console.log("req body..custController ", req.body);
     db.customers.create({
       // customer_id: req.body.customer_id,
       customer_contact: req.body.customer_contact,
@@ -55,9 +55,10 @@ router.get('/:id', (req, res, next) =>{
       customer_active: req.body.customer_active,
       repRepId: req.body.repRepId,
       
-    }).then(function(dbcustomers) {
+    }).then(function(response) {
+      console.log("it posted", response);
       // We have access to the new cals as an argument inside of the callback function
-      res.json(dbcustomers);
+      res.json(response);
     })
     .catch(function(err) {
       // Whenever a validation or flag fails, an error is thrown

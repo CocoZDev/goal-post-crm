@@ -60,10 +60,13 @@ class Form extends Component {
         // customer_rating: this.state.customer_rating,
         customer_notes: this.state.customer_notes,
         customer_visited: this.state.customer_visited,
-        customer_active: this.state.customer_active,
+        // customer_active: this.state.customer_active,
         repRepId: localStorage.getItem('rep_id')
       })
-      .then(res => this.loadCusts())
+      .then(res => {
+          console.log("res from post..CustForm", res)
+        //   this.loadCusts()
+        })
       .catch(err => console.log(err));
     }
     
