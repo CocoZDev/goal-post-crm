@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     customer_contact: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     customer_company: {
       type: DataTypes.STRING,
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     customer_address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     customer_phone: {
       type: DataTypes.STRING,
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     customer_email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         isEmail: true,
       }
@@ -35,10 +35,10 @@ module.exports = function(sequelize, DataTypes) {
     customer_rating: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: 0,
-      validate: {
-        len: [1,2]
-      }
+      // defaultValue: 0,
+      // validate: {
+      //   len: [1,2]
+      // }
     },
     customer_notes: {
       type: DataTypes.STRING,
