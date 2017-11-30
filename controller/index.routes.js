@@ -55,26 +55,7 @@ router.post('/postProducts', (req, res, next) =>{
     // }
 });
 
-// route to get customers from a particular rep
-router.get('/customers/:id', (req, res, next) =>{
-    // if(req.isAuthenticated()){
-        db.customers.findAll({
-            include:[{
-                model: db.reps,
-                where:{
-                    repRepId: req.params.id
-                    },
-                }],
-            order: db.sequelize.col('customer_company')
-        }).then(function(results){
-            // var studentList = {students: results}
-            // res.render('specificClass', studentList);
-            res.json(doc)
-        });
-    // }else{
-    //     res.redirect("/account/login");
-    // }
-});
+
 
 
 

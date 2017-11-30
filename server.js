@@ -45,9 +45,11 @@ app.use(express.static("api"));
 var index = require("./controller/index.routes");
 var api = require("./controller/api.routes");
 var account = require("./controller/account.routes");
+var customer = require("./controller/custController");
 app.use("/", index);
 app.use("/api", api);
 app.use("/account", account);
+app.use("/customers", customer);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
