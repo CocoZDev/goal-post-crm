@@ -104,26 +104,7 @@ class Form extends Component {
             </FormBtn>
           </form>
         </Col>
-         {<Col size="md-6">
-          {this.state.customers.length ? (
-            <List>
-              {this.state.customers.map(customer => {
-                return (
-                  <ListItem key={customer._id}>
-                    <a href={"/customers/" + customer._id}>
-                      <strong>
-                        {customer.customer_contact} by {customer.customer_company}
-                      </strong>
-                    </a>
-                    <DeleteBtn onClick={() => this.deleteCust(customer._id)} />
-                  </ListItem>
-                );
-              })}
-            </List>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-        </Col> }
+
       </Row>
     </Container>
   );
