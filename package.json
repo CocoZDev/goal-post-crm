@@ -30,6 +30,7 @@
     "mysql2": "^1.4.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "pubsub-js": "^1.5.7",
     "react-router-dom": "^4.2.2",
     "sequelize": "^4.22.6"
   }
