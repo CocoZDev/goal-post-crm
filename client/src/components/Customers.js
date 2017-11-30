@@ -5,29 +5,10 @@ import Jumbotron from "./Jumbotron";
 import { List, ListItem } from "./List";
 import DeleteBtn from "./DeleteBtn";
 import VerticalMenu from "./VerticalMenu";
-import API from "../utils/API";
+import CustTable from "./CustTable";
 import CustForm from "./CustForm";
 
-class Customers extends Component {
-  state = {
-    customers: []
-  };
-
-  componentDidMount() {
-    this.loadCustomers();
-  }
-
-  loadCustomers = () => {
-    API.getAccounts({
-      repRepId: localStorage.getItem('rep_id')
-    })
-      .then(res => this.setState({ customers: res.data })
-      )
-      .catch(err => console.log(err));
-  };
-
-  render() {
-    return (
+  const Customers = () =>
       <Container fluid>
         {/* Row #1 */}
         <Row fluid>
@@ -47,41 +28,17 @@ class Customers extends Component {
             </Col>
 
           {/* Dashboard Content */}
-            <Col size="md-10 sm-10">
-              <div className='private text-center'>
-              {this.state.customers.length ? (
-                <List>
-                  {this.state.customers.map(customer => (
-                    <ListItem key={customer.customer_id}>
-                      <a href={"/customer/" + customer.customer_id}>
-                        <strong>
-                          {customer.customer_company}
-                          <br></br>
-                          {customer.customer_contact}
-                          <br></br>
-                          {customer.customer_phone}
-                          <br></br>
-                          {customer.customer_email}
-                        </strong>
-                      </a>
-                      {/* <DeleteBtn /> */}
-                    </ListItem>
-                  ))}
-                </List>
-              ) : (
-                  <h3>No Results to Display</h3>
-                )}
-              </div>
-            </Col>
+          <Col size="md-12 sm-12">
+            <CustTable />
+          </Col>
         </Row>
-        {/* Row #3 */}
+          {/* Row #3 */}
         <Row fluid>
           <Col size="md-12 sm-12">
             <CustForm />
           </Col>
-        </Row>        
+        </Row>      
       </Container>
-    )
-  }};
+
 
 export default Customers;

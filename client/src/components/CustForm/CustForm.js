@@ -5,6 +5,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/custAPI.js";
+import PubSub from 'pubsub-js';
 
 
 class Form extends Component {
@@ -19,26 +20,6 @@ class Form extends Component {
     customer_notes: '',
     customer_visited:'',
     customer_active: ''
-  };
-
-  componentsDidMount() {
-    this.loadCusts();
-  }
-
-  loadCusts = () => {
-    API.getCusts()
-    .then(res =>
-    this.setState({ customers: res.data, customer_contact: "", 
-    customer_company: "", customer_email: "", customer_address: "", customer_phone: "", customer_rating: "",
-    customer_notes: "", customer_visited: "", customer_active: ""})
-  )
-  .catch(err => console.log(err));
-  };
-
-  deleteCust = id => {
-    API.deleteCust(id)
-    .then(res => this.loadCusts())
-    .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -65,7 +46,7 @@ class Form extends Component {
       })
       .then(res => {
           console.log("res from post..CustForm", res)
-        //   this.loadCusts()
+          PubSub.publish('UPDATE_LIST', 'update Now!');
         })
       .catch(err => console.log(err));
     }
@@ -104,7 +85,6 @@ class Form extends Component {
             </FormBtn>
           </form>
         </Col>
-
       </Row>
     </Container>
   );
