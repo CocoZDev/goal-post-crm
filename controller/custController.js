@@ -43,13 +43,13 @@ router.get('/:id', (req, res, next) =>{
     // and complete property 
     console.log(req.body);
     db.customers.create({
-      customer_id: req.body.customer_id,
+      // customer_id: req.body.customer_id,
       customer_contact: req.body.customer_contact,
       customer_company: req.body.customer_company,
       customer_address: req.body.customer_address,
       customer_phone: req.body.customer_phone,
       customer_email: req.body.customer_email,
-      customer_rating: req.body.customer_rating,
+      // customer_rating: req.body.customer_rating,
       customer_notes: req.body.customer_notes,
       customer_visited: req.body.customer_visited,
       customer_active: req.body.customer_active,

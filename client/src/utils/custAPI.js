@@ -3,7 +3,7 @@ export default {
    
       // Gets all custs
       getCusts: function() {
-        return axios.get("/");
+        return axios.post("/customers");
       },
       // Gets the custs with the given id
       getCustById: function(id) {
