@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Main from "./components/Main.js";
 import Customers from "./components/Customers";
+import Sales from "./components/Sales";
 import Products from "./components/Products";
 import Dashboard from "./components/Dashboard";
 import Schedule from "./components/Schedule";
@@ -23,6 +24,7 @@ const App = () =>
             <Route exact path="/" component={Main} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/customers" component={Customers} />
+            <Route exact path="/sales" component={Sales} />
             <Route exact path="/products" component={Products} />
             <Route exact path="/schedule" component={Schedule} />
             <Route exact path="/about" component={About} />
