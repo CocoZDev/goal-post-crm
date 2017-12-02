@@ -13,7 +13,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import General from "./styles/General.css";
-
+import Salesform from "./components/Salesform";
 const App = () =>
   <Router>
     <div id="container">
@@ -28,6 +28,7 @@ const App = () =>
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/salesform" component={Salesform} />
             <Route component={NoMatch} />
           </Switch>
         <Footer />

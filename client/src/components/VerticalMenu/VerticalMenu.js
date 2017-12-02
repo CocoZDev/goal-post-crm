@@ -10,6 +10,7 @@ const VerticalMenu = () =>
         <a href="/customers">Customers</a>
         <a href="/products">Products</a>
         <a href="/schedule">Schedule</a>
+        <a href="/Salesform">Salesform</a>
       </div>
   </center>
 </div>
