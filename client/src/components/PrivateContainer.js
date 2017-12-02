@@ -9,7 +9,7 @@ import Dashboard from "./Dashboard";
 import Customers from "./Customers";
 import Products from "./Products";
 import Schedule from "./Schedule";
-import Sales from "./Sales";
+import Sales from "./Salesform";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class PrivateContainer extends Component {
