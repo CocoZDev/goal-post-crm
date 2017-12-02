@@ -1,0 +1,36 @@
+/* Original Design */
+
+.vertical-menu {
+  min-width: 150px;
+  width: auto;
+  height: 100vh;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.vertical-menu a {
+  background-color: black; /* Grey background color */
+  color: white; /* Black text color */
+  border-bottom: 1px solid white;
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #0047a6; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  color: #d1d5f6;
+  background-color: #0047a6;
+}
+
+@media (max-width: 767px) {
+  .vertical-menu {
+    padding-top: 0px;
+  }
+
+}
