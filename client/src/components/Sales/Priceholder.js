@@ -1,28 +1,9 @@
-import React, { Component } from "react";
-import { Input, FormBtn } from "../Form";
-import { Col, Row, Container } from "../Grid";
-import API from "../../utils/API";
+import React from "react";
 
-class decimalPoint extends Component {
+export const decimalPoint = props =>
+    <div className="form-group">
+        <textarea className="form-control" rows="20" {...props} />
+    </div>;
+
     
-    
-      render(){
-        return (
-          <Container fluid>
-            <Row fluid>
-              <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
-              <form>  
-   
-    
-              </form>
-           </Col>
-        </Row>
-    
-    
-    
-          </Container>
-        );
-      }
-    }
-    
-    export default decimalPoint;
+  
