@@ -1,11 +1,6 @@
-import React, { Component } from "react";
-import DeleteBtn from "./DeleteBtn";
-import { Input, FormBtn } from "./Form";
-import { Col, Row, Container } from "./Grid";
+import React from "react";
+import { Col, Row } from "./Grid";
 import Jumbotron from "./Jumbotron";
-import Nav from "./Nav";
-import { Link } from "react-router-dom";
-
 
 const Contact = () =>
 

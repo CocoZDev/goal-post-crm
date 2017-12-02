@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import DeleteBtn from "./DeleteBtn";
-import { Input, FormBtn } from "./Form";
+import React from "react";
 import { Col, Row, Container } from "./Grid";
 import Jumbotron from "./Jumbotron";
-import Nav from "./Nav";
 import VerticalMenu from "./VerticalMenu";
+import CustSchedule from "./CustSchedule";
 // import API from "../utils/API";
 
 const Schedule = () =>
@@ -29,9 +27,7 @@ const Schedule = () =>
 
     {/* Dashboard Content */}
     <Col size="md-10 sm-10">
-      <div className='private text-center'>
-        <h4>Schedule Placeholder Section</h4>
-      </div>
+      <CustSchedule />
     </Col>
   </Row>
 </Container>

@@ -4,7 +4,6 @@ import API from "../utils/salesAPI.js";
 import DeleteBtn from "./DeleteBtn";
 import { Col, Row, Container } from "./Grid";
 import { List, ListItem } from "./List";
-import { Input, TextArea, FormBtn } from "./Form";
 import VerticalMenu from "./VerticalMenu";
 
 class Sales extends Component {

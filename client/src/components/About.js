@@ -1,13 +1,6 @@
-import React, { Component } from "react";
-import DeleteBtn from "./DeleteBtn";
-import { Input, FormBtn } from "./Form";
+import React from "react";
 import { Col, Row, Container } from "./Grid";
 import Jumbotron from "./Jumbotron";
-import Nav from "./Nav";
-import VerticalMenu from "./VerticalMenu";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
-
 
 const About = () =>
 
@@ -27,7 +20,7 @@ const About = () =>
     {/* Row #2 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Dennis.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/Dennis.jpg" alt="Dennis" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Dennis Alvey</h2>
@@ -41,7 +34,7 @@ const About = () =>
     {/* Row #3 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" alt="Tatianna" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Tatianna "Drama-Mama" Watwood</h2>
@@ -56,7 +49,7 @@ const About = () =>
     {/* Row #4 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/jeannine.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/jeannine.jpg" alt="Jeanine" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Jeanine "Mufasa" Smith</h2>
@@ -71,7 +64,7 @@ const About = () =>
     {/* Row #5 */}
     <Row>
       <Col size="md-4 sm-4">   
-      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" alt="Guiyu" style={{'width':'150px'}}/>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Guiyu "Zoey" Zhao  </h2>
@@ -85,7 +78,7 @@ const About = () =>
     {/* Row #6 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Brian.jpg" style={{'width':'150px'}}/>
+      <img className="aboutImg img-circle" src="/images/Brian.jpg" alt="Brian" style={{'width':'150px'}}/>
       </Col>
         <Col size="md-8 sm-8">
       <h2>Brian "The Captain" Hart  </h2>
