@@ -28,9 +28,9 @@ class Customers extends Component {
 
   render() {
     return (
-      <Container fluid>
-        {/* Row #1 */}
-        <Row fluid>
+      <div>
+          {/* Row #1 */}
+        <Row>
           <Col size="md-12 sm-12">
             <Jumbotron>
               <h1><strong>Customers</strong></h1>
@@ -39,15 +39,18 @@ class Customers extends Component {
           </Col>
         </Row>
 
-          {/* Row #2 */}
-          <Row fluid>
-            {/* Vertical Menu */}
-            <Col size="md-2 sm-2">
-              <VerticalMenu />
-            </Col>
+        {/* Row #2 */}
+        <Row>
+        <div className='private text-center'>
+          <Col size="md-12 sm-12">
+            <CustForm />
+          </Col>
+        </div>       
+        </Row> 
 
-          {/* Dashboard Content */}
-            <Col size="md-10 sm-10">
+        <Row>
+          {/* Customers Content */}
+            <Col size="md-12 sm-12">
               <div className='private text-center'>
               {this.state.customers.length ? (
                 <List>
@@ -74,13 +77,8 @@ class Customers extends Component {
               </div>
             </Col>
         </Row>
-        {/* Row #3 */}
-        <Row fluid>
-          <Col size="md-12 sm-12">
-            <CustForm />
-          </Col>
-        </Row>        
-      </Container>
+
+      </div>
     )
   }};
 

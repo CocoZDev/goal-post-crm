@@ -1,5 +1,9 @@
 /*Remove rounded coners*/
 
+.nav-tabs a {
+  color: #2196F3 !important;
+}
+
 nav.sidebar.navbar {
   border-radius: 0px;
   position: relative;
@@ -90,8 +94,8 @@ nav.sidebar {
   /*gives sidebar width/height*/
   nav.sidebar{
     position: fixed;
-    width: 170px;
-    height: 100vh;
+    width: 100%;
+    height: 130vh;
     /* margin-left: -160px; */
     margin-left: 18px;
     float: left;

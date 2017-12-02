@@ -1,21 +1,8 @@
 import React from "react";
 import "../../styles/VerticalMenu.css";
 
-const VerticalMenu = () =>
+const VerticalMenu = props =>
 <div>
-    {/* Original Code */}
-    {/* <center>
-      <div className="vertical-menu">
-        <h5>Welcome [Username]</h5>
-        <a href="/dashboard">Dashboards</a>
-        <a href="/customers">Customers</a>
-        <a href="/products">Products</a>
-        <a href="/schedule">Schedule</a>
-      </div>
-  </center> */}
-
-  {/* Full-Size Vertical Menu */}
-
   <nav className="navbar navbar-inverse sidebar" role="navigation">
     {/* <div className="container-fluid"> */}
 		{/* <!-- Brand and toggle get grouped for better mobile display --> */}
@@ -30,13 +17,30 @@ const VerticalMenu = () =>
 		</div>
 		{/* <!-- Collect the nav links, forms, and other content for toggling --> */}
 		<div className="navbar">
-			<ul className="nav navbar-nav">
-				<li ><a href="#">Profile<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-user"></span></a></li>
-				<li className="active"><a href="#">Dashboard<span style={{'font-size':'16px'}}  className="pull-right hidden-xs showopacity fa fa-line-chart"></span></a></li>
-				<li><a href="#">Customers<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-users"></span></a></li>
-				<li ><a href="#">Products<span style={{'font-size':'16px'}}  className="pull-right hidden-xs showopacity fa fa-database"></span></a></li>
-				<li ><a href="#">Schedule<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-calendar"></span></a></li>
-        <li ><a href="#">Log Out<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-sign-out"></span></a></li>
+			<ul className="nav nav-tabs">
+				<li onClick={() => props.handlePageChange("Dashboard")}
+					className = {props.currentPage === "Dashboard" ? "active" : ""}>
+					<a>Dashboard<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-line-chart"></span></a></li>
+				
+				<li onClick={() => props.handlePageChange("Customers")}
+					className = {props.currentPage === "Customers" ? "active" : ""}>
+					<a>Customers<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-users"></span></a></li>
+				
+				<li  onClick={() => props.handlePageChange("Products")}
+					className = {props.currentPage === "Products" ? "active" : ""}>
+					<a>Products<span style={{'font-size':'16px'}}  className="pull-right hidden-xs showopacity fa fa-database"></span></a></li>
+				
+				<li onClick={() => props.handlePageChange("Sales")}
+					className = {props.currentPage === "Sales" ? "active" : ""} >
+					<a>Sales<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-money"></span></a></li>
+				
+				<li onClick={() => props.handlePageChange("Schedule")}
+					className = {props.currentPage === "Schedule" ? "active" : ""} >
+					<a>Schedule<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-calendar"></span></a></li>
+                
+				<li>
+					<a href="/login">Log Out<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-sign-out"></span></a></li> 			
+			
 			</ul>
 		</div>
 	{/* </div> */}
