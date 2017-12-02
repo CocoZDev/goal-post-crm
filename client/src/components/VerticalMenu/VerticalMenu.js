@@ -38,8 +38,13 @@ const VerticalMenu = props =>
 					className = {props.currentPage === "Schedule" ? "active" : ""} >
 					<a>Schedule<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-calendar"></span></a></li>
                 
-				<li>
-					<a href="/login">Log Out<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-sign-out"></span></a></li> 			
+					<li onClick={() => {
+						console.log('clearing local storage');
+						localStorage.clear();
+						console.log('cleared');
+						// history.replace('/login');
+					}}>
+					<a>Log Out<span style={{'font-size':'16px'}} className="pull-right hidden-xs showopacity fa fa-sign-out"></span></a></li> 			
 			
 			</ul>
 		</div>
