@@ -36,13 +36,13 @@ router.get('/:id', (req, res, next) =>{
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property 
     console.log("req body..calController ", req.body);
-    db.customers.create({
+    db.calendar.create({
       // customer_id: req.body.customer_id,
-      calendar_id: req.body.calendar_id,
+      //calendar_id: req.body.calendar_id,
       event_title: req.body.event_title,
       start_time: req.body.start_time,
       end_time: req.body.end_time,
-      note: req.body.note,
+      note: req.body.note
       
     }).then(function(response) {
       console.log("it posted", response);
