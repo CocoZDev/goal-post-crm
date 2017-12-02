@@ -25,11 +25,6 @@ const Salesform = () =>
 
     {/* Row #2 */}
     <Row fluid>
-      {/* Vertical Menu */}
-      <Col size="md-2 sm-2">
-        <VerticalMenu />
-      </Col>
-
       {/* Dashboard Content */}
       <Col size="md-10 sm-10">
         <div className='private text-center'>

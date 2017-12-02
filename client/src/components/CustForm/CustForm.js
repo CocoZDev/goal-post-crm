@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./CustForm.css";
-import DeleteBtn from "../../components/DeleteBtn";
+import "./CustForm.css";		 import "./CustForm.css";
+import DeleteBtn from "../../components/DeleteBtn";		
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, TextArea, FormBtn } from "../../components/Form";		
 import API from "../../utils/custAPI.js";
 import PubSub from 'pubsub-js';
 
