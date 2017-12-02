@@ -5,10 +5,29 @@ import VerticalMenu from "./VerticalMenu";
 import CustTable from "./CustTable";
 import CustForm from "./CustForm";
 
-  const Customers = () =>
-      <Container fluid>
-        {/* Row #1 */}
-        <Row fluid>
+class Customers extends Component {
+  state = {
+    customers: []
+  };
+
+  componentDidMount() {
+    this.loadCustomers();
+  }
+
+  loadCustomers = () => {
+    API.getAccounts({
+      repRepId: localStorage.getItem('rep_id')
+    })
+      .then(res => this.setState({ customers: res.data })
+      )
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+      <div>
+          {/* Row #1 */}
+        <Row>
           <Col size="md-12 sm-12">
             <Jumbotron>
               <h1><strong>Customers</strong></h1>
@@ -17,25 +36,47 @@ import CustForm from "./CustForm";
           </Col>
         </Row>
 
-          {/* Row #2 */}
-          <Row fluid>
-            {/* Vertical Menu */}
-            <Col size="md-2 sm-2">
-              <VerticalMenu />
-            </Col>
-
-          {/* Dashboard Content */}
-          <Col size="md-12 sm-12">
-            <CustTable />
-          </Col>
-        </Row>
-          {/* Row #3 */}
-        <Row fluid>
+        {/* Row #2 */}
+        <Row>
+        <div className='private text-center'>
           <Col size="md-12 sm-12">
             <CustForm />
           </Col>
-        </Row>      
-      </Container>
+        </div>       
+        </Row> 
 
+        <Row>
+          {/* Customers Content */}
+            <Col size="md-12 sm-12">
+              <div className='private text-center'>
+              {this.state.customers.length ? (
+                <List>
+                  {this.state.customers.map(customer => (
+                    <ListItem key={customer.customer_id}>
+                      <a href={"/customer/" + customer.customer_id}>
+                        <strong>
+                          {customer.customer_company}
+                          <br></br>
+                          {customer.customer_contact}
+                          <br></br>
+                          {customer.customer_phone}
+                          <br></br>
+                          {customer.customer_email}
+                        </strong>
+                      </a>
+                      {/* <DeleteBtn /> */}
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </div>
+            </Col>
+        </Row>
+
+      </div>
+    )
+  }};
 
 export default Customers;

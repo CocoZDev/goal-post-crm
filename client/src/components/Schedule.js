@@ -7,9 +7,9 @@ import CustSchedule from "./CustSchedule";
 
 const Schedule = () =>
 
-<Container fluid>
-  {/* Row #1 */}
-  <Row fluid>
+<div>
+
+  <Row>
     <Col size="md-12 sm-12">
       <Jumbotron>
         <h1><strong>Schedule</strong></h1>
@@ -18,18 +18,14 @@ const Schedule = () =>
     </Col>
   </Row>
 
-    {/* Row #2 */}
-    <Row fluid>
-      {/* Vertical Menu */}
-      <Col size="md-2 sm-2">
-        <VerticalMenu />
-      </Col>
 
     {/* Dashboard Content */}
+    <Row>
     <Col size="md-10 sm-10">
       <CustSchedule />
     </Col>
   </Row>
-</Container>
 
+
+</div>
 export default Schedule;

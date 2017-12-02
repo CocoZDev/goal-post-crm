@@ -30,15 +30,8 @@ class Sales extends Component {
 
     render() {
         return (
-            <Container fluid>
                 <Row>
-                    <Col size="md-12">
-                        <Jumbotron>
-                            <h1>Sales</h1>
-                        </Jumbotron>
-                        <VerticalMenu />
-                    </Col>
-                    <Col size="md-12">
+                    <Col size="md-12 sm-12">
                         {this.state.sales.length ? (
                             <List>
                                 {this.state.sales.map(sale => (
@@ -62,7 +55,6 @@ class Sales extends Component {
                             )}
                     </Col>
                 </Row>
-            </Container>
         );
     }
 }
