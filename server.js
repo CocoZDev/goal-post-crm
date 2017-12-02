@@ -47,11 +47,14 @@ var api = require("./controller/api.routes");
 var account = require("./controller/account.routes");
 var customer = require("./controller/custController");
 var sale = require("./controller/salesController");
+var calendar = require("./controller/calController");
+
 app.use("/", index);
 app.use("/api", api);
 app.use("/account", account);
 app.use("/customers", customer);
 app.use("/sales", sale);
+app.use("/calendar", calendar);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
