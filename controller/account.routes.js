@@ -6,14 +6,6 @@ var router = express.Router();
 // ALL links in this file get prepended with /account
 // ==================================================
 
-// router.get('/', (req, res, next) => {
-//     res.render(path.join(__dirname, "/"));
-// });
-
-// router.get('/dashboard', (req, res, next) => {
-//     res.render(path.join(__dirname, "/dashboard"));
-// });
-
 // this is handling the authentication
 router.post('/login',
     passport.authenticate('local', { session: false }),
@@ -22,14 +14,10 @@ router.post('/login',
         res.json({ username: req.user.username, token: req.user.token });
     });
 
-// router.get('/register', (req, res, next) => {
-//     res.render(path.join(__dirname, "/register"));
-// });
-
 router.post('/register', passport.authenticate('local-register', {
     successRedirect: '/login',
     failureRedirect: '/'
-}))
+}));
 
 router.get('/logout', (req, res, next) => {
     req.session.destroy(err => {
