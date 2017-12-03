@@ -37,7 +37,7 @@ import Login from "./Login";
                 <section className="content">
                     <div className="intro animated bounceInUp">
                         <h1 style= {{'font-size':'80px', color:'#0060DF'}}>Goal Post</h1>
-                        <h2>On the go sales toobox <br />for busy salespeople </h2>
+                        <h2>On-the-go sales toolbox <br />for busy salespeople </h2>
                     </div>
                 </section>
             </section>
