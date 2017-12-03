@@ -43,11 +43,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif !important;
+  text-shadow: 2px 2px 4px #000000 !important;
 }
 
 h1, h2 {
   color: #292A31;
-  text-shadow: 2px 2px 4px #000000;
+}
+
+.intro {
+  border: 5px solid #fff;
+  padding: 40px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 /* Icons for Why and Features Section */
@@ -67,6 +74,7 @@ h1, h2 {
   position: relative;
   border: 2pt solid white;
   transition: .5s;
+  text-shadow: 2px 2px 4px #000000 !important;
 }
 
 #features-content a:hover {
@@ -242,6 +250,7 @@ section.parallax-5 a:hover {
 /* Team */
 .team {
   line-height: 0.7;
+  margin-bottom: 50px;
 }
 
 .aboutImg {
