@@ -13,7 +13,7 @@ const VerticalMenu = props =>
 				<span className="icon-bar"></span>
 				<span className="icon-bar"></span>
 			</button> */}
-			<a className="navbar-brand" href="/">Hello [Username]</a>
+			<a id='username' className="navbar-brand" href="/">{ localStorage.getItem('username') }</a>
 		</div>
 		{/* <!-- Collect the nav links, forms, and other content for toggling --> */}
 		<div className="navbar">
@@ -42,7 +42,7 @@ const VerticalMenu = props =>
 						console.log('clearing local storage');
 						localStorage.clear();
 						console.log('cleared');
-						// history.replace('/login');
+						window.location.replace('/login');
 					}}>
 						<a>Log Out<span style={{'fontSize':'16px'}} className="pull-right hidden-xs showopacity fa fa-sign-out"></span></a></li> 			
 			
