@@ -51,7 +51,7 @@ return (
     </Col>
   </Row>
 
-  <Row>
+  <Row fluid>
            
     {/* Product Form */}
     <Col size="md-6 sm-6">

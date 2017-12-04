@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const About = () =>
 
-<div>
+<div id="about">
     {/* Row #1 */}
     <Row>
       <Col size="md-12 sm-12">      
@@ -21,12 +21,10 @@ const About = () =>
       </Col>
     </Row>
 
-
-  <Container >
     {/* Row #2 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Dennis.jpg" alt="Dennis" style={{'width':'150px'}}/>
+      <center><img className="aboutImg img-circle" src="/images/Dennis.jpg" alt="Dennis" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Dennis Alvey</h2>
@@ -40,7 +38,7 @@ const About = () =>
     {/* Row #3 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Tatianna.jpg" alt="Tatianna" style={{'width':'150px'}}/>
+      <center><img className="aboutImg img-circle" src="/images/Tatianna.jpg" alt="Tatianna" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Tatianna "Drama-Mama" Watwood</h2>
@@ -55,7 +53,7 @@ const About = () =>
     {/* Row #4 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/jeannine.jpg" alt="Jeanine" style={{'width':'150px'}}/>
+      <center><img className="aboutImg img-circle" src="/images/jeannine.jpg" alt="Jeanine" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Jeanine "Mufasa" Smith</h2>
@@ -70,7 +68,7 @@ const About = () =>
     {/* Row #5 */}
     <Row>
       <Col size="md-4 sm-4">   
-      <img className="aboutImg img-circle" src="/images/Guiyu.jpg" alt="Guiyu" style={{'width':'150px'}}/>
+      <center><img className="aboutImg img-circle" src="/images/Guiyu.jpg" alt="Guiyu" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Guiyu "Zoey" Zhao  </h2>
@@ -84,7 +82,7 @@ const About = () =>
     {/* Row #6 */}
     <Row>
       <Col size="md-4 sm-4">
-      <img className="aboutImg img-circle" src="/images/Brian.jpg" alt="Brian" style={{'width':'150px'}}/>
+      <center><img className="aboutImg img-circle" src="/images/Brian.jpg" alt="Brian" style={{'width':'150px'}}/></center>
       </Col>
         <Col size="md-8 sm-8">
       <h2>Brian "The Captain" Hart  </h2>
@@ -93,7 +91,6 @@ const About = () =>
       </Col>
     </Row>
 
-  </Container>
 </div>
 
 export default About;

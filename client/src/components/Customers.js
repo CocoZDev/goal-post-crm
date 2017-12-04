@@ -11,7 +11,7 @@ import CustForm from "./CustForm";
 const Customers = () =>
   <div>
       {/* Row #1 */}
-    <Row>
+    <Row fluid>
       <Col size="md-12 sm-12">
         <Jumbotron>
           <h1><strong>Customers</strong></h1>

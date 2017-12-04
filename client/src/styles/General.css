@@ -41,6 +41,17 @@ body {
   position: relative;
 }
 
+#private-container {
+  position: absolute;
+  left: -20px;
+  right: 0px;
+
+}
+
+#about {
+  margin-bottom: 60px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif !important;
   text-shadow: 2px 2px 4px #000000 !important;
