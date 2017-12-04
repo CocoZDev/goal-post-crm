@@ -45,6 +45,7 @@ class Login extends Component {
           console.log("res..Login.js: ", res.data.token, this.props);
           // set token to local storage
           localStorage.setItem('token', res.data.token);
+          localStorage.setItem('username', res.data.username);
           // get dashboard component
           this.props.history.replace('/private');
           // decode token
