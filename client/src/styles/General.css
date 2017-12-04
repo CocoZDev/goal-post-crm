@@ -518,15 +518,6 @@ section.parallax-5 a:hover {
   z-index: -1;
 }
 
-#product-form {
-  /* border-radius: 5px; */
-  border: 1.5px solid #0060DF;
-  padding: 20px; 
-  margin: auto; 
-  width: 100%;
-  height: auto;
-}
-
 .product-table {
   /* border-radius: 10px; */
   border: 2px solid #0060DF;

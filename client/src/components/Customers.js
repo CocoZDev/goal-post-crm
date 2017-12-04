@@ -18,22 +18,13 @@ const Customers = () =>
           <p>Quickly see all the customers in the database. </p>
         </Jumbotron>
       </Col>
-    </Row>
 
-    {/* Row #2 */}
-    <Row>
-    <div className='private text-center'>
       <Col size="md-12 sm-12">
+        {/* <div className='private text-center'> */}
         <CustForm />
+         <CustTable />
+        {/* </div> */}
       </Col>
-    </div>       
-    </Row> 
-
-    <Row>
-      {/* Customers Content */}
-        <Col size="md-12 sm-12">
-          <CustTable />
-        </Col>
     </Row>
 
   </div>

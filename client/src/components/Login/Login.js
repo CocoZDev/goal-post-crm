@@ -6,14 +6,6 @@ import API from "../../utils/API";
 import decode from 'jwt-decode';
 
 
-// Code Reference from https://bootsnipp.com/snippets/qrmK0
-
-// const Login = () =>
-
-//   <p>Login/Register Placeholder. Will use this code example reference from https://bootsnipp.com/snippets/qrmK0
-//   </p>
-
-// ============ Modified Login Component with Class ==============
 class Login extends Component {
   state = {
     username: "",

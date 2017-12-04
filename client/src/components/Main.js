@@ -11,7 +11,6 @@ import Dashboard from "./Dashboard";
 import Schedule from "./Schedule";
 import Login from "./Login";
 
-
   class Main extends Component {
 
     // componentDidMount() {

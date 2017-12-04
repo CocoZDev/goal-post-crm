@@ -15,7 +15,7 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import PrivateContainer from "./components/PrivateContainer";
 import General from "./styles/General.css";
-import Salesform from "./components/Salesform";
+
 const App = () =>
   <Router>
     <div id="container">
@@ -23,15 +23,15 @@ const App = () =>
         <Nav />
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route exact path="/private" component={PrivateContainer} />
-            {/* <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/customers" component={Customers} />
-            <Route exact path="/sales" component={Sales} />
-            <Route exact path="/products" component={Products} />
-            <Route exact path="/schedule" component={Schedule} /> */}
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/private" component={PrivateContainer} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/customers" component={Customers} />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/sales" component={Sales} />
+            <Route exact path="/schedule" component={Schedule} />
             <Route component={NoMatch} />
           </Switch>
         <Footer />
