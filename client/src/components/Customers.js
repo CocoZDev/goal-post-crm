@@ -15,7 +15,7 @@ const Customers = () =>
       <Col size="md-12 sm-12">
         <Jumbotron>
           <h1><strong>Customers</strong></h1>
-          <p>Quickly see all the customers you need to visit. </p>
+          <p>Quickly see all the customers in the database. </p>
         </Jumbotron>
       </Col>
     </Row>

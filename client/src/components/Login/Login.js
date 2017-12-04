@@ -82,10 +82,10 @@ class Login extends Component {
               <div className="panel-heading">
                 <Row fluid>
                   <Col size="md-6 sm-6">
-                    <a href="/login" className="active" id="login-form-link">Login</a>
+                    <a href="/login" className="active" id="login-form-link">LOGIN</a>
                   </Col>
                   <Col size="md-6 sm-6">
-                    <a href="/register" id="register-form-link">Register</a>
+                    <a href="/register" id="register-form-link">REGISTER</a>
                   </Col>
                 </Row>
                 {/* <hr /> */}
@@ -100,8 +100,9 @@ class Login extends Component {
                     {/* Login Form */}
 
                     <form id="login-form" style={{ display: 'block'}} >
-                        <Input type="text" name="username" id="username" tabIndex="1" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} required></Input>
-                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} required></Input>
+                        <h2> Welcome Back! </h2>
+                        <Input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} required></Input>
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} required></Input>
          
                         {/* <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
                         <label for="remember">Remember Me</label> */}
@@ -124,18 +125,19 @@ class Login extends Component {
                     {/* Register Form */}
 
                     <form id="register-form" style={{display:'none'}}>
+                      <h2> Sign Up For Free! </h2>
                         <Input 
-                        type="text" name="username" id="username" tabIndex="1" placeholder="Username" 
+                        type="text" name="username" id="username" tabIndex="1" placeholder="Username *" 
                           value={this.state.username} onChange={this.handleInputChange} required>
                         </Input>
                         <Input 
-                        type="email" name="email" id="email" tabIndex="1" placeholder="Email Address" 
+                        type="email" name="email" id="email" tabIndex="1" placeholder="Email Address *" 
                           value={this.state.email} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password" 
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" 
                            value={this.state.password} onChange={this.handleInputChange} required>
                         </Input>
-                        <Input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password" 
+                        <Input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password *" 
                           value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
                         </Input>
                         <Row fluid>
@@ -160,7 +162,7 @@ class Login extends Component {
         <Row fluid>
           {/* Links after users logging in */}
           <Col size="md-12 sm-12">
-            <div className="button groups" style={{position: 'relative', 'paddingBottom': '300px' }}>
+            <div className="button groups" style={{position: 'relative', 'padding-bottom': '300px' }}>
             <h3>Links after users logging in, will remove later!!!</h3>
               <Col size="md-4 md-offset-4 sm-4 sm-offset-4">
                 <ul>
