@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import API from "../../utils/API";
-// import CustAPI from "../../utils/custAPI";
+import CustAPI from "../../utils/custAPI";
 import PubSub from 'pubsub-js';
 import Checkbox from '../../components/Checkbox';
+import CustTable from '../../components/CustTable';
 
 const customers = [
     'One', 
@@ -13,7 +14,20 @@ const customers = [
 ];
 
 class CustSchedule extends Component {
+
+    loadCustomers = () => {
+        API.getAccounts({
+            repRepId: localStorage.getItem('rep_id')
+        })
+        .then(res => {
+            console.log(res);
+            this.setState({ customers: res.data })
+        }
+        )
+        .catch(err => console.log(err));
+    }
     componentWillMount() {
+        this.loadCustomers();
         this.selectedCheckboxes = new Set();
     }
 
