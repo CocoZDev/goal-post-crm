@@ -11,7 +11,7 @@ const Schedule = () =>
 
 <div>
 
-  <Row>
+  <Row fluid>
     <Col size="md-12 sm-12">
       <Jumbotron>
         <h1><strong>Schedule</strong></h1>
@@ -22,7 +22,7 @@ const Schedule = () =>
 
 
     {/* Dashboard Content */}
-    <Row>
+    <Row fluid>
     <Col size="md-10 sm-10">
       <CustSchedule />
     </Col>

@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var Cal = sequelize.define("Cal", {
-        calId: {
+    var calendar = sequelize.define("calendar", {
+        calendar_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -9,15 +9,15 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1,10]
               }
         },
-      event: {
+      event_title: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      startTime:{
+      start_time:{
         type: DataTypes.STRING,
         allowNull: false
       },
-      endTime: {
+      end_time: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -26,5 +26,5 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-    return Cal;
+    return calendar;
   };

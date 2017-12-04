@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./Nav";
 import { Col, Row, Container } from "./Grid";
-// import Carousel from "./Carousel";
-// import HeroImage from "./HeroImage";
 import Footer from "./Footer";
 import General from "../styles/General.css";
 import Jumbotron from "./Jumbotron";
@@ -13,19 +11,6 @@ import Dashboard from "./Dashboard";
 import Schedule from "./Schedule";
 import Login from "./Login";
 
-
-// // Morphext Animation - http://morphext.fyianlai.com/
-// $("#js-rotating").Morphext({
-//     // The [in] animation type. Refer to Animate.css for a list of available animations.
-//     animation: "bounceIn",
-//     // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-//     separator: ",",
-//     // The delay between the changing of each phrase in milliseconds.
-//     speed: 2000,
-//     complete: function () {
-//         // Called after the entrance animation is executed.
-//     }
-//   });
   class Main extends Component {
 
     // componentDidMount() {
@@ -49,12 +34,9 @@ import Login from "./Login";
                     </video>
                 </section>
                 <section className="content">
-                    <div className="container animated fadeIn">
-                        {/* <h1>Stock Video and Placeholder for
-                        <br />Scolling Text:
-                        <br />"Goal Post Can _______"</h1>
-                        <p></p> */}
-                    <h1>I am a <span className ='morphext' id="js-rotating"> So Simple, Very Doge, Much Wow, Such Cool</span> Text Rotator</h1>
+                    <div className="intro animated bounceInUp">
+                        <h1 style= {{'font-size':'80px', color:'#0060DF'}}>Goal Post</h1>
+                        <h2>On-the-go sales toolbox <br />for busy salespeople </h2>
                     </div>
                 </section>
             </section>

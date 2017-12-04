@@ -9,7 +9,7 @@ import Dashboard from "./Dashboard";
 import Customers from "./Customers";
 import Products from "./Products";
 import Schedule from "./Schedule";
-import Sales from "./Salesform";
+import Sales from "./Sales/Sales";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class PrivateContainer extends Component {
@@ -44,7 +44,7 @@ class PrivateContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div id="private-container">
         <Row>
           <Col size="md-2 sm-2">
             <VerticalMenu
