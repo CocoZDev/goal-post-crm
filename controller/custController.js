@@ -44,15 +44,19 @@ router.get('/:id', (req, res, next) =>{
     console.log("req body..custController ", req.body);
     db.customers.create({
       // customer_id: req.body.customer_id,
-      customer_contact: req.body.customer_contact,
+      customer_firstname: req.body.customer_firstname,
+      customer_lastname: req.body.customer_lastname,
       customer_company: req.body.customer_company,
-      customer_address: req.body.customer_address,
+      customer_street: req.body.customer_street,
+      customer_city: req.body.customer_city,
+      customer_state: req.body.customer_state,
+      customer_zipcode: req.body.customer_zipcode,
       customer_phone: req.body.customer_phone,
       customer_email: req.body.customer_email,
       // customer_rating: req.body.customer_rating,
-      customer_notes: req.body.customer_notes,
-      customer_visited: req.body.customer_visited,
-      customer_active: req.body.customer_active,
+      // customer_notes: req.body.customer_notes,
+      // customer_visited: req.body.customer_visited,
+      // customer_active: req.body.customer_active,
       repRepId: req.body.repRepId,
       
     }).then(function(response) {
