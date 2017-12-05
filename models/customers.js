@@ -9,16 +9,32 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,10]
         }
     },
-    customer_contact: {
+    customer_firstname: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+    },
+    customer_lastname: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     customer_company: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    customer_address: {
+    customer_street: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+    customer_city: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    customer_state: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    customer_zipcode: {
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     customer_phone: {
@@ -50,7 +66,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     customer_active: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
       defaultValue: true
     }
   },

@@ -58,7 +58,9 @@ class CustTable extends Component {
                                 <strong>
                                 {customer.customer_company}
                                 <br></br>
-                                {customer.customer_contact}
+                                {customer.customer_firstname}
+                                <br></br>
+                                {customer.customer_lastname}
                                 <br></br>
                                 {customer.customer_phone}
                                 <br></br>
