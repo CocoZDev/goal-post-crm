@@ -31,29 +31,29 @@ router.post('/', (req, res, next) => {
 });
 
 // // POST route for saving a new customer
-// router.post("/", function (req, res) {
-//     // create takes an argument of an object describing the item we want to
-//     // insert into our table. In this case we just we pass in an object with a text
-//     // and complete property 
-//     console.log("req body..salesController ", req.body);
-//     db.sales.create({
-//         sale_product: req.body.sale_product,
-//         sale_company: req.body.sale_company,
-//         sale_quantity: req.body.sale_quantity,
-//         sale_purchasePrice: req.body.sale_purchasePrice,
-//         sale_note: req.body.sale_note,
-//         repRepId: req.body.repRepId,
-//     }).then(function (response) {
-//         console.log("it posted", response);
-//         // We have access to the new cals as an argument inside of the callback function
-//         res.json(response);
-//     })
-//         .catch(function (err) {
-//             // Whenever a validation or flag fails, an error is thrown
-//             // We can "catch" the error to prCal it from being "thrown", which could crash our node router
-//             res.json(err);
-//         });
-// });
+router.post("/new", function (req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property 
+    console.log("req body..salesController ", req.body);
+    db.sales.create({
+        sale_product: req.body.sale_product,
+        sale_customer: req.body.sale_customer,
+        sale_quantity: req.body.sale_quantity,
+        sale_purchasePrice: req.body.sale_purchasePrice,
+        sale_note: req.body.sale_note,
+        repRepId: req.body.repRepId,
+    }).then(function (response) {
+        console.log("it posted", response);
+        // We have access to the new cals as an argument inside of the callback function
+        res.json(response);
+    })
+        .catch(function (err) {
+            // Whenever a validation or flag fails, an error is thrown
+            // We can "catch" the error to prCal it from being "thrown", which could crash our node router
+            res.json(err);
+        });
+});
 
 // DELETE route for deleting a sale. We can get the id of the sale to be deleted from
 // req.params.id
