@@ -58,11 +58,22 @@ class CustTable extends Component {
                                 <strong>
                                 {customer.customer_company}
                                 <br></br>
-                                {customer.customer_contact}
+                                {customer.customer_firstname}
+                                <br></br>
+                                {customer.customer_lastname}
                                 <br></br>
                                 {customer.customer_phone}
                                 <br></br>
                                 {customer.customer_email}
+                                
+                                {customer.customer_street}<br></br>
+                                {customer.customer_city}<br></br>
+                                {customer.customer_state}<br></br>
+                                {customer.customer_zipcode}<br></br>
+                                {/* {customer.customer_rating}<br></br>
+                                {customer.customer_notes}<br></br>
+                                {customer.customer_visited}<br></br>
+                                {customer.customer_active} */}
                                 </strong>
                             </a>
                             <DeleteBtn onClick={() => this.deleteCust(customer.customer_id)} />

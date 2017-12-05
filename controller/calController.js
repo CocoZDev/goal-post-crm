@@ -37,8 +37,7 @@ router.get('/:id', (req, res, next) =>{
     // and complete property 
     console.log("req body..calController ", req.body);
     db.calendar.create({
-      // customer_id: req.body.customer_id,
-      //calendar_id: req.body.calendar_id,
+      // customer_id: req.body.customer_id
       event_title: req.body.event_title,
       start_time: req.body.start_time,
       end_time: req.body.end_time,

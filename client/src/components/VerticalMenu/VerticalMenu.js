@@ -13,7 +13,7 @@ const VerticalMenu = props =>
 				<span className="icon-bar"></span>
 				<span className="icon-bar"></span>
 			</button> */}
-			<a id='username' className="navbar-brand" href="/">{ localStorage.getItem('username') }</a>
+			<a id='username' className="navbar-brand" href="/">Hello { localStorage.getItem('username') }</a>
 		</div>
 		{/* <!-- Collect the nav links, forms, and other content for toggling --> */}
 		<div className="navbar">

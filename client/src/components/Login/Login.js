@@ -32,7 +32,16 @@ class Login extends Component {
         // .then(res => console.log("you have registered!"))
         .then(res => window.location = '/Login')
         .catch(err => console.log(err));
-    }
+
+        //Clear form data after submit
+        this.setState({
+          username: "",
+          password: "",
+          passwordConfirm: "",
+          email: ""
+        });
+    };
+    
 
   handleLogin = event => {
     event.preventDefault();
@@ -155,7 +164,7 @@ class Login extends Component {
         <Row fluid>
           {/* Links after users logging in */}
           <Col size="md-12 sm-12">
-            <div className="button groups" style={{position: 'relative', 'padding-bottom': '300px' }}>
+            <div className="button groups" style={{position: 'relative', 'paddingBottom': '300px' }}>
             <h3>Links after users logging in, will remove later!!!</h3>
               <Col size="md-4 md-offset-4 sm-4 sm-offset-4">
                 <ul>
