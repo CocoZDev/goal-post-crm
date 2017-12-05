@@ -61,12 +61,11 @@ router.delete("/:id", function (req, res) {
     // We just have to specify which cals we want to destroy with "where"
     db.sales.destroy({
         where: {
-            sale_id: req.params.sale_id
+            sale_id: req.params.id
         }
     }).then(function (results) {
         res.json(results);
     });
-
 });
 
 // PUT route for updating cals. We can get the updated cals data from req.body

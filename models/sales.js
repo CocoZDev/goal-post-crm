@@ -25,10 +25,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
         },
-        // sale_note: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true,
-        // }
+        sale_note: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
     },
         { timestamps: false });
     sales.associate = function (models) {
