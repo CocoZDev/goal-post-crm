@@ -11,6 +11,10 @@ nav.sidebar.navbar {
   display: block;
   bottom: 0;
   top: 0;
+  margin-right: 0;
+  width: 100%;
+  min-width: 200px;
+  
 }
 
 nav.sidebar {
@@ -44,19 +48,16 @@ nav.sidebar {
   } */
 
   /*Center Brand*/
-  nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    margin-left: 0px;
-  }
-  /*Center Brand*/
-  nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+  nav.sidebar .navbar-brand, nav.sidebar .navbar-header .nav-tabs{
     /* text-align: center; */
     width: 100%;
-    margin-left: 0px;
+    margin-left: -15px 0 0 -15px;
   }
 
   /*Center Icons*/
   nav.sidebar a{
     padding-right: 13px;
+    margin: 0;
   }
 
   /*adds border top to first nav box */

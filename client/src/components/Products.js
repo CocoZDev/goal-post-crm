@@ -7,6 +7,7 @@ import Nav from "./Nav";
 import VerticalMenu from "./VerticalMenu";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
+import "./Form/DataForm.css";
 
 class Products extends Component {
   state = {
@@ -50,13 +51,13 @@ return (
     </Col>
   </Row>
 
-  <Row>
+  <Row fluid>
            
     {/* Product Form */}
     <Col size="md-6 sm-6">
       <center>
-        <h4>Add A New Product</h4>
-          <form id="product-form" style={{ display: 'block' }} >
+          <form className="DataForm" style={{ display: 'block' }} >
+            <h2>Add A New Product</h2>
             <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="Add Product Name" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
             <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="Add Description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
             <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="Add Quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>

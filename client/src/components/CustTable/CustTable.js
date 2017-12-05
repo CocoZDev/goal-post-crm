@@ -5,7 +5,9 @@ import API from "../../utils/API";
 import CustAPI from "../../utils/custAPI";
 import PubSub from 'pubsub-js';
 import DeleteBtn from "../../components/DeleteBtn";
-class Customers extends Component {
+import "./CustTable.css";
+
+class CustTable extends Component {
     state = {
         customers: []
     };
@@ -80,4 +82,4 @@ class Customers extends Component {
     }
 }
 
-export default Customers;
+export default CustTable

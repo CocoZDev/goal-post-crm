@@ -11,29 +11,20 @@ import CustForm from "./CustForm";
 const Customers = () =>
   <div>
       {/* Row #1 */}
-    <Row>
+    <Row fluid>
       <Col size="md-12 sm-12">
         <Jumbotron>
           <h1><strong>Customers</strong></h1>
-          <p>Quickly see all the customers you need to visit. </p>
+          <p>Quickly see all the customers in the database. </p>
         </Jumbotron>
       </Col>
-    </Row>
 
-    {/* Row #2 */}
-    <Row>
-    <div className='private text-center'>
       <Col size="md-12 sm-12">
+        {/* <div className='private text-center'> */}
         <CustForm />
+         <CustTable />
+        {/* </div> */}
       </Col>
-    </div>       
-    </Row> 
-
-    <Row>
-      {/* Customers Content */}
-        <Col size="md-12 sm-12">
-          <CustTable />
-        </Col>
     </Row>
 
   </div>
