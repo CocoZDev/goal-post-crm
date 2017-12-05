@@ -11,15 +11,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     customer_firstname: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     customer_lastname: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false
     },
     customer_company: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     customer_street: {
       type: DataTypes.STRING,
@@ -48,27 +48,27 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true,
       }
     },
-    customer_rating: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
+    // customer_rating: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
       // defaultValue: 0,
       // validate: {
       //   len: [1,2]
       // }
-    },
-    customer_notes: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    customer_visited: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    customer_active: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: true
-    }
+    // },
+    // customer_notes: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    // customer_visited: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    // customer_active: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: true,
+    //   defaultValue: true
+    // }
   },
 { timestamps: false });
   customers.associate = function(models) {

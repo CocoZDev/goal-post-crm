@@ -11,23 +11,19 @@ import PubSub from 'pubsub-js';
 class CustForm extends Component {
   state = {
     customers: [],
-    // customer_contact: {
       customer_firstname: '',
       customer_lastname: '',
-    // },
-    customer_company: '',
-    customer_email: '', 
-    customer_phone: '',
-    // customer_address: {
+      customer_company: '',
+      customer_email: '', 
+      customer_phone: '',
       customer_street: '',
       customer_city: '',
       customer_state: '',
       customer_zipcode: '',
-    // },
-    customer_rating:'',
-    customer_notes: '',
-    customer_visited:'',
-    customer_active: ''
+      // customer_rating:'',
+      // customer_notes: '',
+      // customer_visited:'',
+      // customer_active: ''
   };
 
   handleInputChange = event => {
@@ -41,22 +37,18 @@ class CustForm extends Component {
     event.preventDefault();
     if (this.state.customer_firstname && this.state.customer_lastname && this.state.customer_company) {
       API.saveCusts({
-        // customer_contact: {
-          customer_firstname: this.state.customer_firstname,
-          customer_lastname: this.state.customer_lastname,
-        // },
+        customer_firstname: this.state.customer_firstname,
+        customer_lastname: this.state.customer_lastname,
         customer_company: this.state.customer_company,
         customer_email: this.state.customer_email, 
         customer_phone: this.state.customer_phone,
-        // customer_address: {
-          customer_street: this.state.customer_street,
-          customer_city: this.state.customer_city,
-          customer_state: this.state.customer_state,
-          customer_zipcode: this.state.customer_zipcode,
-        // },
+        customer_street: this.state.customer_street,
+        customer_city: this.state.customer_city,
+        customer_state: this.state.customer_state,
+        customer_zipcode: this.state.customer_zipcode,
         // customer_rating: this.state.customer_rating,
-        customer_notes: this.state.customer_notes,
-        customer_visited: this.state.customer_visited,
+        // customer_notes: this.state.customer_notes,
+        // customer_visited: this.state.customer_visited,
         // customer_active: this.state.customer_active,
         repRepId: localStorage.getItem('rep_id')
       })
@@ -66,14 +58,30 @@ class CustForm extends Component {
         })
       .catch(err => console.log(err));
     }
+
+    this.setState({
+      customer_firstname: '',
+      customer_lastname: '',
+      customer_company: '',
+      customer_email: '', 
+      customer_phone: '',
+      customer_street: '',
+      customer_city: '',
+      customer_state: '',
+      customer_zipcode: '',
+      // customer_rating:'',
+      // customer_notes: '',
+      // customer_visited:'',
+      // customer_active: ''
+    });
     
   };
-  
+
   render () {
     return (
       <Row>
         <Col size="md-12 sm-12">
-          <form className="form-form-horizontal DataForm">
+          <form className="form-form-horizontal DataForm" ref="form">
             <h2>Enter customer information below:</h2>
             <Col size="md-4 sm-4">
               <Input
