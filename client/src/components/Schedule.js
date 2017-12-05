@@ -6,6 +6,7 @@ import Jumbotron from "./Jumbotron";
 import Nav from "./Nav";		
 import VerticalMenu from "./VerticalMenu";
 import CustSchedule from "./CustSchedule";
+import CustMap from "./CustMap";
 import CalForm from "./CalForm";
 
 
@@ -34,6 +35,13 @@ const Schedule = () =>
       <CalForm />
     </Col>
   </Row>
+
+    {/* Map */}
+    <Row fluid>
+      <Col size="md-10 sm-10">
+       <CustMap />
+      </Col>
+    </Row>
 
 
 </div>
