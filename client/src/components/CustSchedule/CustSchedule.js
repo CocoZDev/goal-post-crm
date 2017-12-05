@@ -7,13 +7,20 @@ import PubSub from 'pubsub-js';
 import Checkbox from '../../components/Checkbox';
 import CustTable from '../../components/CustTable';
 
-const customers = [
-    'One', 
-    'Two', 
-    'Three',
-];
 
 class CustSchedule extends Component {
+
+    state = {
+        customers: []
+    };
+
+    componentWillMount() {
+        this.selectedCheckboxes = new Set();
+    }
+
+    componentDidMount() {
+        this.loadCustomers();
+    }
 
     loadCustomers = () => {
         API.getAccounts({
@@ -25,11 +32,7 @@ class CustSchedule extends Component {
         }
         )
         .catch(err => console.log(err));
-    }
-    componentWillMount() {
-        this.loadCustomers();
-        this.selectedCheckboxes = new Set();
-    }
+    };
 
     toggleCheckbox = label =>{
         if (this.selectedCheckboxes.has(label)) {
@@ -47,16 +50,16 @@ class CustSchedule extends Component {
         }
       }
     
-      createCheckbox = label => (
+      createCheckbox = customers => (
         <Checkbox
-                label={label}
+                label={customers.customer_contact}
                 handleCheckboxChange={this.toggleCheckbox}
-                key={label}
+                key={customers.customer_contact}
             />
       )
     
       createCheckboxes = () => (
-        customers.map(this.createCheckbox)
+          this.state.customers.map(this.createCheckbox)
       )
 
     handleChange = (customers) => {
@@ -67,39 +70,10 @@ class CustSchedule extends Component {
     render() {
         return (
             <Container fluid>
-            {/* Customer Table */}
-            {/* <Row fluid>
-                <Col size="md-10 sm-10">
-                    <div className='private text-center'>
-                    {this.state.customers.length ? (
-                        <List>
-                        {this.state.customers.map(customer => (
-                            <ListItem key={customer.customer_id}>
-                            <a href={"/customer/" + customer.customer_id}>
-                                <strong>
-                                {customer.customer_company}
-                                <br></br>
-                                {customer.customer_contact}
-                                <br></br>
-                                {customer.customer_phone}
-                                <br></br>
-                                {customer.customer_email}
-                                </strong>
-                            </a>
-                                </ListItem>
-                            ))}
-                            </List>
-                            ) : (
-                        <h3>No Results to Display</h3>
-                        )}
-                    </div>
-                </Col>
-            </Row> */}
             <Row fluid>
                 <Col size="md-10 sm-10">
                     <form onSubmit={this.handleFormSubmit}>
                     {this.createCheckboxes()}
-
                     <button className="btn btn-default" type="submit">Route</button>
                     </form>
                 </Col>
