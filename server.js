@@ -59,7 +59,7 @@ app.use("/calendar", calendar);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: false}).then(function () {
     app.listen(PORT, function(){
         console.log("App is listening on PORT " + PORT);
     });
