@@ -32,7 +32,16 @@ class Login extends Component {
         // .then(res => console.log("you have registered!"))
         .then(res => window.location = '/Login')
         .catch(err => console.log(err));
-    }
+
+        //Clear form data after submit
+        this.setState({
+          username: "",
+          password: "",
+          passwordConfirm: "",
+          email: ""
+        });
+    };
+    
 
   handleLogin = event => {
     event.preventDefault();

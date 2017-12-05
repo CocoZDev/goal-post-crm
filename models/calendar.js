@@ -1,14 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
     var calendar = sequelize.define("calendar", {
-        calendar_id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
-              validate: {
-                len: [1,10]
-              }
-        },
+      calendar_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        validate: {
+            len: [1,10]
+          }
+      },
       event_title: {
         type: DataTypes.STRING,
         allowNull: false
