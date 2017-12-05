@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
 import { Col, Row, Container } from "../Grid";
-import API from "../../utils/API";
+// import API from "../../utils/API";
+import API from "../../utils/salesAPI.js";
 import Jumbotron from "../Jumbotron";
 import "../Form/DataForm.css";
 import PubSub from 'pubsub-js';
@@ -78,7 +79,7 @@ render(){
         <Col size="md-12 sm-12">
           <form className="form-form-horizontal DataForm">  
             <h2>Record Your Sales Below:</h2>
-            <Col>
+            <Col size="md-12 sm-12">
             <input
               value={this.state.sale_customer}
               onChange={this.handleInputChange}
@@ -86,8 +87,8 @@ render(){
               placeholder="customer"
               required
             />
-            </Col>
-            <Col>
+            </Col >
+            <Col size="md-12 sm-12">
             <input
               value={this.state.sale_product}
               onChange={this.handleInputChange}
@@ -97,7 +98,7 @@ render(){
             />
             </Col>
 
-            <Col>
+            <Col size="md-12 sm-12">
             <input
               value={this.state.sale_quantity}
               onChange={this.handleInputChange}
@@ -107,7 +108,7 @@ render(){
             />
             </Col>
 
-            <Col>
+            <Col size="md-12 sm-12">
             <input
               value={this.state.sale_purchasePrice}
               onChange={this.handleInputChange}
@@ -116,7 +117,7 @@ render(){
               required
             />
             </Col>
-            <Col>
+            <Col size="md-12 sm-12">
             <input
               value={this.state.sale_note}
               onChange={this.handleInputChange}

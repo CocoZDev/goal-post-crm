@@ -15,7 +15,7 @@ export default {
     //     return axios.delete("/sales/" + id);
     // },
     // // Saves a cust to the database
-    // saveSale: function (Data) {
-    //     return axios.post("/sale", Data);
-    // }
+    saveSale: function (Data) {
+        return axios.post("/sales/new", Data);
+    }
 };      
