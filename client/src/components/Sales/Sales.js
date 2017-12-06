@@ -32,7 +32,7 @@ class Sales extends Component {
     })
     .then(res => {
       console.log('loadSales.sales.js', res);
-      // PubSub.Publish('UPDATE_LIST', 'update Now!');
+      this.loadSales();
     })
     .catch(err => console.log(err));
   };
@@ -60,8 +60,6 @@ class Sales extends Component {
     }
 
   loadSales = () => {
-    // PubSub.Publish('UPDATE_LIST', 'update Now!')
-
     API.getSales({
       repRepId: localStorage.getItem('rep_id')
     })
