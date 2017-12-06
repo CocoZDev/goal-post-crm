@@ -1,9 +1,4 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
 // Dependencies
-// =============================================================
 var express = require("express");
 
 // Requiring our models
@@ -11,11 +6,7 @@ const db = require("../models");
 var path = require("path");
 var router = express.Router();
 
-// Routes
-// =============================================================
-// module.exports = function(router) {
-
-  // route to get customers from a particular rep
+// route to get customers from a particular rep
 router.get('/:id', (req, res, next) =>{
   // if(req.isAuthenticated()){
       db.customers.findAll({
@@ -27,13 +18,8 @@ router.get('/:id', (req, res, next) =>{
               }],
           order: db.sequelize.col('customer_company')
       }).then(function(results){
-          // var studentList = {students: results}
-          // res.render('specificClass', studentList);
           res.json(results);
       }).catch(err => { res.json(err)});
-  // }else{
-  //     res.redirect("/account/login");
-  // }
 });
 
   // POST route for saving a new customer
@@ -58,7 +44,6 @@ router.get('/:id', (req, res, next) =>{
       // customer_visited: req.body.customer_visited,
       // customer_active: req.body.customer_active,
       repRepId: req.body.repRepId,
-      
     }).then(function(response) {
       console.log("it posted", response);
       // We have access to the new cals as an argument inside of the callback function
@@ -82,12 +67,10 @@ router.get('/:id', (req, res, next) =>{
     }).then(function(dbcustomers) {
       res.json(dbcustomers);
     });
-
   });
 
   // PUT route for updating cals. We can get the updated cals data from req.body
   router.put("/", function(req, res) {
-
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.customers.update({
