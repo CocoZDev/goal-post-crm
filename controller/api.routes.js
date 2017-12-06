@@ -1,8 +1,8 @@
-// var express = require("express");
-// var path = require("path");
-// var router = express.Router();
-// var db = require("../models");
-// var passport = require("passport");
+var express = require("express");
+var path = require("path");
+var router = express.Router();
+var db = require("../models");
+var passport = require("passport");
 
 // PUT route for updating student points via buttons
 // router.put("/points/:class/:id/:points", function(req, res) {
@@ -164,4 +164,4 @@
 //     }
 // })
 
-// module.exports = router;
+module.exports = router;
