@@ -39,7 +39,7 @@ const Schedule = () =>
     {/* Map */}
     <Row fluid>
       <Col size="md-10 sm-10">
-       {/* <CustMap /> */}
+       <CustMap />
       </Col>
     </Row>
 
