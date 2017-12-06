@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
+import { List, ListItem } from "../../components/List";
 import { Col, Row, Container } from "../Grid";
-// import API from "../../utils/API";
+import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/salesAPI.js";
 import Jumbotron from "../Jumbotron";
 import "../Form/DataForm.css";
@@ -17,51 +18,63 @@ class Sales extends Component {
     this.setState({
       [name] : value
     });
-    };
+  };
 
-    handleFormSubmit = event => {
-      event.preventDefault();
-      API.saveSale({
-        sale_customer: this.state.sale_customer,
-        sale_product: this.state.sale_product,
-        sale_quantity: this.state.sale_quantity,
-        Sale_purchasePrice: this.state.Sale_purchasePrice,
-        sale_note: this.state.sale_note,
-        repRepId: localStorage.getItem('rep_id')
-      })
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.saveSale({
+      sale_customer: this.state.sale_customer,
+      sale_product: this.state.sale_product,
+      sale_quantity: this.state.sale_quantity,
+      sale_purchasePrice: this.state.sale_purchasePrice,
+      sale_note: this.state.sale_note,
+      repRepId: localStorage.getItem('rep_id')
+    })
+    .then(res => {
+      console.log('loadSales.sales.js', res);
+      this.loadSales();
+    })
+    .catch(err => console.log(err));
+  };
+
+  componentWillMount() {
+    this.token = PubSub.subscribe('UPDATE_LIST', this.loadSales.bind(this));
+  }
+
+  componentDidMount() {
+    this.loadSales();
+    PubSub.publish('UPDATE_LIST', this.token)
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token);
+  }
+
+  deleteSale = (id) => {
+    console.log("Attempting to delete", id);
+    API.deleteSale(id) 
       .then(res => {
-        console.log('loadcustomers.. Sales', res)
-        PubSub.Publish('UPDATE_LIST', 'update Now!');
-      })
+        console.log("response from deleteSale", res)})
+        .then(res => this.loadSales())
       .catch(err => console.log(err));
-    };
-  
+    }
 
-
-
-  // componentDidMount() {
-  //   this.loadCustomers();
-  // }
-
-  // loadCustomers = () => {
-  //   console.log('loadcustomers.. salesform js', res)
-  //   Pubsub.Publish('UPDATE_LIST', 'update Now!');
-
-  //   API.getCusts({
-  //     id: localStorage.getItem('rep_id'),
-
-  //   })
-  //   .then(res =>{
-  //    console.log('response to load customers.. sales js');
-  //    console.log(res);
-  //    this.setState({
-  //      customers: res.data
-  //    })
-  //    .catch(err => {
-  //      console.log(err)
-  //    })
-  //   }) 
-  // };
+  loadSales = () => {
+    API.getSales({
+      repRepId: localStorage.getItem('rep_id')
+    })
+    .then(res => {
+      console.log('response to load sales.. sales js');
+      console.log(res);
+      if (res.data != null) {
+        this.setState({
+          sales: res.data
+      })
+     }})
+     .catch(err => {
+        console.log(err)
+     }) 
+  };
   
 render(){
   return (
@@ -113,7 +126,7 @@ render(){
               value={this.state.sale_purchasePrice}
               onChange={this.handleInputChange}
               name="sale_purchasePrice"
-              placeholder="purchase"
+              placeholder="purchase price"
               required
             />
             </Col>
@@ -126,44 +139,47 @@ render(){
               required
             />
             </Col>
-
-            <FormBtn
-            onClick={this.handleFormSubmit}>Chart sale</FormBtn>
-
-          {/* <div className="form-group">
-            <label for="exampleFormControlSelect2">Products</label>
-            <select className="form-control" id="exampleFormControlSelect2">
-              <option>THC Drink</option>
-              <option>Bread Loaf</option>
-              <option>Gold Caps</option>
-              <option>Cheesecake Decadence Bar</option>
-              <option>Cannabis Granola</option>
-            </select>
-          </div> */}
-          {/* <label for="exampleFormControlSelect1">Sale Amount</label>
-          <div className="input-group">  
-          <span className="input-group-addon">$</span>  
-          <input type="text" className="form-control" id="decimalPoint"  placeholder="Price"/>      
-          </div>
-          <div className="outer-money-div">
-          <br/>
-          <label for="exampleFormControlSelect1">Quantity</label>
-            <div className="input-group">  
-            <span className="input-group-addon"></span>  
-            <input type="text" className="form-control"  placeholder="Number of items"/>      
-            </div>
-          </div>
-          <div>
-            <br/>
-          <FormBtn>Submit</FormBtn>
-          </div> */}
+            <FormBtn onClick={this.handleFormSubmit}>Chart sale</FormBtn>
         </form>
-      </Col>    </Row>
+      </Col>
+      </Row>
+      
+      <Container fluid>
+        {/* Customer Table */}
+        <Row fluid>
+          <Col size="md-12 sm-12">
+            <div className='private text-center'>
+              {this.state.sales.length ? (
+                <List>
+                  {this.state.sales.map(sale => (
+                    <ListItem key={sale.sale_id}>
+                      <a href={"/sales/" + sale.sale_id}>
+                        <strong>
+                          {sale.sale_customer}
+                          <br></br>
+                          {sale.sale_product}
+                          <br></br>
+                          {sale.sale_quantity}
+                          <br></br>
+                          {sale.sale_purchasePrice}
+                          <br></br>
+                          {sale.sale_note}
+                        </strong>
+                      </a>
+                      <DeleteBtn onClick={() => this.deleteSale(sale.sale_id)} />
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                  <h3>No Results to Display</h3>
+                )}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
       )
     }
-
   }
-  
   
   export default Sales;
