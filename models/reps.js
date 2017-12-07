@@ -31,9 +31,17 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
-    }
-  },
-    { timestamps: false });
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+  updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+   },
+    { timestamps: true });
   reps.associate = function (models) {
     reps.hasMany(models.customers, {
       onDelete: "CASCADE"
