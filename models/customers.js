@@ -69,8 +69,16 @@ module.exports = function(sequelize, DataTypes) {
     //   allowNull: true,
     //   defaultValue: true
     // }
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    }
   },
-{ timestamps: false });
+{ timestamps: true });
   customers.associate = function(models) {
         customers.belongsTo(models.reps, {
           onDelete: "CASCADE"

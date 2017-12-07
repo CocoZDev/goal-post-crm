@@ -24,9 +24,17 @@ module.exports = function(sequelize, DataTypes) {
     event_note: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
     }
   },
-    { timestamps: false });
+    { timestamps: true });
   events.associate = function (models) {
       events.belongsTo(models.reps, {
         onDelete: "CASCADE"
