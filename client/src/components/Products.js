@@ -8,12 +8,15 @@ import VerticalMenu from "./VerticalMenu";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import "./Form/DataForm.css";
+import { TableContainerProduct, TableRow} from "./Table";
+import "./Table/Table.css";
 
 class Products extends Component {
   state = {
-    product_name: "",
-    product_description:"",
-    product_quantity:""
+    products: [],
+    product_name: '',
+    product_description: '',
+    product_quantity: ''
   };
 
 
@@ -35,6 +38,12 @@ handleFormSubmit = event => {
   // .then(res => console.log("you have entered your product..Products.js"))
     .then(res => window.location = '/Products')
   .catch(err => console.log (err));
+
+  this.setState({
+    product_name: '',
+    product_description: '',
+    product_quantity: ''
+  });
 };
 
 render() {
@@ -54,7 +63,7 @@ return (
   <Row fluid>
            
     {/* Product Form */}
-    <Col size="md-6 sm-6">
+    <Col size="md-12 sm-12">
       <center>
           <form className="DataForm" style={{ display: 'block' }} >
             <h2>Add A New Product</h2>
@@ -66,41 +75,34 @@ return (
           </form>
         </center>
     </Col>
+    </Row>
 
     {/* Product Table */}
-    <Col size="md-6 sm-6">
-        <h4>Product Database</h4>
-        <table className="product-table table-bordered text-center">
-          <thead>
-            <tr>
-              <th className="text-center">Product Name</th>
-              <th className="text-center">Description</th>
-              <th className="text-center">Quantity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-            </tr>
-            <tr>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-            </tr>
-            <tr>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-              <td>Placeholder</td>
-            </tr>
-          </tbody>
-        </table>
-    </Col>
-  </Row>
-</div>
-);
+      <Row fluid>
+        <Col size="md-12 sm-12">
+          <div className='private text-center sales-table'>
+            {this.state.products.length ? (
+              <TableContainerProduct>
+                {this.state.products.map(product => (
+                  <TableRow key={product.product_id}>
+                      <td className="col-md-1">{product.product_id}</td>
+                      <td className="col-md-2">{product.product_name}</td>
+                      <td className="col-md-2">{product.product_quantity}</td>
+                      <td className="col-md-3">{product.product_description}</td>
+                  </TableRow>
+                ))}
+              </TableContainerProduct>
+            ) : (
+                <h3>No Results to Display</h3>
+              )}
+          </div>
+        </Col>
+      </Row>
+  </div>
+
+)
 }
 }
+
 
 export default Products;

@@ -24,7 +24,16 @@ module.exports = function(sequelize, DataTypes) {
       note: {
         type: DataTypes.TEXT,
         allowNull: false
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
       }
-    });
+    },
+      { timestamps: true });
     return calendar;
   };
