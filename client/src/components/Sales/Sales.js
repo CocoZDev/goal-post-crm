@@ -92,53 +92,55 @@ render(){
         <Col size="md-12 sm-12">
           <form className="form-form-horizontal DataForm">  
             <h2>Record Your Sales Below:</h2>
-            <Col size="md-12 sm-12">
-            <input
+
+            <label for="sale_customer">Customer:</label>
+            <Input
               value={this.state.sale_customer}
               onChange={this.handleInputChange}
               name="sale_customer"
-              placeholder="customer"
+              placeholder="Customer Name"
               required
             />
-            </Col >
-            <Col size="md-12 sm-12">
-            <input
+
+            <label for="sale_product">Product Sold:</label>
+            <Input
               value={this.state.sale_product}
               onChange={this.handleInputChange}
               name="sale_product"
-              placeholder="product"
+              placeholder="Name of Product That Was Sold"
               required
             />
-            </Col>
 
-            <Col size="md-12 sm-12">
-            <input
+            <label for="sale_quantity">Quantity Sold:</label>
+            <Input
               value={this.state.sale_quantity}
               onChange={this.handleInputChange}
               name="sale_quantity"
-              placeholder="quantity"
+              placeholder="Quantity Sold"
               required
             />
-            </Col>
 
-            <Col size="md-12 sm-12">
-            <input
-              value={this.state.sale_purchasePrice}
-              onChange={this.handleInputChange}
-              name="sale_purchasePrice"
-              placeholder="purchase price"
-              required
-            />
-            </Col>
-            <Col size="md-12 sm-12">
-            <input
+            <label for="sale_purchasePrice">Purchase Price:</label>
+            <div class="input-group">  
+              <span class="input-group-addon">$</span> 
+              <Input
+                value={this.state.sale_purchasePrice}
+                onChange={this.handleInputChange}
+                name="sale_purchasePrice"
+                placeholder="Purchase Price"
+                required
+              />
+           </div>
+
+           <label for="sale_note">Sale Note:</label>
+            <Input
               value={this.state.sale_note}
               onChange={this.handleInputChange}
               name="sale_note"
-              placeholder="sale note"
+              placeholder="Notes on the Sale"
               required
             />
-            </Col>
+
             <FormBtn onClick={this.handleFormSubmit}>Chart sale</FormBtn>
         </form>
       </Col>
