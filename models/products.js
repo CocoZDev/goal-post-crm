@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     }
   },
-    { timestamps: false });
+    { timestamps: true });
   products.associate = function (models) {
     products.belongsTo(models.reps, {
       onDelete: "CASCADE"
