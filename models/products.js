@@ -25,6 +25,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+  updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
     }
   },
     { timestamps: false });
