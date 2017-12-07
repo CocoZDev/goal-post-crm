@@ -1,3 +1,4 @@
+import 'rc-time-picker/assets/index.css';
 import React, { Component } from "react";
 import "../Form/DataForm.css";
 import DeleteBtn from "../../components/DeleteBtn";		
@@ -6,6 +7,16 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";		
 import API from "../../utils/calAPI.js";
 import PubSub from 'pubsub-js';
+import TimePicker from 'rc-time-picker';
+import ReactDOM from 'react-dom';
+import moment from 'moment';
+
+const format = 'h:mm a';
+const now = moment().hour(0).minute(0);
+
+function onChange(value) {
+  console.log(value && value.format(format));
+}
 
 
 class CalForm extends Component {
@@ -40,54 +51,72 @@ class CalForm extends Component {
         })
       .catch(err => console.log(err));
     }
+
+    this.setState({
+      event_title: '',
+      start_time: '',
+      end_time: '', 
+      note: ''
+    });
     
   };
-  
+
   render () {
     return (
       <Row>
         <Col size="md-12 sm-12">
-          <form className="form-form-horizontal DataForm">
+          <form className="form-form-horizontal DataForm" ref="form">
             <h2>Enter event information below:</h2>
-            <Col size="md-6 sm-6">
+            <Col size="md-4 sm-4">
               <Input
-                value={this.state.event_title}
-                onChange={this.handleInputChange}
-                name="event title"
-                placeholder="Event Title *"
-                required
-              />
+              value={this.state.event_title}
+              onChange={this.handleInputChange}
+              name="event_title"
+              placeholder="Event Title *"
+              required
+            />
             </Col>
-            <Col size="md-6 sm-6">
-              <Input
+            <Col size="md-4 sm-4">
+              <TimePicker
+                showSecond={false}
+                defaultValue={now}
                 value={this.state.start_time}
-                onChange={this.handleInputChange}
-                name="start time"
-                placeholder="Start Time*"
+                className="xxx"
+                onChange={onChange}
+                name="start_time"
+                format={format}
+                placeholder="11:00am"
+                use12Hours
                 required
-              />
+                />
             </Col>
-            <Col size="md-6 sm-6">
-              <Input
+            <Col size="md-4 sm-4">
+            <TimePicker
+                showSecond={false}
+                defaultValue={now}
                 value={this.state.end_time}
-                onChange={this.handleInputChange}
-                name="end time"
-                placeholder="End Time"
-              />
+                className="xxx"
+                onChange={onChange}
+                name="end_time"
+                format={format}
+                placeholder="11:30am"
+                use12Hours
+                required
+                />
             </Col>
             <Col size="md-6 sm-6">
               <Input
-                value={this.state.note}
-                onChange={this.handleInputChange}
-                name="note"
-                placeholder="Note"
-              />
+              value={this.state.note}
+              onChange={this.handleInputChange}
+              name="note"
+              placeholder="Note"
+            />
             </Col>
             <FormBtn
-              disabled={!(this.state.event_title && this.state.start_time)}
-              onClick={this.handleFormSubmit}
+            disabled={!(this.state.event_title && this.state.start_time)}
+            onClick={this.handleFormSubmit}
             >
-              Add to Database
+              Add to Calendar
             </FormBtn>
           </form>
         </Col>
