@@ -2,20 +2,37 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import API from "../../utils/API";
-// import CustAPI from "../../utils/custAPI";
+import CustAPI from "../../utils/custAPI";
 import PubSub from 'pubsub-js';
 import Checkbox from '../../components/Checkbox';
+import CustTable from '../../components/CustTable';
 
-const customers = [
-    'One', 
-    'Two', 
-    'Three',
-];
 
 class CustSchedule extends Component {
+
+    state = {
+        customers: []
+    };
+
     componentWillMount() {
         this.selectedCheckboxes = new Set();
     }
+
+    componentDidMount() {
+        this.loadCustomers();
+    }
+
+    loadCustomers = () => {
+        API.getAccounts({
+            repRepId: localStorage.getItem('rep_id')
+        })
+        .then(res => {
+            console.log(res);
+            this.setState({ customers: res.data })
+        }
+        )
+        .catch(err => console.log(err));
+    };
 
     toggleCheckbox = label =>{
         if (this.selectedCheckboxes.has(label)) {
@@ -33,16 +50,16 @@ class CustSchedule extends Component {
         }
       }
     
-      createCheckbox = label => (
+      createCheckbox = customers => (
         <Checkbox
-                label={label}
+                label={customers.customer_company}
                 handleCheckboxChange={this.toggleCheckbox}
-                key={label}
+                key={customers.customer_company}
             />
       )
     
       createCheckboxes = () => (
-        customers.map(this.createCheckbox)
+          this.state.customers.map(this.createCheckbox)
       )
 
     handleChange = (customers) => {
@@ -53,39 +70,10 @@ class CustSchedule extends Component {
     render() {
         return (
             <Container fluid>
-            {/* Customer Table */}
-            {/* <Row fluid>
-                <Col size="md-10 sm-10">
-                    <div className='private text-center'>
-                    {this.state.customers.length ? (
-                        <List>
-                        {this.state.customers.map(customer => (
-                            <ListItem key={customer.customer_id}>
-                            <a href={"/customer/" + customer.customer_id}>
-                                <strong>
-                                {customer.customer_company}
-                                <br></br>
-                                {customer.customer_contact}
-                                <br></br>
-                                {customer.customer_phone}
-                                <br></br>
-                                {customer.customer_email}
-                                </strong>
-                            </a>
-                                </ListItem>
-                            ))}
-                            </List>
-                            ) : (
-                        <h3>No Results to Display</h3>
-                        )}
-                    </div>
-                </Col>
-            </Row> */}
             <Row fluid>
                 <Col size="md-10 sm-10">
                     <form onSubmit={this.handleFormSubmit}>
                     {this.createCheckboxes()}
-
                     <button className="btn btn-default" type="submit">Route</button>
                     </form>
                 </Col>

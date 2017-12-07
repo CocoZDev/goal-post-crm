@@ -1,8 +1,10 @@
+// Dependencies
 var express = require("express");
+
+// Requiring our models
 var path = require("path");
 var router = express.Router();
 var db = require("../models");
-var passport = require("passport");
 
 
 router.get('/', (req, res, next) => {
@@ -25,12 +27,6 @@ router.post('/dashboard', (req, res, next) => {
             // console.log(results);
             res.json(results)
         });
-    // } else {
-    //     console.log("_________________________________");
-    //     console.log("User not Authenticated..index.routes.js");
-    //     console.log("_________________________________");
-    //     res.redirect("/login");
-    // }
 });
 
 // post to create a new product
@@ -46,11 +42,7 @@ router.post('/postProducts', (req, res, next) =>{
         }).then(function(results){
             console.log("Your product was created!");
             res.json(results);
-            // res.redirect('/dashboard');
         });
-    // }else{
-    //     res.redirect("/account/login");        
-    // }
 });
 
 module.exports = router;

@@ -1,19 +1,10 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
 // Dependencies
-// =============================================================
 var express = require("express");
 
 // Requiring our models
 const db = require("../models");
 var path = require("path");
 var router = express.Router();
-
-// Routes
-// =============================================================
-// module.exports = function(router) {
 
 // route to get all the events on the calendar
 router.get('/:id', (req, res, next) =>{
