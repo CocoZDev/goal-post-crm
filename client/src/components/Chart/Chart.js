@@ -1,9 +1,22 @@
 // import React from 'react';
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
-
+import API from '../../utils/salesAPI';
+var chartData1;
 
  class Chart extends Component {
+     componentDidMount = () => {
+         console.log("getting Chart data..Chart.js");
+         API.getChartData({
+             repRepId: localStorage.getItem('rep_id')
+         })
+         .then(res => {
+             console.log("res..Chart.js: ", res.data);
+             chartData1 = parseInt(res.data);
+             console.log('chartData: ', chartData1);
+         })
+             .catch(err => console.log(err));
+     }
     //  constructor is a function that will run when initialized
      constructor(props){
         //  props are basically properties that you can pass into components
@@ -15,10 +28,7 @@ import {Bar, Line, Pie} from 'react-chartjs-2';
             datasets: [{
                label: 'Sales',
             //    this is my "x" axis data
-               data:[200,
-                     150,
-                     50,
-                     100],
+               data:[chartData1, 150, 50, 100],
 
                backgroundColor:['rgba(54, 162, 235, 0.6)'], 
             }
@@ -27,6 +37,7 @@ import {Bar, Line, Pie} from 'react-chartjs-2';
              }
          }
      }
+     
       render() {
           return(
               <div className= "chart">

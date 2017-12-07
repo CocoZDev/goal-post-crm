@@ -21,6 +21,20 @@ router.post('/', (req, res, next) => {
     }).catch(err => { res.json(err) });
 });
 
+// route to get customers from a particular rep
+router.post('/chart', (req, res, next) => {
+    // if(req.isAuthenticated()){
+    console.log("req body..getChartData ", req.body);
+    db.sales.sum('sale_purchasePrice',{
+        where: {
+            repRepId: req.body.repRepId
+        }
+    }).then(function (results) {
+        // console.log(results);
+        res.json(results);
+    }).catch(err => { res.json(err) });
+});
+
 // // POST route for saving a new customer
 router.post("/new", function (req, res) {
     // create takes an argument of an object describing the item we want to
@@ -63,7 +77,7 @@ router.delete("/:id", function (req, res) {
 router.put("/", function (req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
-    db.customers.update({
+    db.sales.update({
         sale_product: req.body.sale_product,
         sale_company: req.body.sale_company,
         sale_quantity: req.body.sale_quantity,
