@@ -27,7 +27,7 @@ class CustSchedule extends Component {
             repRepId: localStorage.getItem('rep_id')
         })
         .then(res => {
-            console.log(res);
+            console.log(res.data);
             this.setState({ customers: res.data })
         }
         )
@@ -65,6 +65,7 @@ class CustSchedule extends Component {
     handleChange = (customers) => {
         this.setState({ customers });
         console.log(`Selected: ${customers.label}`);
+        
       }
     
     render() {
