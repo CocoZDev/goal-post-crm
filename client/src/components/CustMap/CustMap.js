@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
-export class CustMap extends Component {
+export class MapContainer extends Component {
   render() {
     const style = {
         width: '100%',
@@ -19,8 +19,6 @@ export class CustMap extends Component {
     }
   }
   
-  // export default CustMap({
-  //   apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
-  // })(MapContainer)
-
-  export default CustMap;
+  export default GoogleApiWrapper({
+    apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
+  })(MapContainer)

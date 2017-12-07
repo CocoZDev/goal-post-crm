@@ -6,7 +6,7 @@ import Jumbotron from "./Jumbotron";
 import Nav from "./Nav";		
 import VerticalMenu from "./VerticalMenu";
 import CustSchedule from "./CustSchedule";
-// import CustMap from "./CustMap";
+import CustMap from "./CustMap";
 import CalForm from "./CalForm";
 
 
