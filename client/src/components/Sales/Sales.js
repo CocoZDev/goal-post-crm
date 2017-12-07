@@ -37,6 +37,14 @@ class Sales extends Component {
       this.loadSales();
     })
     .catch(err => console.log(err));
+
+    //Clear form data after submit
+    this.setState({
+      username: "",
+      password: "",
+      passwordConfirm: "",
+      email: ""
+    });
   };
 
   componentWillMount() {

@@ -13,7 +13,10 @@ import "./Table/Table.css";
 
 class Products extends Component {
   state = {
-    products: []
+    products: [],
+    product_name: '',
+    product_description: '',
+    product_quantity: ''
   };
 
 
@@ -35,6 +38,12 @@ handleFormSubmit = event => {
   // .then(res => console.log("you have entered your product..Products.js"))
     .then(res => window.location = '/Products')
   .catch(err => console.log (err));
+
+  this.setState({
+    product_name: '',
+    product_description: '',
+    product_quantity: ''
+  });
 };
 
 render() {
