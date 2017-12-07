@@ -3,10 +3,17 @@ import "./List.css";
 
 export const List = ({ children }) => {
     return (
-        <div className="list-overflow-container">
-            <ul className="list-group">
-                {children}
-            </ul>
-        </div>
+        <table class="points_table">
+            <thead>
+                <tr>
+                    <th class="col-md-1">#</th>
+                    <th class="col-md-1">First Name</th>
+                    <th class="col-md-1">Last Name</th>
+                    <th class="col-md-1">Company Name</th>
+                    <th class="col-md-1">Phone Number</th>
+                    <th class="col-md-1">Email</th>
+                </tr>
+            </thead>
+        </table>
     );
 };

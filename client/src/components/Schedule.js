@@ -36,12 +36,18 @@ const Schedule = () =>
     </Col>
   </Row>
 
-    {/* Map */}
-    <Row fluid>
-      <Col size="md-10 sm-10">
-       <CustMap />
-      </Col>
-    </Row>
+
+    {/*MAP TESTING*/}
+    <Container fluid>
+      <Row fluid>
+          <Col size="md-10 sm-10">
+              <div className='private text-center'>
+              <CustMap />
+              </div>
+          </Col>
+      </Row>
+
+      </Container> 
 
 
 </div>

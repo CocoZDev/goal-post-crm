@@ -45,13 +45,14 @@ class CustTable extends Component {
     
     render() {
         return (
+
             <Container fluid>
             {/* Customer Table */}
             <Row fluid>
                 <Col size="md-10 sm-10">
                     <div className='private text-center'>
                     {this.state.customers.length ? (
-                        <List>
+                       <List>
                         {this.state.customers.map(customer => (
                             <ListItem key={customer.customer_id}>
                             <a href={"/customer/" + customer.customer_id}>
@@ -89,6 +90,53 @@ class CustTable extends Component {
             </Row>
   
             </Container>    
+
+            // <Container fluid>
+            // {/* Customer Table */}
+            // <Row fluid>
+            //     <Col size="md-10 sm-10">
+            //         <div className='private text-center'>
+            //         {this.state.customers.length ? (
+            //            <List>
+            //             {this.state.customers.map(customer => (
+            //                 <ListItem key={customer.customer_id}>
+            //                 <a href={"/customer/" + customer.customer_id}>
+            //                     <strong>
+            //                     {customer.customer_company}
+            //                     <br></br>
+            //                     {customer.customer_firstname}
+            //                     <br></br>
+            //                     {customer.customer_lastname}
+            //                     <br></br>
+            //                     {customer.customer_phone}
+            //                     <br></br>
+            //                     {customer.customer_email}
+                                
+            //                     {customer.customer_street}<br></br>
+            //                     {customer.customer_city}<br></br>
+            //                     {customer.customer_state}<br></br>
+            //                     {customer.customer_zipcode}<br></br>
+            //                     {/* {customer.customer_rating}<br></br>
+            //                     {customer.customer_notes}<br></br>
+            //                     {customer.customer_visited}<br></br>
+            //                     {customer.customer_active} */}
+            //                     </strong>
+            //                 </a>
+            //                 <DeleteBtn onClick={() => this.deleteCust(customer.customer_id)} />
+            //                     {/* <DeleteBtn /> */}
+            //                     </ListItem>
+            //                 ))}
+            //                 </List>
+            //                 ) : (
+            //             <h3>No Results to Display</h3>
+            //             )}
+            //         </div>
+            //     </Col>
+            // </Row>
+  
+            // </Container>    
+
+
         );
     }
 }

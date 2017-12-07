@@ -52,9 +52,9 @@ class CustSchedule extends Component {
     
       createCheckbox = customers => (
         <Checkbox
-                label={customers.customer_contact}
+                label={customers.customer_company}
                 handleCheckboxChange={this.toggleCheckbox}
-                key={customers.customer_contact}
+                key={customers.customer_company}
             />
       )
     
