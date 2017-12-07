@@ -24,8 +24,8 @@ export class CustMap extends Component {
     }
   }
   
-  // export default CustMap({
-  //   apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
-  // })(MapContainer)
+  export default CustMap({
+    apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
+  })(MapContainer)
 
-  export default CustMap;
+  // export default CustMap;

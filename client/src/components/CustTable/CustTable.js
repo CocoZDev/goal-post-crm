@@ -5,7 +5,8 @@ import API from "../../utils/API";
 import CustAPI from "../../utils/custAPI";
 import PubSub from 'pubsub-js';
 import DeleteBtn from "../../components/DeleteBtn";
-import "./CustTable.css";
+import { TableContainerCust, TableRow} from "../Table";
+import "../Table/Table.css";
 
 class CustTable extends Component {
     state = {
@@ -42,16 +43,45 @@ class CustTable extends Component {
           .then(res => this.loadCustomers())
           .catch(err => console.log(err));
       };
-    
+   
     render() {
         return (
+            <div>
+            <Row>
+                <Col size="md-12 sm-12">
+                    <div className='private text-center customer-table'>
+                        {this.state.customers.length ? (
+                       <TableContainerCust>
+                        {this.state.customers.map(customer => (
+                            <TableRow key={customer.customer_id}>
+                                <td className="col-md-1">{customer.customer_id}</td>
+                                <td className="col-md-1">{customer.customer_firstname}</td>
+                                <td className="col-md-1">{customer.customer_lastname}</td>
+                                <td className="col-md-2">{customer.customer_company}</td>
+                                <td className="col-md-1">{customer.customer_phone}</td>
+                                <td className="col-md-1">{customer.customer_email}</td>
+                                <td className="col-md-2">{customer.customer_street}</td>
+                                <td className="col-md-1">{customer.customer_city}</td>
+                                <td className="col-md-1">{customer.customer_state}</td>
+                                <td className="col-md-1">{customer.customer_zipcode}</td>
 
-            <Container fluid>
-            {/* Customer Table */}
-            <Row fluid>
-                <Col size="md-10 sm-10">
-                    <div className='private text-center'>
-                    {this.state.customers.length ? (
+                                </TableRow>
+                                ))}
+                                </TableContainerCust>
+                                ) : (
+                            <h3>No Results to Display</h3>
+                            )}
+                    </div>
+                </Col>
+            </Row>
+            </div>
+
+
+             /* <Container fluid>
+                <Row fluid>
+                 <Col size="md-10 sm-10">
+                     <div className='private text-center'>
+                     {this.state.customers.length ? (
                        <List>
                         {this.state.customers.map(customer => (
                             <ListItem key={customer.customer_id}>
@@ -71,15 +101,10 @@ class CustTable extends Component {
                                 {customer.customer_city}<br></br>
                                 {customer.customer_state}<br></br>
                                 {customer.customer_zipcode}<br></br>
-                                {/* {customer.customer_rating}<br></br>
-                                {customer.customer_notes}<br></br>
-                                {customer.customer_visited}<br></br>
-                                {customer.customer_active} */}
-                                </strong>
+                                 </strong>
                             </a>
                             <DeleteBtn onClick={() => this.deleteCust(customer.customer_id)} />
-                                {/* <DeleteBtn /> */}
-                                </ListItem>
+                                   </ListItem>
                             ))}
                             </List>
                             ) : (
@@ -89,56 +114,11 @@ class CustTable extends Component {
                 </Col>
             </Row>
   
-            </Container>    
-
-            // <Container fluid>
-            // {/* Customer Table */}
-            // <Row fluid>
-            //     <Col size="md-10 sm-10">
-            //         <div className='private text-center'>
-            //         {this.state.customers.length ? (
-            //            <List>
-            //             {this.state.customers.map(customer => (
-            //                 <ListItem key={customer.customer_id}>
-            //                 <a href={"/customer/" + customer.customer_id}>
-            //                     <strong>
-            //                     {customer.customer_company}
-            //                     <br></br>
-            //                     {customer.customer_firstname}
-            //                     <br></br>
-            //                     {customer.customer_lastname}
-            //                     <br></br>
-            //                     {customer.customer_phone}
-            //                     <br></br>
-            //                     {customer.customer_email}
-                                
-            //                     {customer.customer_street}<br></br>
-            //                     {customer.customer_city}<br></br>
-            //                     {customer.customer_state}<br></br>
-            //                     {customer.customer_zipcode}<br></br>
-            //                     {/* {customer.customer_rating}<br></br>
-            //                     {customer.customer_notes}<br></br>
-            //                     {customer.customer_visited}<br></br>
-            //                     {customer.customer_active} */}
-            //                     </strong>
-            //                 </a>
-            //                 <DeleteBtn onClick={() => this.deleteCust(customer.customer_id)} />
-            //                     {/* <DeleteBtn /> */}
-            //                     </ListItem>
-            //                 ))}
-            //                 </List>
-            //                 ) : (
-            //             <h3>No Results to Display</h3>
-            //             )}
-            //         </div>
-            //     </Col>
-            // </Row>
-  
-            // </Container>    
+            </Container>    */
 
 
         );
     }
 }
 
-export default CustTable
+export default CustTable;
