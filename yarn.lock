@@ -1820,11 +1820,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-<<<<<<< HEAD
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
-=======
-prop-types@>=15.5, prop-types@^15.5.4, prop-types@^15.6.0:
->>>>>>> 565cad3b4126ff9bb4528a604a8fe96bed08d389
+prop-types@15.x, prop-types@>=15.5, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -1952,7 +1948,25 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-<<<<<<< HEAD
+react-calendar@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-calendar/-/react-calendar-2.6.0.tgz#d0e5ffad05121481eb22f3d8b898d44913d4f85a"
+  dependencies:
+    lodash.once "^4.1.1"
+    merge-class-names "^1.1.1"
+    prop-types ">=15.5"
+    react ">=15.5"
+    react-dom ">=15.5"
+
+react-dom@>=15.5:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 react-gmaps@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-gmaps/-/react-gmaps-1.7.0.tgz#644bc0fc61e303d82af9ac62c953eecc487ee363"
@@ -1975,26 +1989,6 @@ react-google-maps@^9.4.2:
     recompose "^0.26.0"
     scriptjs "^2.5.8"
     warning "^3.0.0"
-=======
-react-calendar@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/react-calendar/-/react-calendar-2.6.0.tgz#d0e5ffad05121481eb22f3d8b898d44913d4f85a"
-  dependencies:
-    lodash.once "^4.1.1"
-    merge-class-names "^1.1.1"
-    prop-types ">=15.5"
-    react ">=15.5"
-    react-dom ">=15.5"
-
-react-dom@>=15.5:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
->>>>>>> 565cad3b4126ff9bb4528a604a8fe96bed08d389
 
 react-router-dom@^4.2.2:
   version "4.2.2"
