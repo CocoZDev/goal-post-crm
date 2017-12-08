@@ -1,17 +1,22 @@
 import React, { Component } from "react";
-import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import ReactDOM from 'react-dom';
+import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import API from "../../utils/API";
+import CustAPI from "../../utils/custAPI";
 
-export class MapContainer extends Component {
+const coords = {
+  lat: 34.0522,
+  lng: -118.2437
+};
+
+const params = {v: '3.exp', key: 'AIzaSyBxWJpAb69GxwZixZHTWLqLOFlDqwbKHXw'};
+
+class CustMap extends Component {
 
   state = {
-      customers: [],
+      customers: []
   };
-
-  componentWillMount() {
-      this.selectedCheckboxes = new Set();
-  }
-
+  
   componentDidMount() {
       this.loadCustomers();
   }
@@ -22,44 +27,70 @@ export class MapContainer extends Component {
       })
       .then(res => {
           console.log(res.data);
-          this.setState({ customers: res.data })
-          
+          this.setState({ customers: res.data})
       }
       )
       .catch(err => console.log(err));
   };
 
-  // THIS WILL CREATE MARKERS BY LOOPING THROUGH CUSTOMERS 
-  // ONCE WE HAVE A CUSTOMERS.CUSTOMER_POSITION (LATLNG)
-  // createMarker = customers => (
-  //   <Marker
-  //   name={customers.customer_state}
-  //   key={customers.customer_company}
-  //   />
-  // )
+  createMarker = customers => (
+    <Marker
+          lat={coords.lat}
+          lng={coords.lng}
+          draggable={true}
+          onDragEnd={this.onDragEnd} 
+       />
+  )
 
-  // createMarkers = () => (
-  //   this.state.customers.map(this.createMarker)
-  // )
+  createMarkers = () => (
+      this.state.customers.map(this.createMarker)
+  )
 
-
-render() {
-
-    return (
-      <Map google={this.props.google}
-      style={{width: '100%', height: '100%', position: 'relative'}}
-      className={'map'}
-      zoom={14}>
-      {/*{this.createMarkers()}*/}
-      <Marker
-      title={'The marker`s title will appear as a tooltip.'}
-      name={'The Cookie Store'}
-      position={{lat: 34.0522, lng: -118.2437}} />
-      </Map>
-    );
-  
+  onMapCreated(map) {
+    map.setOptions({
+      disableDefaultUI: true
+    });
   }
-}
-  export default GoogleApiWrapper({
-    apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
-  })(MapContainer)
+
+  onDragEnd(e) {
+    console.log('onDragEnd', e);
+  }
+
+  onCloseClick() {
+    console.log('onCloseClick');
+  }
+
+  onClick(e) {
+    console.log('onClick', e);
+  }
+
+  render() {
+    return (
+      <Gmaps
+        width={'800px'}
+        height={'600px'}
+        lat={coords.lat}
+        lng={coords.lng}
+        zoom={12}
+        loadingMessage={'Be happy'}
+        params={params}
+        onMapCreated={this.onMapCreated}>
+        {this.createMarkers()}
+        <InfoWindow
+          lat={coords.lat}
+          lng={coords.lng}
+          content={'Hello, React :)'}
+          onCloseClick={this.onCloseClick} />
+        <Circle
+          lat={coords.lat}
+          lng={coords.lng}
+          radius={500}
+          onClick={this.onClick} />
+      </Gmaps>
+    );
+  }
+
+};
+
+
+export default CustMap;

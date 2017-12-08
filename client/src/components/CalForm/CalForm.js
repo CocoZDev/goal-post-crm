@@ -7,17 +7,6 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";		
 import API from "../../utils/calAPI.js";
 import PubSub from 'pubsub-js';
-import TimePicker from 'rc-time-picker';
-import ReactDOM from 'react-dom';
-import moment from 'moment';
-
-const format = 'h:mm a';
-const now = moment().hour(0).minute(0);
-
-function onChange(value) {
-  console.log(value && value.format(format));
-}
-
 
 class CalForm extends Component {
   state = {
@@ -77,32 +66,22 @@ class CalForm extends Component {
             />
             </Col>
             <Col size="md-4 sm-4">
-              <TimePicker
-                showSecond={false}
-                defaultValue={now}
-                value={this.state.start_time}
-                className="xxx"
-                onChange={onChange}
-                name="start_time"
-                format={format}
-                placeholder="11:00am"
-                use12Hours
-                required
-                />
-            </Col>
-            <Col size="md-4 sm-4">
-            <TimePicker
-                showSecond={false}
-                defaultValue={now}
-                value={this.state.end_time}
-                className="xxx"
-                onChange={onChange}
-                name="end_time"
-                format={format}
-                placeholder="11:30am"
-                use12Hours
-                required
-                />
+            <Input
+            value={this.state.start_time}
+            onChange={this.handleInputChange}
+            name="start_time"
+            placeholder="Start Time *"
+            required
+          />
+          </Col>            
+          <Col size="md-4 sm-4">
+              <Input
+              value={this.state.end_time}
+              onChange={this.handleInputChange}
+              name="end_time"
+              placeholder="End Time *"
+              required
+            />
             </Col>
             <Col size="md-6 sm-6">
               <Input
