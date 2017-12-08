@@ -14,7 +14,7 @@ class Chart extends Component {
                     datasets: [{
                         label: 'Sales',
                         data: [chartData1, 500, 1000, 100],
-                        backgroundColor: ['rgba(54, 162, 235, 0.6)'],
+                        backgroundColor: ['rgba(255, 255,255, .8)'],
                     }]
                 }
         })
@@ -47,7 +47,7 @@ class Chart extends Component {
                label: 'Sales',
             //    this is my "x" axis data
                data:[chartData1, 0, 0, 0],
-               backgroundColor:['rgba(54, 162, 235, 0.6)'], 
+               backgroundColor:['rgba(0, 0, 0, 0)'], 
             }]
              }
          }
