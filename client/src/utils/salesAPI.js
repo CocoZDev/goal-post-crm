@@ -17,6 +17,8 @@ export default {
     // // Saves a cust to the database
     saveSale: function (Data) {
         return axios.post("/sales/new", Data);
+    },
+    getChartData: function (Data) {
+        return axios.post("/sales/chart", Data);
     }
-    
 };  
