@@ -32,4 +32,8 @@ export default {
     console.log("___________________________");
     return axios.post("/postProducts", Data);
   },
+
+  getChartData: function (Data) {
+    return axios.post("/sales/chart", Data);
+}
 };

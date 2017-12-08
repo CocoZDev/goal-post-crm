@@ -5,6 +5,7 @@ import "../../styles/Login.css";
 import API from "../../utils/API";
 import decode from 'jwt-decode';
 
+var chartData1;
 
 class Login extends Component {
   state = {
@@ -55,22 +56,26 @@ class Login extends Component {
           // set token to local storage
           localStorage.setItem('token', res.data.token);
           localStorage.setItem('username', res.data.username);
-          // get dashboard component
-          this.props.history.replace('/private');
           // decode token
           const decoded = decode(res.data.token);
           var sub = decoded.sub;
           console.log('sub: ' + sub);
           localStorage.setItem('rep_id', sub);
           console.log("decoded token giving rep_id and timestamp: ", decoded);
-          API.getAccounts({
-            username: this.state.username,
-            repRepId: sub
-          }).then(res => {
-            console.log("getAccounts response: ", res.data)
-          })
-            .catch(err => console.log(err));
+          // API.getChartData({
+          //            repRepId: localStorage.getItem('rep_id')
+          //        })
+          //        .then(res => {
+          //            console.log("res..Login.js: ", res.data);
+          //            localStorage.setItem('chartData1', parseInt(res.data, 10));
+          //            chartData1 = localStorage.getItem('chartData1');
+          //            console.log('chartData1..Login.js ', chartData1);
+          //        })
+          //        .catch(err => console.log(err))
+          // get dashboard component
+          // this.props.history.replace('/private');
         })
+        .then(res => window.location = '/private')
         .catch(err => console.log(err));
   };
 
