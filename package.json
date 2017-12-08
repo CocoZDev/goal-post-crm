@@ -35,9 +35,9 @@
     "passport-local": "^1.0.0",
     "pubsub-js": "^1.5.7",
     "rc-time-picker": "^3.2.1",
+    "react-calendar": "^2.6.0",
     "react-gmaps": "^1.7.0",
     "react-google-maps": "^9.4.2",
-    "react-calendar": "^2.6.0",
     "react-router-dom": "^4.2.2",
     "sequelize": "^4.22.6"
   }
