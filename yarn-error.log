@@ -2727,10 +2727,25 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 Trace: 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  SyntaxError: /Users/sktdigitalmbp2/Coding_Bootcamp/project-3/bisque3/package.json: Unexpected token < in JSON at position 991
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:770:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+=======
+>>>>>>> master
   SyntaxError: c:\Users\DENNIS\Desktop\bisque3\package.json: Unexpected token < in JSON at position 991
       at JSON.parse (<anonymous>)
       at C:\Program Files (x86)\Yarn\lib\cli.js:770:59
       at Generator.next (<anonymous>)
       at step (C:\Program Files (x86)\Yarn\lib\cli.js:92:30)
       at C:\Program Files (x86)\Yarn\lib\cli.js:103:13
+<<<<<<< HEAD
+=======
+>>>>>>> muddavugga
+>>>>>>> master
       at <anonymous>
