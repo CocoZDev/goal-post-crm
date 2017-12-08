@@ -32,7 +32,7 @@ app.use(passport.session());
 
 // Static Directory
 // ================
-app.use(express.static("api"));
+app.use(express.static("client/build"));
 
 // Routes
 // ======
