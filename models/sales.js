@@ -28,9 +28,17 @@ module.exports = function (sequelize, DataTypes) {
         sale_note: {
             type: DataTypes.STRING,
             allowNull: true,
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
         }
     },
-        { timestamps: false });
+        { timestamps: true });
     sales.associate = function (models) {
         sales.belongsTo(models.reps, {
             onDelete: "CASCADE"

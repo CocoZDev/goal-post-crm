@@ -32,13 +32,7 @@ app.use(passport.session());
 
 // Static Directory
 // ================
-app.use(express.static("api"));
-
-// Allow use of handlebars and method override
-// ===========================================
-// app.use(methodOverride("_method"));
-// app.engine("handlebars", exphbs({defaultLayout: "main"}));
-// app.set("view engine" , "handlebars");
+app.use(express.static("client/build"));
 
 // Routes
 // ======
@@ -59,10 +53,9 @@ app.use("/calendar", calendar);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-db.sequelize.sync({ force: false}).then(function () {
-    app.listen(PORT, function(){
-        console.log("App is listening on PORT " + PORT);
-    });
+app.listen(PORT, function () {
+    console.log("App is listening on PORT " + PORT);
+    db.sequelize.sync({ force: false });
 });
 
 module.exports = app;

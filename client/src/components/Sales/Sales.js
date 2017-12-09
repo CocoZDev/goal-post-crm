@@ -7,6 +7,8 @@ import API from "../../utils/salesAPI.js";
 import Jumbotron from "../Jumbotron";
 import "../Form/DataForm.css";
 import PubSub from 'pubsub-js';
+import { TableContainerSales, TableRow} from "../Table";
+import "../Table/Table.css";
 
 class Sales extends Component {
   state = {
@@ -35,6 +37,14 @@ class Sales extends Component {
       this.loadSales();
     })
     .catch(err => console.log(err));
+
+    //Clear form data after submit
+    this.setState({
+      username: "",
+      password: "",
+      passwordConfirm: "",
+      email: ""
+    });
   };
 
   componentWillMount() {
@@ -75,10 +85,18 @@ class Sales extends Component {
         console.log(err)
      }) 
   };
+
+  addClassToEvenRow = () => {
+    var rows = document.getElementByClassName('table').getElementsByTagName('tr');
+    for(var x = 0; x < rows.length; x++) {
+        rows[x].className = (x % 2 == 0) ? 'even' : 'odd';
+    }
+  };
   
 render(){
   return (
     <div>
+      {/* Sales Form */}
       <Row fluid>
         <Col size="md-12 sm-12">
           <Jumbotron>
@@ -93,7 +111,7 @@ render(){
           <form className="form-form-horizontal DataForm">  
             <h2>Record Your Sales Below:</h2>
 
-            <label for="sale_customer">Customer:</label>
+            <label htmlFor="sale_customer">Customer:</label>
             <Input
               value={this.state.sale_customer}
               onChange={this.handleInputChange}
@@ -102,7 +120,7 @@ render(){
               required
             />
 
-            <label for="sale_product">Product Sold:</label>
+            <label htmlFor="sale_product">Product Sold:</label>
             <Input
               value={this.state.sale_product}
               onChange={this.handleInputChange}
@@ -111,7 +129,7 @@ render(){
               required
             />
 
-            <label for="sale_quantity">Quantity Sold:</label>
+            <label htmlFor="sale_quantity">Quantity Sold:</label>
             <Input
               value={this.state.sale_quantity}
               onChange={this.handleInputChange}
@@ -120,9 +138,9 @@ render(){
               required
             />
 
-            <label for="sale_purchasePrice">Purchase Price:</label>
-            <div class="input-group">  
-              <span class="input-group-addon">$</span> 
+            <label htmlFor="sale_purchasePrice">Purchase Price:</label>
+            <div className="input-group">  
+              <span className="input-group-addon">$</span> 
               <Input
                 value={this.state.sale_purchasePrice}
                 onChange={this.handleInputChange}
@@ -132,7 +150,7 @@ render(){
               />
            </div>
 
-           <label for="sale_note">Sale Note:</label>
+           <label htmlFor="sale_note">Sale Note:</label>
             <Input
               value={this.state.sale_note}
               onChange={this.handleInputChange}
@@ -146,42 +164,34 @@ render(){
       </Col>
       </Row>
       
-      <Container fluid>
-        {/* Customer Table */}
+        {/* Sales Table */}
         <Row fluid>
           <Col size="md-12 sm-12">
-            <div className='private text-center'>
+            <div className='private text-center sales-table'>
               {this.state.sales.length ? (
-                <List>
+                <TableContainerSales>
                   {this.state.sales.map(sale => (
-                    <ListItem key={sale.sale_id}>
-                      <a href={"/sales/" + sale.sale_id}>
-                        <strong>
-                          {sale.sale_customer}
-                          <br></br>
-                          {sale.sale_product}
-                          <br></br>
-                          {sale.sale_quantity}
-                          <br></br>
-                          {sale.sale_purchasePrice}
-                          <br></br>
-                          {sale.sale_note}
-                        </strong>
-                      </a>
-                      <DeleteBtn onClick={() => this.deleteSale(sale.sale_id)} />
-                    </ListItem>
+                    <TableRow key={sale.sale_id}>
+                        <td className="col-md-1">{sale.sale_id}</td>
+                        <td className="col-md-2">{sale.sale_customer}</td>
+                        <td className="col-md-2">{sale.sale_product}</td>
+                        <td className="col-md-2">{sale.sale_quantity}</td>
+                        <td className="col-md-2">{sale.sale_purchasePrice}</td>
+                        <td className="col-md-3">{sale.sale_note}</td>
+                    </TableRow>
                   ))}
-                </List>
+                </TableContainerSales>
               ) : (
                   <h3>No Results to Display</h3>
                 )}
             </div>
           </Col>
         </Row>
-      </Container>
     </div>
-      )
-    }
+
+)
+// {this.addClassToEvenRow()}; 
+}
   }
   
   export default Sales;

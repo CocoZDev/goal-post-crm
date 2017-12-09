@@ -11,19 +11,19 @@ import PubSub from 'pubsub-js';
 class CustForm extends Component {
   state = {
     customers: [],
-      customer_firstname: '',
-      customer_lastname: '',
-      customer_company: '',
-      customer_email: '', 
-      customer_phone: '',
-      customer_street: '',
-      customer_city: '',
-      customer_state: '',
-      customer_zipcode: '',
-      // customer_rating:'',
-      // customer_notes: '',
-      // customer_visited:'',
-      // customer_active: ''
+    customer_firstname: '',
+    customer_lastname: '',
+    customer_company: '',
+    customer_email: '', 
+    customer_phone: '',
+    customer_street: '',
+    customer_city: '',
+    customer_state: '',
+    customer_zipcode: '',
+    // customer_rating:'',
+    // customer_notes: '',
+    // customer_visited:'',
+    // customer_active: ''
   };
 
   handleInputChange = event => {

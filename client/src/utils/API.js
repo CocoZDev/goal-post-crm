@@ -32,4 +32,10 @@ export default {
     console.log("___________________________");
     return axios.post("/postProducts", Data);
   },
+  getProducts: function (Data) {
+    console.log("___________________________");
+    console.log("getting product..API.js");
+    console.log("___________________________");
+    return axios.post("/getProducts", Data);
+  },
 };

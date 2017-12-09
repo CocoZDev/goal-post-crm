@@ -6,6 +6,8 @@ import CustAPI from "../../utils/custAPI";
 import PubSub from 'pubsub-js';
 import Checkbox from '../../components/Checkbox';
 import CustTable from '../../components/CustTable';
+import { TableContainerCust, TableRow} from "../Table";
+import "../Table/Table.css";
 
 
 class CustSchedule extends Component {
@@ -27,7 +29,7 @@ class CustSchedule extends Component {
             repRepId: localStorage.getItem('rep_id')
         })
         .then(res => {
-            console.log(res);
+            console.log(res.data);
             this.setState({ customers: res.data })
         }
         )
@@ -56,15 +58,19 @@ class CustSchedule extends Component {
                 handleCheckboxChange={this.toggleCheckbox}
                 key={customers.customer_company}
             />
+           
+           
       )
     
       createCheckboxes = () => (
+
           this.state.customers.map(this.createCheckbox)
       )
 
     handleChange = (customers) => {
         this.setState({ customers });
         console.log(`Selected: ${customers.label}`);
+        
       }
     
     render() {
@@ -72,6 +78,8 @@ class CustSchedule extends Component {
             <Container fluid>
             <Row fluid>
                 <Col size="md-10 sm-10">
+                    <h1>Customers</h1>
+                    <p>Select the Customers you would like to visit</p>
                     <form onSubmit={this.handleFormSubmit}>
                     {this.createCheckboxes()}
                     <button className="btn btn-default" type="submit">Route</button>
