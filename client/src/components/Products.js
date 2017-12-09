@@ -104,10 +104,16 @@ return (
     {/* Product Form */}
     <Col size="md-12 sm-12">
       <center>
-          <form className="DataForm" style={{ display: 'block' }} >
+          <form className="form-form-horizontal DataForm" style={{ display: 'block', 'text-align': 'left'}} >
             <h2>Add A New Product</h2>
+
+            <label htmlFor="product_name">Product Name:</label>
             <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="Add Product Name" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
+            
+            <label htmlFor="product_description">Product Description:</label>
             <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="Add Description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
+            
+            <label htmlFor="product_quantity">Product Quantity:</label>
             <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="Add Quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>
             <FormBtn type="submit" name="product-submit" id="product-submit" tabIndex="4" className="form-control btn" value="submit_product" onClick={this.handleFormSubmit}>Add Product
           </FormBtn>
