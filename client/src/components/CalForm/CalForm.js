@@ -12,6 +12,7 @@ class CalForm extends Component {
   state = {
     events: [],
     event_title: '',
+    date: '',
     start_time: '',
     end_time: '', 
     note: ''
@@ -29,13 +30,14 @@ class CalForm extends Component {
     if (this.state.event_title && this.state.start_time) {
       API.saveEvent({
         event_title: this.state.event_title,
+        date: this.state.date,
         start_time: this.state.start_time,
         end_time: this.state.end_time, 
         note: this.state.note,
         repRepId: localStorage.getItem('rep_id')
       })
       .then(res => {
-          console.log("res from post..CalForm", res)
+          console.log("res from post..CalForm", res.data)
           PubSub.publish('UPDATE_LIST', 'update Now!');
         })
       .catch(err => console.log(err));
@@ -43,6 +45,7 @@ class CalForm extends Component {
 
     this.setState({
       event_title: '',
+      date: '',
       start_time: '',
       end_time: '', 
       note: ''
@@ -62,6 +65,15 @@ class CalForm extends Component {
               onChange={this.handleInputChange}
               name="event_title"
               placeholder="Event Title *"
+              required
+            />
+            </Col>
+            <Col size="md-4 sm-4">
+              <Input
+              value={this.state.date}
+              onChange={this.handleInputChange}
+              name="date"
+              placeholder="Date MM-DD-YYYY*"
               required
             />
             </Col>

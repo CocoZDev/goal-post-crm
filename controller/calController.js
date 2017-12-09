@@ -7,7 +7,7 @@ var path = require("path");
 var router = express.Router();
 
 // route to get all the events on the calendar
-router.get('/:id', (req, res, next) =>{
+router.get('/', (req, res, next) =>{
   // find all events in the calendar table
     db.calendar.findAll({
         include:[{

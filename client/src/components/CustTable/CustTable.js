@@ -11,7 +11,7 @@ import "../Table/Table.css";
 class CustTable extends Component {
     state = {
         customers: []
-    };
+    };z
 
     componentWillMount() {
         this.token = PubSub.subscribe('UPDATE_LIST',this.loadCustomers.bind(this));

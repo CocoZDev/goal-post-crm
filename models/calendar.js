@@ -13,6 +13,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      date: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       start_time:{
         type: DataTypes.STRING,
         allowNull: false
@@ -34,6 +38,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       }
     },
-      { timestamps: true });
+    { timestamps: true });
+      calendar.associate = function(models) {
+        calendar.belongsTo(models.reps, {
+          onDelete: "CASCADE"
+        });
+    };
     return calendar;
   };

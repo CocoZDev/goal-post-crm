@@ -7,6 +7,7 @@ import Nav from "./Nav";
 import VerticalMenu from "./VerticalMenu";
 import CustSchedule from "./CustSchedule";
 import CustMap from "./CustMap";
+import CalTable from "./CalTable";
 import CalForm from "./CalForm";
 
 const Schedule = () =>
@@ -32,7 +33,7 @@ const Schedule = () =>
   <Row fluid>
     <Col size="md-10 sm-10">
       <CalForm />
- 
+      <CalTable/>
     </Col>
   </Row>
 
