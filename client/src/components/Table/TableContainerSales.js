@@ -15,7 +15,7 @@ export const TableContainerSales= ({ children }) => {
 
                 </tr>
             </thead>
-            <tbody className="table">
+            <tbody className="table table_scrollbar">
                 {children}
             </tbody>
         </table>

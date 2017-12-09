@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import API from "../../utils/API";
-import CustAPI from "../../utils/custAPI";
 
-const coords = {
+const customer_address = {
   lat: 34.0522,
   lng: -118.2437
 };
@@ -14,7 +13,7 @@ const params = {v: '3.exp', key: 'AIzaSyBxWJpAb69GxwZixZHTWLqLOFlDqwbKHXw'};
 class CustMap extends Component {
 
   state = {
-      customers: []
+    customers: []
   };
   
   componentDidMount() {
@@ -26,25 +25,28 @@ class CustMap extends Component {
           repRepId: localStorage.getItem('rep_id')
       })
       .then(res => {
-          console.log(res.data);
-          this.setState({ customers: res.data})
+        console.log(res);
+        this.setState({ customers: res.data })
       }
       )
+
       .catch(err => console.log(err));
   };
 
-  createMarker = customers => (
-    <Marker
-          lat={coords.lat}
-          lng={coords.lng}
-          draggable={true}
-          onDragEnd={this.onDragEnd} 
-       />
-  )
 
-  createMarkers = () => (
-      this.state.customers.map(this.createMarker)
-  )
+
+  // createMarker = customer_address => (
+  //   <Marker
+  //         lat={customer_address.lat}
+  //         lng={customer_address.lng}
+  //         draggable={true}
+  //         onDragEnd={this.onDragEnd} 
+  //      />
+  // )
+
+  // createMarkers = () => (
+  //     this.state.customer_address.map(this.createMarker)
+  // )
 
   onMapCreated(map) {
     map.setOptions({
@@ -69,21 +71,21 @@ class CustMap extends Component {
       <Gmaps
         width={'800px'}
         height={'600px'}
-        lat={coords.lat}
-        lng={coords.lng}
+        lat={customer_address.lat}
+        lng={customer_address.lng}
         zoom={12}
         loadingMessage={'Be happy'}
         params={params}
         onMapCreated={this.onMapCreated}>
-        {this.createMarkers()}
+       
         <InfoWindow
-          lat={coords.lat}
-          lng={coords.lng}
+          lat={customer_address.lat}
+          lng={customer_address.lng}
           content={'Hello, React :)'}
           onCloseClick={this.onCloseClick} />
         <Circle
-          lat={coords.lat}
-          lng={coords.lng}
+          lat={customer_address.lat}
+          lng={customer_address.lng}
           radius={500}
           onClick={this.onClick} />
       </Gmaps>

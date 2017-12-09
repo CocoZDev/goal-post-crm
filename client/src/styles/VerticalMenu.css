@@ -9,11 +9,14 @@ nav.sidebar.navbar {
   position: relative;
   left: 0px;
   display: block;
-  bottom: 0;
   top: 0;
+  bottom: 0;
   margin-right: 0;
+  margin-bottom: 0px;
   width: 100%;
   min-width: 200px;
+  min-height: 170vh;
+  overflow-y: auto;
   
 }
 
@@ -96,7 +99,6 @@ nav.sidebar {
   nav.sidebar{
     position: fixed;
     width: 100%;
-    height: 130vh;
     /* margin-left: -160px; */
     margin-left: 18px;
     float: left;
@@ -119,6 +121,20 @@ nav.sidebar {
   } */
 }
 
+
+
+@media (max-width: 736px) {
+  nav.sidebar.navbar{
+   min-height: auto;
+   margin: 0 -20px 0 20px;
+   }
+}
+
+@media (max-width: 768px) {
+  nav.sidebar.navbar{
+   margin: 20px -20px 0 20px;
+   }
+}
 /* .....NavBar: Fully showing nav bar..... */
 
 /* @media (min-width: 1330px) { */
@@ -151,3 +167,4 @@ nav.sidebar {
 section{
   padding-left: 15px;
 } */
+

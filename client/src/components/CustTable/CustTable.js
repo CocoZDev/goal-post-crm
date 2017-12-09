@@ -64,7 +64,7 @@ class CustTable extends Component {
                                 <td className="col-md-1">{customer.customer_city}</td>
                                 <td className="col-md-1">{customer.customer_state}</td>
                                 <td className="col-md-1">{customer.customer_zipcode}</td>
-
+                                <td className="col-md-1">{customer.customer_notes}</td>
                                 </TableRow>
                                 ))}
                                 </TableContainerCust>
