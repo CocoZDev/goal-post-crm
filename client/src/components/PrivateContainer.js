@@ -10,6 +10,7 @@ import Customers from "./Customers";
 import Products from "./Products";
 import Schedule from "./Schedule";
 import Sales from "./Sales/Sales";
+import Footer from './Footer'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class PrivateContainer extends Component {
@@ -37,9 +38,6 @@ class PrivateContainer extends Component {
     else if (this.state.currentPage === "Schedule") {
       return <Schedule />;
     }
-    // else {
-    //   return <Contact />;
-    // };
   };
 
   render() {
@@ -57,6 +55,7 @@ class PrivateContainer extends Component {
             {this.renderPage()}
           </Col>
         </Row>
+        <Footer />
       </div>
     );
   }
