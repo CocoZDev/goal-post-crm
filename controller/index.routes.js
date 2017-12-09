@@ -11,10 +11,6 @@ router.get('*', (req, res, next) => {
     res.sendFile(path.join(__dirname + '../../client/build/index.html'));
 });
 
-router.get('/login', (req, res, next) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
-
 // route to get all of a rep's customers
 router.post('/dashboard', (req, res, next) => {
     // if (req.isAuthenticated()) {
