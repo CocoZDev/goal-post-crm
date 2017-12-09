@@ -89,5 +89,12 @@ table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, tabl
 	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
 }
 
+@media (max-width: 736px) {
+	.table {
+	  width: 100%;
+	  -webkit-overflow-scrolling: auto;
+	}
+  }
+
 
   

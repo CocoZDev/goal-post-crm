@@ -8,4 +8,8 @@
   padding: 50px; 
 }
 
-
+@media (min-width: 736px) {
+  .jumbotron {
+    margin-left: 2.5%;
+  }
+}
