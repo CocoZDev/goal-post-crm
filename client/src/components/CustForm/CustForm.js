@@ -20,8 +20,9 @@ class CustForm extends Component {
     customer_city: '',
     customer_state: '',
     customer_zipcode: '',
+    customer_address: '',
     // customer_rating:'',
-    // customer_notes: '',
+    customer_notes: '',
     // customer_visited:'',
     // customer_active: ''
   };
@@ -46,16 +47,20 @@ class CustForm extends Component {
         customer_city: this.state.customer_city,
         customer_state: this.state.customer_state,
         customer_zipcode: this.state.customer_zipcode,
+        customer_address: this.state.customer_street + 
+        this.state.customer_city + this.state.customer_state +
+         this.state.customer_zipcode, 
         // customer_rating: this.state.customer_rating,
-        // customer_notes: this.state.customer_notes,
+        customer_notes: this.state.customer_notes,
         // customer_visited: this.state.customer_visited,
         // customer_active: this.state.customer_active,
         repRepId: localStorage.getItem('rep_id')
       })
       .then(res => {
-          console.log("res from post..CustForm", res)
+          console.log("res from post..CustForm", res); 
           PubSub.publish('UPDATE_LIST', 'update Now!');
         })
+
       .catch(err => console.log(err));
     }
 
@@ -69,8 +74,9 @@ class CustForm extends Component {
       customer_city: '',
       customer_state: '',
       customer_zipcode: '',
+      customer_address: '',
       // customer_rating:'',
-      // customer_notes: '',
+      customer_notes: ''
       // customer_visited:'',
       // customer_active: ''
     });
@@ -156,6 +162,14 @@ class CustForm extends Component {
                 onChange={this.handleInputChange}
                 name="customer_zipcode"
                 placeholder="Zip Code"
+              />
+            </Col>
+            <Col size="md-4 sm-4">
+              <Input
+                value={this.state.customer_notes}
+                onChange={this.handleInputChange}
+                name="customer_notes"
+                placeholder="Customer Notes *"
               />
             </Col>
             <FormBtn

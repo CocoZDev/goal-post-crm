@@ -37,6 +37,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    customer_address: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    lat: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    long: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     customer_phone: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -56,10 +68,10 @@ module.exports = function(sequelize, DataTypes) {
       //   len: [1,2]
       // }
     // },
-    // customer_notes: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+    customer_notes: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     // customer_visited: {
     //   type: DataTypes.STRING,
     //   allowNull: true,
