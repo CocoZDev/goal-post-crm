@@ -166,23 +166,22 @@ class Login extends Component {
 
       {/* Placeholder Links After Logging In */}
 
-        <Row fluid>
-          {/* Links after users logging in */}
+        {/* <Row fluid>
           <Col size="md-12 sm-12">
             <div className="button groups" style={{position: 'relative', 'paddingBottom': '300px' }}>
             <h3>Links after users logging in, will remove later!!!</h3>
               <Col size="md-4 md-offset-4 sm-4 sm-offset-4">
                 <ul>
                   <li><a href="/private">Private Section Container</a></li>
-                  {/* <li><a href="/dashboard">Dashboard</a></li>
+                  <li><a href="/dashboard">Dashboard</a></li>
                   <li><a href="/customers">Customers</a></li>
                   <li><a href="/products">Products</a></li>
-                  <li><a href="/schedule">Schedule</a></li> */}
+                  <li><a href="/schedule">Schedule</a></li>
                 </ul>
               </Col>
             </div>
           </Col>
-        </Row>
+        </Row> */}
 
 
 
