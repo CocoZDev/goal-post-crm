@@ -72,7 +72,7 @@ class CalForm extends Component {
                 value={this.state.end_time}
                 onChange={this.handleInputChange}
                 name="end time"
-                placeholder="End Time"
+                placeholder="End Time *"
               />
             </Col>
             <Col size="md-6 sm-6">
@@ -80,7 +80,7 @@ class CalForm extends Component {
                 value={this.state.note}
                 onChange={this.handleInputChange}
                 name="note"
-                placeholder="Note"
+                placeholder="Note *"
               />
             </Col>
             <FormBtn

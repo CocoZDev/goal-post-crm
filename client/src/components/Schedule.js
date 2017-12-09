@@ -33,6 +33,7 @@ const Schedule = () =>
   <Row fluid>
     <Col size="md-10 sm-10">
       <CalForm />
+ 
     </Col>
   </Row>
 
