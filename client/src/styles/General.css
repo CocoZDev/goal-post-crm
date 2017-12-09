@@ -538,13 +538,13 @@ section.parallax-5 a:hover {
 
 .private {
   /* border: 1px dashed #0060DF; */
-  height: 90vh;
+  height: auto;
   width: 95%;
   color:black;
   margin-right: 0px;
   margin-left: 30px;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   /* border-radius: 5px;
   border: 1px solid #0060DF;
   padding: 20px;
@@ -552,6 +552,13 @@ section.parallax-5 a:hover {
   opacity: .9;
   z-index: -1;
 }
+
+@media (min-width: 736px) {
+  .private {
+    margin-left: 40px;
+  }
+};
+
 
 .product-table {
   /* border-radius: 10px; */
