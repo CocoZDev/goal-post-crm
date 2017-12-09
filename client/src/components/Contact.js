@@ -22,8 +22,9 @@ const Contact = () =>
   {/* Zotabox Contact Form Embed */}
   <Row fluid>
     <Col size="md-12 sm-12">
-      <center><div style={{padding: "20px 0 20px 0", 'height': '600px'}} id="zbwid-e422a183"></div></center>  
-
+      <div className='contact-form'>
+        <center><div style={{padding: "20px 0 20px 0", 'min-height': '600px'}} id="zbwid-e422a183"></div></center>  
+      </div>
     </Col>
   </Row>
 
