@@ -10,12 +10,9 @@ export const TableContainerProduct= ({ children }) => {
                     <th className="col-md-2">Customer</th>
                     <th className="col-md-2">Product</th>
                     <th className="col-md-2">Quantity</th>
-                    <th className="col-md-2">Price</th>
-                    <th className="col-md-3">Notes</th>
-
                 </tr>
             </thead>
-            <tbody className="table">
+            <tbody className="table table_scrollbar">
                 {children}
             </tbody>
         </table>

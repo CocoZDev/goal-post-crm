@@ -20,10 +20,8 @@ const Customers = () =>
       </Col>
 
       <Col size="md-12 sm-12">
-        {/* <div className='private text-center'> */}
         <CustForm />
          <CustTable />
-        {/* </div> */}
       </Col>
     </Row>
 
