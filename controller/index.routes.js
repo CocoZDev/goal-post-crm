@@ -7,8 +7,8 @@ var router = express.Router();
 var db = require("../models");
 
 
-router.get('/', (req, res, next) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+router.get('*', (req, res, next) => {
+    res.sendFile(path.join(__dirname + '../../client/build/index.html'));
 });
 
 // route to get all of a rep's customers
