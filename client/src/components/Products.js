@@ -3,22 +3,19 @@ import DeleteBtn from "./DeleteBtn";
 import { Input, FormBtn } from "./Form";
 import { Col, Row, Container } from "./Grid";
 import Jumbotron from "./Jumbotron";
-import Nav from "./Nav";		
-import VerticalMenu from "./VerticalMenu";
+// import Nav from "./Nav";		
+// import VerticalMenu from "./VerticalMenu";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./Form/DataForm.css";
+import PubSub from 'pubsub-js';
 import { TableContainerProduct, TableRow} from "./Table";
 import "./Table/Table.css";
 
 class Products extends Component {
   state = {
     products: [],
-    product_name: '',
-    product_description: '',
-    product_quantity: ''
   };
-
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -33,26 +30,69 @@ handleFormSubmit = event => {
   API.postProducts({
     product_name: this.state.product_name,
     product_description: this.state.product_description,
-    product_quantity: this.state.product_quantity
+    product_quantity: this.state.product_quantity,
+    repRepId: localStorage.getItem('rep_id')
   })
   // .then(res => console.log("you have entered your product..Products.js"))
-    .then(res => window.location = '/Products')
+    .then(res => {
+      console.log('postProducts..Products.js ', res);
+      this.loadProducts();
+    })
   .catch(err => console.log (err));
 
+  //Clear form data after submit
   this.setState({
-    product_name: '',
-    product_description: '',
-    product_quantity: ''
+    product_name: "",
+    product_description: "",
+    product_quantity: "",
   });
 };
 
+componentWillMount() {
+  this.token = PubSub.subscribe('UPDATE_LIST', this.loadProducts.bind(this));
+}
+
+componentDidMount() {
+  this.loadProducts();
+  PubSub.publish('UPDATE_LIST', this.token)
+  }
+
+componentWillUnmount() {
+  PubSub.unsubscribe(this.token);
+}
+
+loadProducts = () => {
+  API.getProducts({
+    repRepId: localStorage.getItem('rep_id')
+  })
+    .then(res => {
+      console.log('response to load products..Products.js');
+      console.log(res);
+      if (res.data) {
+        this.setState({
+          products: res.data
+        })
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
+};
+
+  addClassToEvenRow = () => {
+    var rows = document.getElementByClassName('table').getElementsByTagName('tr');
+    for (var x = 0; x < rows.length; x++) {
+      rows[x].className = (x % 2 === 0) ? 'even' : 'odd';
+    }
+  };
+
+
 render() {
 return (
-
 <div>
   {/* Row #1 */}
   <Row fluid>
-    <Col size="md-12">
+    <Col size="md-12 sm-12">
       <Jumbotron>
         <h1><strong>Products</strong></h1>
         <p>Find product photo and details here. </p>
@@ -61,14 +101,19 @@ return (
   </Row>
 
   <Row fluid>
-           
     {/* Product Form */}
     <Col size="md-12 sm-12">
       <center>
-          <form className="DataForm" style={{ display: 'block' }} >
+          <form className="form-form-horizontal DataForm" style={{ display: 'block', 'text-align': 'left'}} >
             <h2>Add A New Product</h2>
+
+            <label htmlFor="product_name">Product Name:</label>
             <Input type="text" name="product_name" id="product_name" tabIndex="1" placeholder="Add Product Name" value={this.state.product_name} onChange={this.handleInputChange} required></Input>
+            
+            <label htmlFor="product_description">Product Description:</label>
             <Input type="text" name="product_description" id="product_description" tabIndex="2" placeholder="Add Description" value={this.state.product_description} onChange={this.handleInputChange} required></Input>
+            
+            <label htmlFor="product_quantity">Product Quantity:</label>
             <Input type="number" name="product_quantity" id="product_quantity" tabIndex="2" placeholder="Add Quantity" value={this.state.product_quantity} onChange={this.handleInputChange} required></Input>
             <FormBtn type="submit" name="product-submit" id="product-submit" tabIndex="4" className="form-control btn" value="submit_product" onClick={this.handleFormSubmit}>Add Product
           </FormBtn>

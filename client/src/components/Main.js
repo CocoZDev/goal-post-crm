@@ -13,15 +13,6 @@ import Login from "./Login";
 
   class Main extends Component {
 
-    // componentDidMount() {
-    //     this.$el = $(this.el);
-    //     this.$el.somePlugin();
-    // }
-
-    // componentWillUnmount() {
-    // this.$el.somePlugin('destroy');
-    // }
-
     render() {
         return (
         <div>
@@ -29,10 +20,13 @@ import Login from "./Login";
 
             <section className="parallax" style={{ 'min-height': '100vh' }}>
                 <section className="container">
-                    <video autoPlay="true" loop muted poster="../styles/img/mobile-friendly.jpg" className="video">
-                        <source src="https://ak3.picdn.net/shutterstock/videos/3894353/preview/stock-footage-two-young-businessmen-who-are-old-acquaintances-meet-and-shake-hands-in-a-busy-modern-office-buildi.mp4" type="video/mp4" />
-                    </video>
+                    <div className="video-background">
+                        <div className="video-foreground">
+                        <iframe src="https://www.youtube.com/embed/_2un4VAfVow?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=_2un4VAfVow" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </section>
+                
                 <section className="content">
                     <div className="intro animated bounceInUp">
                         <h1 style= {{'font-size':'80px', color:'#0060DF'}}>Goal Post</h1>

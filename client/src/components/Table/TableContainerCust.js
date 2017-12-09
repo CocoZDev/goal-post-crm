@@ -19,7 +19,7 @@ export const TableContainerCust = ({ children }) => {
                     <th className="col-md-1">Notes</th>
                 </tr>
             </thead>
-            <tbody className="table">
+            <tbody className="table table_scrollbar">
                 {children}
             </tbody>
         </table>

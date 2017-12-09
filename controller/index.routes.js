@@ -39,10 +39,28 @@ router.post('/postProducts', (req, res, next) =>{
             product_name: req.body.product_name,
             product_description: req.body.product_description,
             product_quantity: req.body.product_quantity,
+            repRepId: req.body.repRepId
         }).then(function(results){
             console.log("Your product was created!");
             res.json(results);
         });
+});
+
+// post to get all products from a particular rep
+router.post('/getProducts', (req, res, next) => {
+    console.log("_________________________________");
+    console.log("getting products..index.routes.js");
+    console.log("_________________________________");
+    // if(req.isAuthenticated()){
+    db.products.findAll({
+        where: {
+            repRepId: req.body.repRepId
+        }
+        // order: db.sequelize.col('customer_company')
+    }).then(function (results) {
+        // console.log(results);
+        res.json(results)
+    });
 });
 
 module.exports = router;
