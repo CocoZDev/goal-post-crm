@@ -6,6 +6,9 @@ var path = require("path");
 var router = express.Router();
 var db = require("../models");
 
+router.get('/images', (req, res, next) => {
+    res.sendFile(path.join(__dirname + '../../client/build/images'));
+});
 
 router.get('*', (req, res, next) => {
     res.sendFile(path.join(__dirname + '../../client/build/index.html'));
