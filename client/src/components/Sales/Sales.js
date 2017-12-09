@@ -76,7 +76,7 @@ class Sales extends Component {
     .then(res => {
       console.log('response to load sales.. sales js');
       console.log(res);
-      if (res.data != null) {
+      if (res.data) {
         this.setState({
           sales: res.data
       })
@@ -89,7 +89,7 @@ class Sales extends Component {
   addClassToEvenRow = () => {
     var rows = document.getElementByClassName('table').getElementsByTagName('tr');
     for(var x = 0; x < rows.length; x++) {
-        rows[x].className = (x % 2 == 0) ? 'even' : 'odd';
+        rows[x].className = (x % 2 === 0) ? 'even' : 'odd';
     }
   };
   
