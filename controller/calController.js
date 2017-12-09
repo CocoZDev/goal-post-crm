@@ -7,16 +7,17 @@ var path = require("path");
 var router = express.Router();
 
 // route to get all the events on the calendar
-router.get('/', (req, res, next) =>{
+router.post('/new', (req, res, next) =>{
   // find all events in the calendar table
     db.calendar.findAll({
         include:[{
             model: db.reps,
             where:{
-                rep_id: req.params.id
+                rep_id: req.body.repRepId
                 },
             }],
     }).then(function(results){
+        console.log(results);
         res.json(results);
     }).catch(err => { res.json(err)});
 });
@@ -30,9 +31,11 @@ router.get('/', (req, res, next) =>{
     db.calendar.create({
       // customer_id: req.body.customer_id
       event_title: req.body.event_title,
+      date: req.body.date,
       start_time: req.body.start_time,
       end_time: req.body.end_time,
-      note: req.body.note
+      note: req.body.note,
+      repRepId: req.body.repRepId,
       
     }).then(function(response) {
       console.log("it posted", response);
@@ -67,6 +70,7 @@ router.get('/', (req, res, next) =>{
     // we use where to describe which objects we want to update
     db.calendar.update({
         calendar_id: req.body.calendar_id,
+        date: req.body.date,
         event_title: req.body.event_title,
         start_time: req.body.start_time,
         end_time: req.body.end_time,

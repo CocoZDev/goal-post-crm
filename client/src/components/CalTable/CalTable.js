@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import API from "../../utils/API";
-import calAPI from "../../utils/calAPI";
+import API from "../../utils/calAPI";
 import PubSub from 'pubsub-js';
 import DeleteBtn from "../../components/DeleteBtn";
 import { TableContainerCal, TableRow} from "../Table";
@@ -27,19 +26,19 @@ class CalTable extends Component {
 
     loadEvents = () => {
         
-        calAPI.getEvents({
+        API.getEvents({
             repRepId: localStorage.getItem('rep_id')
         })
         .then(res => {
-            console.log(res);
+            console.log(res.data);
             this.setState({ events: res.data })
         }
         )
         .catch(err => console.log(err));
-    };
+    }; 
 
     deleteEvent = id => {
-        calAPI.deleteEvent(id)
+        API.deleteEvent(id)
           .then(res => this.loadEvents())
           .catch(err => console.log(err));
       };
