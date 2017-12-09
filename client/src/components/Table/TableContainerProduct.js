@@ -12,7 +12,7 @@ export const TableContainerProduct= ({ children }) => {
                     <th className="col-md-2">Quantity</th>
                 </tr>
             </thead>
-            <tbody className="table">
+            <tbody className="table table_scrollbar">
                 {children}
             </tbody>
         </table>

@@ -11,7 +11,7 @@ table, th, td {
  }
 
 th {
-    background-color: rgba(0, 8, 56, 0.801);
+    background-color: #0060DF;
     color: white;
     text-align: center;
 }
@@ -24,10 +24,69 @@ tr:hover {
     background-color: red !important;
 } */
 
+table tbody {
+	height: 562px;
+	overflow-y: auto;
+	width: 100%;
+}
 
-.panel-body h2 {
-    margin-top: 0px;
-    margin-bottom: 20px;
+table thead tr{
+	width: 99%;
+}
+
+ table tr{
+ 	width: 100%;
+ }
+
+
+table thead{
+	background: #0060DF;
+	color: #fff;
+}
+
+table tbody td, table thead > tr> th{
+	float: left;
+	border-bottom-width: 0;
+}
+
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th{
+	padding: 8px;
+	height: 50px;
+	text-align: center;
+	line-height: 32px;
+}
+
+/* .odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+} */
+
+.table_scrollbar{
+	height: 612px;
+	overflow-y: scroll;
+}
+
+.table_scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px #0060DF;
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.table_scrollbar::-webkit-scrollbar{
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.table_scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #0060DF;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
 }
 
 
