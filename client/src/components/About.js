@@ -24,7 +24,7 @@ const About = () =>
     {/* Row #2 */}
     <Row>
       <Col size="md-4 sm-4">
-      <center><img className="aboutImg img-circle" src="/images/Dennis.jpg" alt="Dennis" style={{'width':'150px'}}/></center>
+      <center><img className="aboutImg img-circle" src={require(`/images/Dennis.jpg`)} alt="Dennis" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Dennis Alvey</h2>
@@ -38,7 +38,7 @@ const About = () =>
     {/* Row #3 */}
     <Row>
       <Col size="md-4 sm-4">
-      <center><img className="aboutImg img-circle" src="/images/Tatianna.jpg" alt="Tatianna" style={{'width':'150px'}}/></center>
+      <center><img className="aboutImg img-circle" src={require(`/images/Tatianna.jpg`)} alt="Tatianna" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Tatianna "Drama-Mama" Watwood</h2>
@@ -53,7 +53,7 @@ const About = () =>
     {/* Row #4 */}
     <Row>
       <Col size="md-4 sm-4">
-      <center><img className="aboutImg img-circle" src="/images/jeannine.jpg" alt="Jeanine" style={{'width':'150px'}}/></center>
+      <center><img className="aboutImg img-circle" src={require(`/images/jeannine.jpg`)} alt="Jeanine" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Jeanine "Mufasa" Smith</h2>
@@ -68,7 +68,7 @@ const About = () =>
     {/* Row #5 */}
     <Row>
       <Col size="md-4 sm-4">   
-      <center><img className="aboutImg img-circle" src="/images/Guiyu.jpg" alt="Guiyu" style={{'width':'150px'}}/></center>
+      <center><img className="aboutImg img-circle" src={require(`/images/Guiyu.jpg`)} alt="Guiyu" style={{'width':'150px'}}/></center>
       </Col>
       <Col size="md-8 sm-8">
       <h2>Guiyu "Zoey" Zhao  </h2>
@@ -82,7 +82,7 @@ const About = () =>
     {/* Row #6 */}
     <Row>
       <Col size="md-4 sm-4">
-      <center><img className="aboutImg img-circle" src="/images/Brian.jpg" alt="Brian" style={{'width':'150px'}}/></center>
+      <center><img className="aboutImg img-circle" src={require(`/images/Brian.jpg`)} alt="Brian" style={{'width':'150px'}}/></center>
       </Col>
         <Col size="md-8 sm-8">
       <h2>Brian "The Captain" Hart  </h2>
