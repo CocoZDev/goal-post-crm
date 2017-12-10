@@ -1,9 +1,17 @@
 {
   "main.css": "static/css/main.5ad4d323.css",
   "main.css.map": "static/css/main.5ad4d323.css.map",
-  "main.js": "static/js/main.d76a8d2d.js",
-  "main.js.map": "static/js/main.d76a8d2d.js.map",
-  "static/media/team.jpg": "static/media/team.e859209f.jpg",
-  "static/media/thumb-up.jpg": "static/media/thumb-up.a3a96217.jpg",
-  "static/media/tools.png": "static/media/tools.1f92a5a2.png"
+  "main.js": "static/js/main.f5ac9542.js",
+  "main.js.map": "static/js/main.f5ac9542.js.map",
+  "static\\media\\Brian.jpg": "static/media/Brian.0ed0a75b.jpg",
+  "static\\media\\Dennis.jpg": "static/media/Dennis.6603bccb.jpg",
+  "static\\media\\Guiyu.jpg": "static/media/Guiyu.c09c89f5.jpg",
+  "static\\media\\Tatianna.jpg": "static/media/Tatianna.f4dd2e79.jpg",
+  "static\\media\\jeannine.jpg": "static/media/jeannine.f5bf2679.jpg",
+  "static\\media\\t-1.jpg": "static/media/t-1.ef1ac27d.jpg",
+  "static\\media\\t-2.jpg": "static/media/t-2.669dd8bb.jpg",
+  "static\\media\\t-3.jpg": "static/media/t-3.1ae537f7.jpg",
+  "static\\media\\team.jpg": "static/media/team.e859209f.jpg",
+  "static\\media\\thumb-up.jpg": "static/media/thumb-up.a3a96217.jpg",
+  "static\\media\\tools.png": "static/media/tools.1f92a5a2.png"
 }
