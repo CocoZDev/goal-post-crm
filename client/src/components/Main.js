@@ -135,21 +135,21 @@ import Login from "./Login";
                             <div className="carousel-inner" role="listbox">
                                 <div className="item active">
                                     <div className="testimonial_slide">
-                                        <img src={require(`images/t-1.jpg`)} className="img-circle img-responsive" />
+                                        <img src={require(`../styles/img/t-1.jpg`)} className="img-circle img-responsive" />
                                         <h5><i>"I love Goal Post! Great tool to keep track of my customer information, sales notes, and plan my clients visits."</i></h5>
                                         <h5>- Alex</h5>
                                     </div>
                                 </div>
                                 <div className="item">
                                     <div className="testimonial_slide">
-                                        <img src={require(`images/t-2.jpg`)} className="img-circle img-responsive" />
+                                        <img src={require(`../styles/img/t-2.jpg`)} className="img-circle img-responsive" />
                                         <h5><i>"I wish I knew about Goal Post years earlier. Every salesperson should use GoalPost."</i></h5>
                                         <h5>- Brandon</h5>
                                     </div>
                                 </div>
                                 <div className="item">
                                     <div className="testimonial_slide">
-                                        <img src={require(`images/t-3.jpg`)} className="img-circle img-responsive" />
+                                        <img src={require(`../styles/img/t-3.jpg`)} className="img-circle img-responsive" />
                                         <h5><i>"No more piles of sales notes. With Goal Post, now I can keep my customer records digitally in the cloud."</i></h5>
                                         <h5>- Lisa</h5>
                                     </div>
@@ -183,19 +183,19 @@ import Login from "./Login";
                     {/* Row #1 */}
                     <Row fluid>
                         <Col size="md-4 sm-4">
-                            <img className="aboutImg img-circle" src={require(`/images/jeannine.jpg`)} />
+                            <img className="aboutImg img-circle" src={require(`../styles/img/jeannine.jpg`)} />
                             <h4>Jeanine Smith</h4>
                             <p>Project Manager</p>
                         </Col>
 
                         <Col size="md-4 sm-4">
-                            <img className="aboutImg img-circle" src={require(`/images/Guiyu.jpg`)} />
+                            <img className="aboutImg img-circle" src={require(`../styles/img/Guiyu.jpg`)} />
                             <h4>Guiyu (Zoey) Zhao  </h4>
                             <p>Front End Developer &amp; QA Manager</p>
                         </Col>
 
                         <Col size="md-4 sm-4">
-                            <img className="aboutImg img-circle" src={require(`/images/Dennis.jpg`)} />
+                            <img className="aboutImg img-circle" src={require(`../styles/img/Dennis.jpg`)} />
                             <h4>Dennis Alvey</h4>
                             <p>Front End Developer &amp; UI/UX Manager</p>
                         </Col>
@@ -204,13 +204,13 @@ import Login from "./Login";
                     {/* Row #2 */}
                     <Row fluid>
                         <Col size="md-6 sm-6">
-                            <img className="aboutImg img-circle" src={require(`/images/Brian.jpg`)} />
+                            <img className="aboutImg img-circle" src={require(`../styles/img/Brian.jpg`)} />
                             <h4>Brian Hart  </h4>
                             <p>Back End Developer &amp; Git Master</p>
                         </Col>
 
                         <Col size="md-6 sm-6">
-                            <img className="aboutImg img-circle" src={require(`/images/Tatianna.jpg`)} />
+                            <img className="aboutImg img-circle" src={require(`../styles/img/Tatianna.jpg`)} />
                             <h4>Tatianna Watwood</h4>
                             <p>Back End Developer &amp; Code Review Manager</p>
                         </Col>
