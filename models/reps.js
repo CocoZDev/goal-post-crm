@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true,
       }
     },
-    rep_userName: {
+    rep_username: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -31,13 +31,33 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
-    }
-  },
-    { timestamps: false });
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+  updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+   },
+    { timestamps: true });
   reps.associate = function (models) {
     reps.hasMany(models.customers, {
       onDelete: "CASCADE"
-    });
+    })};
+  reps.associate = function (models) {
+    reps.hasMany(models.products, {
+      onDelete: "CASCADE"
+    })};
+  reps.associate = function (models) {
+      reps.hasMany(models.events, {
+        onDelete: "CASCADE"
+      })};
+  reps.associate = function (models) {
+    reps.hasMany(models.sales, {
+      onDelete: "CASCADE"
+    })
   };
   return reps;
 };

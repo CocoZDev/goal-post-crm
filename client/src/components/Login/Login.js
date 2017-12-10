@@ -1,25 +1,17 @@
 import React, { Component } from "react";
 import { Input, FormBtn } from "../Form";
 import { Col, Row, Container } from "../Grid";
-// import Jumbotron from "../Jumbotron";
+import "../../styles/Login.css";
+import API from "../../utils/API";
+import decode from 'jwt-decode';
 
+var chartData1;
 
-
-// Code Reference from https://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
-
-// const Login = () =>
-
-
-//   <p>Login/Register Placeholder. Will use this code example reference from https://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
-//   </p>
-
-// ============ Modified Login Component with Class ==============
 class Login extends Component {
   state = {
     username: "",
     password: "",
-    firstName: "",
-    lastName: "",
+    passwordConfirm: "",
     email: ""
   };
 
@@ -30,104 +22,172 @@ class Login extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleRegister = event => {
     event.preventDefault();
+    console.log("Handling register..Login.js");
+      API.registerAccount({
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email
+      })
+        // .then(res => console.log("you have registered!"))
+        .then(res => window.location = '/Login')
+        .catch(err => console.log(err));
+
+        //Clear form data after submit
+        this.setState({
+          username: "",
+          password: "",
+          passwordConfirm: "",
+          email: ""
+        });
+    };
+    
+
+  handleLogin = event => {
+    event.preventDefault();
+    console.log("Handling login..Login.js");
+      API.loginAccount({
+        username: this.state.username,
+        password: this.state.password
+      })
+        .then(res => {
+          console.log("res..Login.js: ", res.data.token, this.props);
+          // set token to local storage
+          localStorage.setItem('token', res.data.token);
+          localStorage.setItem('username', res.data.username);
+          // decode token
+          const decoded = decode(res.data.token);
+          var sub = decoded.sub;
+          console.log('sub: ' + sub);
+          localStorage.setItem('rep_id', sub);
+          console.log("decoded token giving rep_id and timestamp: ", decoded);
+          // API.getChartData({
+          //            repRepId: localStorage.getItem('rep_id')
+          //        })
+          //        .then(res => {
+          //            console.log("res..Login.js: ", res.data);
+          //            localStorage.setItem('chartData1', parseInt(res.data, 10));
+          //            chartData1 = localStorage.getItem('chartData1');
+          //            console.log('chartData1..Login.js ', chartData1);
+          //        })
+          //        .catch(err => console.log(err))
+          // get dashboard component
+          // this.props.history.replace('/private');
+        })
+        .then(res => window.location = '/private')
+        .catch(err => console.log(err));
   };
 
   render(){
     return (
       <Container fluid>
-        <Row>
-          <Col size="lg-6 lg-offset-3 md-6 md-offset-3 sm-6 sm-offset-3">
-            <div id="myTabContent" className="tab-content text-center" style={{width:'300px'}}>
-              {/* ===== Login ===== */}
-              <div className="tab-pane active in" id="login">
-                <form className="form-horizontal" action='' method="POST">
-                  <fieldset>
-                    <div id="legend">
-                      <legend className="">Login</legend>
-                    </div>    
-                    <div className="control-group">
-                      {/* <!-- Username --> */}
-                      <label className="control-label"  for="username">Username</label>
-                      <div className="controls">
-                        <Input 
-                          type="text" 
-                          id="username" 
-                          name="username" 
-                          placeholder="" 
-                          value={this.state.username}
-                          onChange={this.handleInputChange}>
-                        </Input>
-                      </div>
-                    </div>
-
-                    <div className="control-group">
-                      {/* <!-- Password--> */}
-                      <label className="control-label" for="password">Password</label>
-                      <div className="controls">
-                        <Input 
-                          type="password" 
-                          id="password"
-                          name="password" 
-                          placeholder=""
-                          value={this.state.password}
-                          onChange={this.handleInputChange}>
-                        </Input>
-                      </div>
-                    </div>
-
-
-                    <div className="control-group">
-                      {/* <!-- Button --> */}
-                      <div className="controls">
-                        <button className="btn btn-success">Login</button>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>                
+        <Row fluid>
+          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
+            <div className="panel panel-login">
+              {/* Panel Heading */}
+              <div className="panel-heading">
+                <Row fluid>
+                  <Col size="md-6 sm-6">
+                    <a href="/login" className="active" id="login-form-link">LOGIN</a>
+                  </Col>
+                  <Col size="md-6 sm-6">
+                    <a href="/register" id="register-form-link">REGISTER</a>
+                  </Col>
+                </Row>
+                {/* <hr /> */}
               </div>
+              {/* End of Panel Heading */}
 
-              {/* ===== Create New Account ===== */}
+              {/* Panel Body */}
+              <div className="panel-body">
+                <Row fluid>
+                  <Col size="md-12 sm-12">
 
-              <div className="tab-pane fade" id="create">
-                <form id="tab">
-                  <label>Username</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.username}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>First Name</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.firstName}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>Last Name</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.lastName}
-                    onChange={this.handleInputChange}>
-                  </Input>
-                  <label>Email</label>
-                  <Input 
-                    type="text" 
-                    value={this.state.email}
-                    onChange={this.handleInputChange}>
-                  </Input>
+                    {/* Login Form */}
 
-                  <div>
-                    <FormBtn>Create Account</FormBtn>
-                  </div>
-                </form>
+                    <form id="login-form" style={{ display: 'block'}} >
+                        <h2> Welcome Back! </h2>
+                        <Input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} required></Input>
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} required></Input>
+         
+                        {/* <Input type="checkbox" tabIndex="3" className="" name="remember" id="remember"></Input>
+                        <label for="remember">Remember Me</label> */}
+                        <Row fluid>
+                          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
+                            <FormBtn 
+                            type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" 
+                              value="Log In" onClick={this.handleLogin}>Log In
+                            </FormBtn>
+                          </Col>
+                        </Row>
+                  
+                        {/* <Row fluid>
+                          <Col size="md-12 sm-12" className="text-center">
+                          <a href="" tabIndex="5" className="forgot-password">Forgot Password?</a>
+                          </Col>
+                        </Row> */}
+                    </form>
+
+                    {/* Register Form */}
+
+                    <form id="register-form" style={{display:'none'}}>
+                      <h2> Sign Up For Free! </h2>
+                        <Input 
+                        type="text" name="username" id="username" tabIndex="1" placeholder="Username *" 
+                          value={this.state.username} onChange={this.handleInputChange} required>
+                        </Input>
+                        <Input 
+                        type="email" name="email" id="email" tabIndex="1" placeholder="Email Address *" 
+                          value={this.state.email} onChange={this.handleInputChange} required>
+                        </Input>
+                        <Input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" 
+                           value={this.state.password} onChange={this.handleInputChange} required>
+                        </Input>
+                        <Input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password *" 
+                          value={this.state.passwordConfirm} onChange={this.handleInputChange} required>
+                        </Input>
+                        <Row fluid>
+                          <Col size="md-6 md-offset-3 sm-6 sm-offset-3">
+                            <FormBtn 
+                            type="submit" name="register-submit" id="register-submit" tabIndex="4" className="form-control btn btn-register" 
+                              value="Register Now" onClick={this.handleRegister}>Register
+                            </FormBtn>
+                          </Col>
+                        </Row>
+                    </form>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>
-          </Row>
-        </Container>
-      );
-    }
+        </Row>
+
+
+      {/* Placeholder Links After Logging In */}
+
+        {/* <Row fluid>
+          <Col size="md-12 sm-12">
+            <div className="button groups" style={{position: 'relative', 'paddingBottom': '300px' }}>
+            <h3>Links after users logging in, will remove later!!!</h3>
+              <Col size="md-4 md-offset-4 sm-4 sm-offset-4">
+                <ul>
+                  <li><a href="/private">Private Section Container</a></li>
+                  <li><a href="/dashboard">Dashboard</a></li>
+                  <li><a href="/customers">Customers</a></li>
+                  <li><a href="/products">Products</a></li>
+                  <li><a href="/schedule">Schedule</a></li>
+                </ul>
+              </Col>
+            </div>
+          </Col>
+        </Row> */}
+
+
+
+      </Container>
+    );
   }
+}
 
 export default Login;

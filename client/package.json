@@ -4,7 +4,12 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "accounting-js": "^1.1.1",
+    "animate.css": "^3.5.2",
+    "pubsub-js": "^1.5.7",
+    "rc-time-picker": "^3.2.1",
     "react": "^16.0.0",
+    "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
   },

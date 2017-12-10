@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
-var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require('express-session');
 var bcrypt = require("bcrypt-nodejs");
@@ -12,7 +11,7 @@ require('./passport.js');
 // Set up the Express App
 // ======================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 // ================================
@@ -33,29 +32,30 @@ app.use(passport.session());
 
 // Static Directory
 // ================
-app.use(express.static("public"));
-
-// Allow use of handlebars and method override
-// ===========================================
-app.use(methodOverride("_method"));
-// app.engine("handlebars", exphbs({defaultLayout: "main"}));
-// app.set("view engine" , "handlebars");
+app.use(express.static("client/build"));
 
 // Routes
 // ======
 var index = require("./controller/index.routes");
 var api = require("./controller/api.routes");
 var account = require("./controller/account.routes");
+var customer = require("./controller/custController");
+var sale = require("./controller/salesController");
+var schedule = require("./controller/calController");
+
 app.use("/", index);
 app.use("/api", api);
 app.use("/account", account);
+app.use("/customers", customer);
+app.use("/sales", sale);
+app.use("/schedule", schedule);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-    app.listen(PORT, function(){
-        db.sequelize.sync({force: false}).then(function(){ console.log("App is listening on PORT " + PORT);
-    });
+app.listen(PORT, function () {
+    console.log("App is listening on PORT " + PORT);
+    db.sequelize.sync({ force: false });
 });
 
 module.exports = app;

@@ -6,25 +6,19 @@ var router = express.Router();
 
 // ALL links in this file get prepended with /account
 // ==================================================
-router.get('/login' , (req, res, next) => {
-    res.render(path.join(__dirname, "../views/login.handlebars"));
-});
 
+// this is handling the login authentication
+router.post('/login',
+    passport.authenticate('local', { session: false }),
+    function (req, res) {
+        console.log("user authenticated..account.routes.js ", req.user.username, req.user.token);
+        res.json({ username: req.user.username, token: req.user.token });
+    });
 
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/account/login'
-}))
-
-router.post('/signup', passport.authenticate('local-register', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/account/login'
-}))
-
-router.get('/logout', (req, res, next) => {
-    req.session.destroy(err => {
-      res.redirect('/account/login')
-    })
-  })
+    // this is handling the registration
+router.post('/register', passport.authenticate('local-register', {
+    successRedirect: '/login',
+    failureRedirect: '/'
+}));
 
 module.exports = router;

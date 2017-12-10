@@ -1,0 +1,63 @@
+/* .form {
+    margin: 20px;
+  }
+  
+  .form input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  } */
+
+.DataForm {
+    border-color: rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    margin-top: -10px;
+    padding: 20px;
+    background-color:rgba(0, 8, 56, 0.801);
+
+}
+
+.DataForm h2 {
+    margin: -10px 0 10px 0;
+}
+
+.DataForm label {
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.DataForm input {
+    background-color: transparent;
+    width: 100%;
+    color: white;
+}
+
+/* .DataForm input[type="text"],.DataForm input[type="email"],.DataForm input[type="password"] {
+    height: 45px;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+} */
+.DataForm input:hover,
+.DataForm input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: white;
+}
+
+.panel-body h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+  

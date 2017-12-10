@@ -4,8 +4,7 @@ import "../../styles/Footer.css";
 const Footer = () =>
     <footer>
         <div className="footer" >
-            <h6>SalesTool © 2017 | 
-            Made with <span className="glyphicon glyphicon-heart"/> by Jeannie, Tatianna, Guiyu, Brian, and Dennis.</h6>
+            <h5>Goal Post Copyright © 2017 | All Rights Reserved</h5>
         </div>
     </footer>
 

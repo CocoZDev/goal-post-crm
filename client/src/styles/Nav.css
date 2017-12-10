@@ -1,21 +1,73 @@
-.navbar {
-  /* background: #653bb5; */
-  height: 60px;
+.navbar-default {
+  background-color: #0060df;
+  border-color: #0047a6;
+}
+.navbar-default .navbar-brand {
+  color: #f8f8f8;
+  font-size: 25px;
+  height: 25px;
+  margin-top: -5px;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #d1d5f6;
+}
+.navbar-default .navbar-text {
+  color: #f8f8f8;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #f8f8f8;
+  height: auto;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #d1d5f6;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #d1d5f6;
+  background-color: #0047a6;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #d1d5f6;
+  background-color: #0047a6;
+}
+.navbar-default .navbar-toggle {
+  border-color: #0047a6;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #0047a6;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #f8f8f8;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #f8f8f8;
+}
+.navbar-default .navbar-link {
+  color: #f8f8f8;
+}
+.navbar-default .navbar-link:hover {
+  color: #d1d5f6;
 }
 
-
-/* .navbar ul {
-  margin: 0;
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #f8f8f8;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #d1d5f6;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #d1d5f6;
+    background-color: #0047a6;
+  }
 }
-
-.navbar li {
-  display: inline-block;
-}
-
-.navbar a {
-  color: white;
-  font-size: 1.3rem;
-  text-decoration: none;
-  margin: 5px;
-  line-height: 3;
-} */
